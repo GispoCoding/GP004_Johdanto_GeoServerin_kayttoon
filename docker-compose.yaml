@@ -23,6 +23,8 @@ services:
     image: kartoza/geoserver:${GS_TAG}
     volumes:
     - geoserver-data:${GS_DATA_DIR}
+    - ./training-data/geoserver:/koulutus
+    - ./geoserver-init.sh:/geoserver-init.sh
 
     environment:
       - SAMPLE_DATA=true
