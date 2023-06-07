@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-docker-compose exec geoserver /postgis-init.sh
+docker-compose exec postgres /postgis-init.sh

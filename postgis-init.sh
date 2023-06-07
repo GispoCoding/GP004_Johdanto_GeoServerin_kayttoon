@@ -34,5 +34,6 @@ done
 echo "Importing OSM data"
 wget https://gispo-training-data.s3.eu-central-1.amazonaws.com/public/finland-latest.osm.pbf
 echo "$PGHOST:5432:gs_training:$PGUSER:$PGPASSWORD" > $HOME/.pgpass
-osm2pgsql --output-pgsql-schema=suomi -d gs_training -U $PGUSER -H $PGHOST -P 5432 finland-latest.osm.pbf
-psql -W -d gs_training -c "ALTER TABLE suomi.planet_osm_roads RENAME TO osm_tiet;"
+chmod 600 $HOME/.pgpass
+osm2pgsql --output-pgsql-schema=suomi -s -C 1200 -d gs_training -U $PGUSER -H $PGHOST -P 5432 finland-latest.osm.pbf
+psql -d gs_training -c "ALTER TABLE suomi.planet_osm_roads RENAME TO osm_tiet;"
