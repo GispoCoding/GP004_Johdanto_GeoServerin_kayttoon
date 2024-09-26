@@ -51,10 +51,6 @@ Näiden lisäksi Geoserverin laajennokset voivat lisätä valikkoja käyttöliit
 
 ![](img/harjoitus_2/image1.png)
 
-::: hint-box
-Psst! Huomaa, että nyt käyttöliittymän keskiosassa lukee myös "No Strong cryptography available...". Riippuen asennuksesta vahva salaus (strong cryptography)-toiminnallisuuden mahdollistaminen saattaa tarvita erillisen asennuksen (Java policy jar tiedostot).
-:::
-
 ## **Master- ja Administrator-käyttäjät**
 
 GeoServerin oletusasennuksessa on kaksi käyttäjäprofiilia, **master** ja **admin**. Salasanat on vaihdettu oletuksesta seuraavalla tavalla:
@@ -246,7 +242,9 @@ Tämä valikko sisältää erilaisia asetuksia kuten:
 +--------------------------------------+-----------------------------------------------------------------------------+
 | **Global**                           | Rajapintapalvelujen asetuksia ja lokitietojen asetuksia                     |
 +--------------------------------------+-----------------------------------------------------------------------------+
-| **Image Processing & Raster Access** | Asetukset kuvien ja raakakuva-aineiston (coverage) käsittelyyn palvelimessa |
+| **Image Processing**                 | Kuvien (WMS-ja WCS-palvelujen) käsittelyyn liittyviä asetuksia              |
++--------------------------------------+-----------------------------------------------------------------------------+
+| **Raster Access**                    | Rasteriaineiston käsittelyyn liittyviä muisti- ja CPU-asetuksia |
 +--------------------------------------+-----------------------------------------------------------------------------+
 
 ## **Tile Caching**
