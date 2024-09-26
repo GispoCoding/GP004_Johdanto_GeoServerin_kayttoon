@@ -244,7 +244,7 @@ Tämä valikko sisältää erilaisia asetuksia kuten:
 +--------------------------------------+-----------------------------------------------------------------------------+
 | **Image Processing**                 | Kuvien (WMS-ja WCS-palvelujen) käsittelyyn liittyviä asetuksia              |
 +--------------------------------------+-----------------------------------------------------------------------------+
-| **Raster Access**                    | WCS-palvelun muistinhallintaan ja palvelun optimointiin liittyviä asetuksia |
+| **Raster Access**                    | Rasteriaineiston käsittelyyn liittyviä muisti- ja CPU-asetuksia |
 +--------------------------------------+-----------------------------------------------------------------------------+
 
 ## **Tile Caching**
