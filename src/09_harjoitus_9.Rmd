@@ -24,7 +24,7 @@ Avaa **Tile Caching → Caching defaults** ja tarkista, mitkä karttatiilipalvel
 
 ![](img/harjoitus_9/image1.png)
 
-Oletuksena aktivoituna ovat **WMS-C**- (WMS Service-Cached) ja **TMS** (Tile Map Service)-karttatiilipalvelut.
+Oletuksena aktivoituna ovat **WMS-C**- (WMS Tile Caching) ja **TMS** (Tile Map Service)-karttatiilipalvelut.
 
 Avaa vielä **Tile Caching → Tile Layers** ja huomaa myös, että kaikille tasoille on automaattisesti luotu oma karttatiilitaso.\
 ![](img/harjoitus_9/image2.png)
