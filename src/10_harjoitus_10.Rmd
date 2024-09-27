@@ -30,7 +30,9 @@ Voit tarkistaa ja vapauttaa GeoServerin käyttämää muistia **Memory Usage** k
 
 Tarkista vielä, mitkä Java-asetukset ovat voimassa palvelimessa kuvien käsittelyä varten. Lähtökohtaisesti ei ole kovin tehokasta käsitellä kuvia kokonaisina tietokoneen muistissa. Yleisesti käytetty tapa on jakaa kuvat pienempiin osiin (tiilet/tiles) ja tehdä mahdolliset kuvaoperaattorit pienempiin kuviin. JAI-asetukset (määritelty **Image Processing** -asetuksissa) hallinnoivat näiden menetelmien toimintaa.
 
-JAI (Java Advanced Imaging) asetuksia voit muokata **Settings → Image Processing** -näkymän kautta. ![](img/harjoitus_10/image2.png)
+JAI (Java Advanced Imaging) asetuksia voit muokata **Settings → Image Processing** -näkymän kautta. 
+
+![](img/harjoitus_10/image2.png)
 
 
 Asetusten muutokset näkyvät **Server Status** -sivulla.
@@ -94,7 +96,7 @@ GeoServerin palvelimen asetuksia on mahdollista hallita myös REST-rajapinnan ka
 Voit tarkistaa REST-rajapinnan kautta saatavilla olevat aineistot kirjoittamalla seuraavan osoitteen web-selaimeen (käytä oman palvelimesi ip-osoitetta):
 
 ::: note-box
-<http://%3Eoma-ip-osoite:8080/geoserver/rest/workspaces/>
+<http://oma-ip-osoite/geoserver/rest/workspaces/>
 :::
 
 Etsi tiedot edellisissä harjoituksissa luoduista karttatasoista.
@@ -115,4 +117,8 @@ GeoServerin **Monitor**-lisäosa on valmiiksi asennettu koulutus palvelimiin, ja
 
 Avaa **Monitor → Activity**.
 
-Kokeile esikatsella eri tasoja ja katso sen jälkeen **Monitor → Activity → Daily**-osiosta järjestelmän aktiviteettigrafiikkaa, jonka pitäisi näyttää seuraavanlaiselta: ![](img/harjoitus_10/image7.png) ![](img/harjoitus_10/image8.png)
+Kokeile esikatsella eri tasoja ja katso sen jälkeen **Monitor → Activity → Daily**-osiosta järjestelmän aktiviteettigrafiikkaa, jonka pitäisi näyttää seuraavanlaiselta: 
+
+![](img/harjoitus_10/image7.png) 
+
+![](img/harjoitus_10/image8.png)

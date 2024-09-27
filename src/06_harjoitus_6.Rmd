@@ -91,13 +91,14 @@ Psst! Kuten aiemmin mainittiin, GeoServer pyrkii tulkitsemaan alkuperäisen aine
 Paina lopuksi **Save**.
 
 Tarkista, että uusi taso löytyy **Data → Layers** -näkymältä. Voit myös esikatsella sitä tuttuun tapaan käyttäen **Data → Layers Preview**.
+
 ![](img/harjoitus_6/image9.png)
 
 ## **Layer Groups**
 
 GeoServerin tasoja ja/tai aiemmin luotuja tasoryhmiä voidaan ryhmittää. Tasoryhmissä voi yhdistää eri vektori- ja rasteriformaatteja. Yksi selkeä käyttötapaus on taustakartan julkaiseminen yhtenä WMS-tasopalveluna. 
 
-Luodaan nyt tasoryhmä käyttäen aiemmin palvelimelle lisättyjä **ilmakuvat_keskusta-**, **rakennukset-** ja **tiesto**-tasoja.
+Luodaan nyt tasoryhmä käyttäen aiemmin palvelimelle lisättyjä **ilmakuvat-**, **rakennukset-** ja **tiesto**-tasoja.
 
 Valitse päävalikosta **Data → Layer Groups** ja sitten **Add new layer group**.
 
@@ -109,14 +110,17 @@ Psst! Joissain selaimissa ääkkösten käyttö ei välttämättä onnistu. Väl
 
 Valitse **helsinki** workspace:ksi.
 
-Selaa sivua alaspäin, paina **Add Layer...** ja lisää **ilmakuvat_keskusta**-taso. Taso on nyt lisätty **Layers**-listalle.
+Selaa sivua alaspäin, paina **Add Layer...** ja lisää **ilmakuvat**-taso. Taso on nyt lisätty **Layers**-listalle.
 
 Paina **Generate Bounds** ja huomaa, kuinka tason alkuperäinen koordinaatistojärjestelmä ja laajuus on nyt määritettynä niille kuuluvissa kentissä. Pidetään ryhmätason järjestelmänä **ETRS89 / TM35FIN**.
+
 ![](img/harjoitus_6/image10.png)
 
 Lisää samalla tavalla Helsingin **rakennukset**- ja **tiesto**-tasot.
 
-Huomaa, että voit järjestää tasot käyttämällä **Drawing order** -nuolia. Ylempänä oleva (sija 1) piirretään ensimmäiseksi; sen päälle piirretään seuraava taso, ja niin edelleen. Järjestele tasot tämän kuvan mukaan:
+Huomaa, että voit järjestää tasot käyttämällä **Drawing order** -nuolia. Ylempänä oleva (sija 1) piirretään ensimmäiseksi, sen päälle piirretään seuraava taso, ja niin edelleen. Järjestele tasot tämän kuvan mukaan:
+
+![](img/harjoitus_6/image11.png)
 
 Varmista, että **Default Style** ovat rastittuina.
 
@@ -125,7 +129,7 @@ Paina lopulta uudelleen **Generate Bounds** päivittämään ryhmätason laajuus
 Paina vielä **Save**.
 
 Voit esikatsella ryhmätasoa samalla tavalla kuin muitakin tasoja:
-![](img/harjoitus_6/image11.png)
+
 ![](img/harjoitus_6/image12.png)
 
 ### **Ryhmätasojen julkaisemisen muoto**

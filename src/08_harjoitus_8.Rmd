@@ -176,16 +176,18 @@ Helpoiten saadaan testattua editointi-toiminnallisuutta QGIS-paikkatietojärjest
 
 Tarvitaan ensin WFS-palvelun osoite. Saat tämän esimerkiksi GeoServerin etusivulta, jonne pääset klikkaamalla vasemman yläkulman GeoServer-logoa. Klikkaa hiiren oikealla painikkeella etusivun **Service Capabilities**-paneelin WFS-kohdan alla olevaa linkkiä **1.1.0**.
 
- Osoite on muotoa:
+Osoite on muotoa:
 
 ::: note-box
-<http://%3Cip.osoite%3E:8080/geoserver/ows?service=wfs&version=1.1.0&request=GetCapabilities>
+<http://ip.osoite:8080/geoserver/ows?service=wfs&version=1.1.0&request=GetCapabilities>
 :::
+
+Huomaa, että yllä olevassa laatikossa **ip.osoite** kohdassa kuuluu olla oma ip-osoitteesi.
 
 GeoServerin oletusasetuksilla workspace-kohtaisen osoitteen saa lisäämällä osoitteeseen workspacen URI:n. Esimerkiksi helsinki-workspacen osoite olisi:
 
 ::: note-box
-<http://%3Cip.osoite%3E:8080/geoserver/ows?service=wfs&version=1.1.0&request=GetCapabilities>
+<http://ip.osoite:8080/geoserver/helsinki/ows?service=wfs&version=1.1.0&request=GetCapabilities>
 :::
 
 Avaa QGIS työpöydän pikakuvakkeesta. Lisää uusi WFS-palvelu ja liitä URL-kenttään äsken kopioimasi osoite. Syötä myös käyttäjänimi (admin) sekä salasana (gispo).

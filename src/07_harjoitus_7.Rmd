@@ -14,8 +14,6 @@ Harjoituksen jälkeen opiskelija osaa yhdistää paikkatietokannan tietoja GeoSe
 
 ## **Valmistautuminen**
 
-Käynnistä koneessa web-selain ja kirjaudu osoitteeseen:
-
 Palvelinkoneeseen on asennettu PostgreSQL-tietokanta ja sen PostGIS-laajennos. Tietokantaan on ladattu valmiiksi erilaisia vektoriaineistoja.
 
 ## **Yhteyden muodostaminen paikkatietokantaan**
@@ -37,23 +35,23 @@ Valitse **Workspaceksi** tuttu **helsinki**-workspace ja nimeä se **hki_lipas**
 
 Täytä sitten PostGIS-tietokannan **Connection Parameters** -yhteysasetukset seuraavasti:
 
+
 +--------------------+---------------+
-| ##### **Dbtype**   | postgis       |
+| ##### **host**     | postgres      |
 +--------------------+---------------+
-| ##### **Host**     | postgres      |
+| ##### **port**     | 5432          |
 +--------------------+---------------+
-| ##### **Port**     | 5432          |
+| ##### **database** | gs_training   |
 +--------------------+---------------+
-| ##### **Database** | gs_training   |
+| ##### **schema**   | lipas         |
 +--------------------+---------------+
-| ##### **Schema**   | lipas         |
+| ##### **user**     | postgres      |
 +--------------------+---------------+
-| ##### **User**     | postgres      |
-+--------------------+---------------+
-| ##### **Passwd**   | gispo         |
+| ##### **passwd**   | gispo         |
 +--------------------+---------------+
 
 Jätä loput asetukset oletuksiin ja paina lopulta **Save**.
+
 ![](img/harjoitus_7/image2.png)
 
 Samalla tavalla kuin aiemmin, uuden tason luomisen näkymä tulee esiin automaattisesti storen luomisen jälkeen. Näkymässä on listattu kaikki tasot, jotka löytyvät kyseisessä tietokannassa.
@@ -76,12 +74,15 @@ Tarkista, että **Enabled** ja **Advertised** ovat rastittuina.
 Kuten olet varmasti nyt huomannut, uuden tason asetukset ovat samanlaiset, oli kyseessä sitten shapefile-formaatti tai PostGIS-tietokanta.
 
 Katso vielä **Coordinate Reference Systems** -osiosta, että GeoServer on tunnistanut koordinaattijärjestelmäksi **EPSG:3067**. PostGIS ja GeoServer käyttävät EPSG-koodeja määrittääkseen koordinaattijärjestelmän, joten useimmiten koordinaattijärjestelmä tulee oikein määritellyksi automaattisesti.
+
 ![](img/harjoitus_7/image4.png)
 
 Ennen kuin tallennetaan tason julkaisuasetukset, määritä tason **Bounding Boxes** samalla tavalla kuin aikaisemmin lisäämiesi aineistojen kanssa.
+
 ![](img/harjoitus_7/image5.png)
 
-Paina lopulta **Save**. Voit esikatsella uutta tasoa **Layer Preview**:n kautta.\
+Paina lopulta **Save**. Voit esikatsella uutta tasoa **Layer Preview**:n kautta.
+
 ![](img/harjoitus_7/image6.png)
 
 ## **Monikulmio- ja viiva-tason lisääminen PostGIS-tietokannasta**
