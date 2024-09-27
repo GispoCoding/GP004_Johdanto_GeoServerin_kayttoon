@@ -40,7 +40,7 @@ Pidä **Weak PBE** ja paina **Save**.
 
 Oletuksena GeoServerin asetukset sallivat palvelimen käytön (eli WMS-, WFS- ja WCS-palvelujen käytön) ilman mitään käyttäjätunnusta. Voit tarkistaa tämän seuraavasti.
 
-Esikatsele tasoa **ilmakuvat_keskusta** samalla tavalla kuin aiemmin muita tasoja. Taso aukeaa selaimella ongelmitta, koska olet kirjautunut **admin**-tunnuksella.  Älä sulje esikatselusivua vielä.
+Esikatsele tasoa **ilmakuvat** samalla tavalla kuin aiemmin muita tasoja. Taso aukeaa selaimella ongelmitta, koska olet kirjautunut **admin**-tunnuksella.  Älä sulje esikatselusivua vielä.
 
 Mene nyt takaisin GeoServerin ylläpitosivulle ja paina **Logout**.
 
@@ -200,15 +200,15 @@ Kirjaudu uudelleen palvelimelle käyttäen **hki_kayttaja**-tunnusta ja tarkista
 
 Kirjaudu **admin**-tunnuksella uudelleen Geoserver palvelimelle.
 
-Samalla tavalla kuin äsken määriteltiin käyttäjäkohtaisesti oikeudet yhdelle workspace:lle, voidaan asettaa oikeudet palvelukohtaisesti eri käyttäjille.
+Samalla tavalla kuin äsken määriteltiin käyttäjäkohtaisesti oikeudet yhdelle workspacelle, voidaan asettaa oikeudet palvelukohtaisesti eri käyttäjille.
 
-Avaa **Security → Services**. Määriteltynä on oletuksena vain yksi sääntö **\*.\***. Samalla tavalla kuin aiemmin, tämä tarkoittaa se, että kaikki palvelujen toiminnot (säännön toinen **\***-merkki) ovat käytettävissä kaikissa palveluissa (säännön ensimmäinen **\***-merkki).
+Avaa **Security → Services**.
 
 Seuraava kuva esittää GeoServerin palvelusääntöjen määrittelyä:
 
 ![](img/harjoitus_12/image16.png)
 
-Avaa sääntö **\*.\*** ja rajoita sen käyttöä vain ylläpitäjille.
+Luo uusi sääntö **\*.\*** ja rajoita sen käyttöä vain ylläpitäjille.
 
 ![](img/harjoitus_12/image17.png)
 
