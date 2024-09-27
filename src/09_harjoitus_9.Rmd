@@ -290,9 +290,10 @@ Luo workspace, anna sille nimeksi **suomi**.
 
 Luo PostGIS-store, laita se suomi-workspaceen ja nimeä se **suomi_tiesto_3067**:ksi (tietokannan nimi on **gs_training**, skeema on **suomi**, käyttäjä on **postgres** ja salasana on **gispo**).
 
-Kyseisestä storesta löytyy ainoastaan yksi aineisto (osm-tiet). Luo siitä uusi GeoServer-taso, nimeä se **suomi_tiesto_3067**:ksi (täytä myös muuta tarvittavat tiedot).
+Kyseisestä storesta löytyy aineisto nimellä **osm-tiet**. Luo siitä uusi GeoServer-taso, nimeä se **suomi_tiesto_3067**:ksi (täytä myös muut tarvittavat tiedot).
 
-Tarpeen vaatiessa, voit katsoa mallia alla olevasta kuvakaappauksesta PostGIS-storen luomisesta:\
+Tarpeen vaatiessa, voit katsoa mallia alla olevasta kuvakaappauksesta PostGIS-storen luomisesta:
+
 ![](img/harjoitus_9/image24.png) ![](img/harjoitus_9/image25.png)
 
 ## **Oman karttatiiliruudukon käyttöönotto**
