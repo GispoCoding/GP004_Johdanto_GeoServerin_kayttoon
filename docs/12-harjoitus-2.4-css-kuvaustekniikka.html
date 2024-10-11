@@ -16,7 +16,7 @@
 
 <meta name="author" content="Gispo Oy" />
 
-<meta name="date" content="2024-09-26" />
+<meta name="date" content="2024-10-11" />
 
 
 <meta name="description" content="12 HARJOITUS 2.4: CSS-KUVAUSTEKNIIKKA | Johdanto GeoServerin käyttöön">
@@ -272,14 +272,14 @@ type="button" onclick="navToggle()" aria-label="Toggle navigation">
 </div>
 <p>Paina <strong>Save</strong>. Avaa <strong>Styles</strong>-valikosta juuri luomasi tyyli ja valitse <strong>Layer Preview</strong> -välilehti. Valitse esikatseltavaksi tasoksi tiestötaso.</p>
 <p>Lähennä karttaa siten, että tiet alkavat näkyä kunnolla.</p>
-<p>Pystyt muokkaamaan CSS-koodia myös <strong>Layer Preview</strong> -välilehdellä. Huomaa merkki “<strong>*</strong>”. Se tarkoittaa, että sääntö koskee kaikkia kohteita (samoin kuin *-merkki esimerkiksi tiedostojen listauksessa komentoriviltä). 
-<img src="img/harjoitus_11/image1.png" /></p>
+<p>Pystyt muokkaamaan CSS-koodia myös <strong>Layer Preview</strong> -välilehdellä. Huomaa merkki “<strong>*</strong>”. Se tarkoittaa, että sääntö koskee kaikkia kohteita (samoin kuin *-merkki esimerkiksi tiedostojen listauksessa komentoriviltä). Paina “Preview on layer”-kohdan tasoa ja vaihda se tasoon helsinki:hki_tiesto, ellei se ole jo valittuna.</p>
+<p><img src="img/harjoitus_11/image1.png" /></p>
 <p>Vaihda nyt <strong>stroke</strong>-komennon arvoksi <strong>blue</strong>.</p>
 <div class="code-box">
 <p>* { stroke: blue;</p>
 </div>
-<p>Paina <strong>Apply</strong> ja esikatsele karttaa. Nyt tiet näkyvät kartassa sinisinä.
-<img src="img/harjoitus_11/image2.png" /></p>
+<p>Paina <strong>Apply</strong> ja esikatsele karttaa. Nyt tiet näkyvät kartassa sinisinä.</p>
+<p><img src="img/harjoitus_11/image2.png" /></p>
 </div>
 <div id="aineiston-luokittelu" class="section level2" number="12.4">
 <h2><span class="header-section-number">12.4</span> <strong>Aineiston luokittelu</strong></h2>
@@ -290,8 +290,8 @@ type="button" onclick="navToggle()" aria-label="Toggle navigation">
 { stroke: red;}</p>
 </div>
 <p>Paina <strong>Apply</strong>. Nyt vain päätiet ovat näkyvissä.</p>
-<p>Luo nyt tyyli muille teille.
-<img src="img/harjoitus_11/image3.png" /></p>
+<p>Luo nyt tyyli muille teille.</p>
+<p><img src="img/harjoitus_11/image3.png" /></p>
 <p>Muokkaa CSS-tyyliä vielä seuraavasti:</p>
 <p>Kopioi pääteiden luokitus-koodi ja laita se koodilaatikon loppuun.</p>
 <p>Korvaa “<strong>=</strong>”-merkki “<strong>eri kuin</strong>”-merkillä “<strong>&lt;&gt;</strong>”, niin tulee määrittelyksi tiet, jotka eivät kuulu edelliseen luokitukseen, eli toisin sanoen pienemmät tiet.</p>
@@ -306,8 +306,8 @@ type="button" onclick="navToggle()" aria-label="Toggle navigation">
 { stroke: black;}<br />
 </p>
 </div>
-<p>Esikatsele nyt tulos painamalla <strong>Apply</strong>.
-<img src="img/harjoitus_11/image4.png" /></p>
+<p>Esikatsele nyt tulos painamalla <strong>Apply</strong>.</p>
+<p><img src="img/harjoitus_11/image4.png" /></p>
 </div>
 <div id="tyylin-virittäminen" class="section level2" number="12.5">
 <h2><span class="header-section-number">12.5</span> <strong>Tyylin virittäminen</strong></h2>
@@ -331,8 +331,8 @@ stroke-width: 5px, 3px;<br />
 z-index: 0, 3;</p>
 </div>
 <p>Huomaa, että tällä tavalla määrittelet pääteille päällekkäiset tyylit, jotka muodostavat monimutkaisempia visualisointeja.</p>
-<p>Paina vielä <strong>Save</strong> ja visualisoi lopputulos:
-<img src="img/harjoitus_11/image5.png" /></p>
+<p>Paina vielä <strong>Save</strong> ja visualisoi lopputulos:</p>
+<p><img src="img/harjoitus_11/image5.png" /></p>
 <p><strong>Z-index</strong> -komennolla määritellään, missä järjestyksessä eri tyylit piirtyvät. Indeksin arvolla 0 viitataan mustaan viivaan, jonka paksuus määritellään viiteen pikseliin. Indeksin arvo kolme viittaa keltaiseen viivaan , jonka paksuus on kolme pikseliä. Huomaa, kuinka Z-indeksin pienemmät arvot piirtyvät ensin ja suuremmat arvot myöhemmin.</p>
 <div class="hint-box">
 <p>Psst! Huomaa, että esikatselun selite ei ymmärrä näitä monimutkaisia tyylejä oikein. Työkalu vaatii kehitystä, mutta nopeaa esikatselua varten kartta on riittävän hyvä.</p>
@@ -369,8 +369,8 @@ z-index: 0, 3;</p>
 <p>/* @title Tiesto */ * { font-family: Helvetica; }</p>
 </div>
 <p>Edellä esitetty ja viimeinen taso/koodi määrittää “<strong>*</strong>”-merkin toimesta kokonaisvaltaisia CSS-tyylisääntöjä, joissa tässä on määritelty “<strong>Tiesto</strong>”-etuliite symboliikan teksteihin ja <strong>Helvetica</strong>-tyyli kartan tekstityksiin.</p>
-<p>Paina nyt <strong>Apply</strong>, jolloin kartta päivittyy.
-<img src="img/harjoitus_11/image6.png" /></p>
+<p>Paina nyt <strong>Apply</strong>, jolloin kartta päivittyy.</p>
+<p><img src="img/harjoitus_11/image6.png" /></p>
 <p>Koodisi tässä vaiheessa pitäisi näyttää jotenkin tältä:</p>
 <div class="code-box">
 <p> /* @title Paatiet */<br />
@@ -397,8 +397,8 @@ z-index: 0, 3;</p>
 <p>[@scale &lt; 50000]</p>
 </div>
 <p>Paina <strong>Apply</strong>.</p>
-<p>Nyt muut tiet näkyvät vain, jos <strong>zoom</strong>-taso on tarkempi kuin <strong>1:50 000</strong>. Ja kun zoomataan kauemmaksi, niin vain päätiet näkyvät kartalla:
-<img src="img/harjoitus_11/image7.png" /></p>
+<p>Nyt muut tiet näkyvät vain, jos <strong>zoom</strong>-taso on tarkempi kuin <strong>1:50 000</strong>. Ja kun zoomataan kauemmaksi, niin vain päätiet näkyvät kartalla:</p>
+<p><img src="img/harjoitus_11/image7.png" /></p>
 <p>Koodisi tässä vaiheessa pitäisi näyttää jotenkin tältä:</p>
 <div class="code-box">
 <p> /* @title Paatiet */</p>
@@ -435,14 +435,14 @@ z-index: 0, 3;</p>
 <div class="code-box">
 <p>label-follow-line: true; label-max-angle-delta: 90; label-max-displacement: 400; label-repeat: 150;</p>
 </div>
-<p><strong>label-*</strong> kertoo, miten tekstit eli labelit piirretään. Kokeile muuttaa edellisten komentojen arvoja.
-<img src="img/harjoitus_11/image8.png" /></p>
+<p><strong>label-*</strong> kertoo, miten tekstit eli labelit piirretään. Kokeile muuttaa edellisten komentojen arvoja.</p>
+<p><img src="img/harjoitus_11/image8.png" /></p>
 <p>Lisää vielä puskuri teksteille:</p>
 <div class="code-box">
 <p>halo-color: white; halo-radius: 1;</p>
 </div>
-<p>Voit määritellä pienemmille teille myös nimiöt samalla tavalla kun äsken tehtiin pääteille.
-<img src="img/harjoitus_11/image9.png" /></p>
+<p>Voit määritellä pienemmille teille myös nimiöt samalla tavalla kun äsken tehtiin pääteille.</p>
+<p><img src="img/harjoitus_11/image9.png" /></p>
 <p>Tässä on esimerkkikoodi, jossa kaikki aiemmin mainitut tyylit ovat käytössä:</p>
 <div class="code-box">
 <p>/* @title Paatiet */</p>
@@ -481,8 +481,8 @@ z-index: 0, 3;</p>
 <p>/* @title Tiesto */ </p>
 <p>* { font-family: Helvetica;}</p>
 </div>
-<p>Tämän tyylin esikatselu näyttää kartassa tältä:
-<img src="img/harjoitus_11/image10.png" /></p>
+<p>Tämän tyylin esikatselu näyttää kartassa tältä:</p>
+<p><img src="img/harjoitus_11/image10.png" /></p>
 <p>Voit vielä kokeilla erilaisia komentoja virittämään karttasi tyyliä pidemmälle. GeoServer CSS-lisäosan nettisivuilla löytyy ohjeita ja esimerkkejä: <a href="https://docs.geoserver.org/latest/en/user/styling/css/index.html" class="uri">https://docs.geoserver.org/latest/en/user/styling/css/index.html</a>.</p>
 </div>
 <div id="kuvaustekniikan-soveltaminen" class="section level2" number="12.9">
@@ -507,7 +507,7 @@ z-index: 0, 3;</p>
 
 <div class="footer-info">
 <h5 class="footer-title">Johdanto GeoServerin käyttöön</h5>
-<span class="footer-version">v2024-09-26</span>
+<span class="footer-version">v2024-10-11</span>
 <div class="license"><img src="img/by-nd.svg" width="80px" alt="CC-BY-ND"></div>
 </div>
 

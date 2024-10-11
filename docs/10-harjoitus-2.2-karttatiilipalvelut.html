@@ -16,7 +16,7 @@
 
 <meta name="author" content="Gispo Oy" />
 
-<meta name="date" content="2024-09-26" />
+<meta name="date" content="2024-10-11" />
 
 
 <meta name="description" content="10 HARJOITUS 2.2: KARTTATIILIPALVELUT | Johdanto GeoServerin käyttöön">
@@ -256,7 +256,7 @@ type="button" onclick="navToggle()" aria-label="Toggle navigation">
 <p>GeoServer sisältää <strong>Tile</strong>-palvelut osana <strong>GeoWebCache-</strong>palvelua.</p>
 <p>Avaa <strong>Tile Caching → Caching defaults</strong> ja tarkista, mitkä karttatiilipalvelut ovat käytössä GeoServerin asennuksessasi.</p>
 <p><img src="img/harjoitus_9/image1.png" /></p>
-<p>Oletuksena aktivoituna ovat <strong>WMS-C</strong>- (WMS Service-Cached) ja <strong>TMS</strong> (Tile Map Service)-karttatiilipalvelut.</p>
+<p>Oletuksena aktivoituna ovat <strong>WMS-C</strong>- (WMS Tile Caching) ja <strong>TMS</strong> (Tile Map Service)-karttatiilipalvelut.</p>
 <p>Avaa vielä <strong>Tile Caching → Tile Layers</strong> ja huomaa myös, että kaikille tasoille on automaattisesti luotu oma karttatiilitaso.<br />
 <img src="img/harjoitus_9/image2.png" /></p>
 </div>
@@ -350,9 +350,11 @@ type="button" onclick="navToggle()" aria-label="Toggle navigation">
 <p>Karttatiilien luominen kannattaa suunnitella etukäteen ja toteuttaa huolellisesti. Yksi tärkeä asetus karttatiilipalveluissa on karttatiilien kovalevyn käytön tarkkaileminen ja hallinnointi. Siihen on GeoWebCache:ssa erilaisia asetuksia ja osaa niistä voi säätää suoraan GeoServeristä.</p>
 <p>Avaa <strong>Tile Caching → Tile Layers</strong> -näkymästä <strong>ilmakuvat_keskusta</strong> tason asetukset. Avaa vielä <strong>Tile Caching</strong> välilehti.</p>
 <p>Sivun asetuksista voit tarkistaa, että sekä <strong>jpeg</strong>- että <strong>png</strong>-kuvaformaatit ovat rastitettuina. Sen lisäksi on määritelty <strong>kaksi eri karttatiiliruudukkoa</strong> käytettäväksi. Tämä tarkoittaa sitä, että tämä taso on saatavilla kuudella eri karttatiilitasolla. Äskettäin laskettiin valmiiksi karttatiiliä vain yhdelle.</p>
-<p>Voit tarkistaa kovalevyn käytön tasokohtaisesti <strong>Tile Caching → Tile Layers</strong> -näkymästä. Huomaa kuitenkin, että oletusasetuksilla tämä tieto ei ole saatavilla (<strong>N/A</strong>). <img src="img/harjoitus_9/image15.png" /></p>
+<p>Voit tarkistaa kovalevyn käytön tasokohtaisesti <strong>Tile Caching → Tile Layers</strong> -näkymästä. Huomaa kuitenkin, että oletusasetuksilla tämä tieto ei ole saatavilla (<strong>N/A</strong>).</p>
+<p><img src="img/harjoitus_9/image15.png" /></p>
 <p>Tiedon näkymiseksi pitää ensin määrittää, kuinka paljon kovalevytilaa karttatiilipalvelulla on lupa käyttää. Oletuksena GeoWebCache voi käyttää koko palvelimen levytilan.</p>
-<p>Palataan hetkeksi takaisin näkymään <strong>Tile Caching</strong> → <strong>Disk Quota</strong>. Rastita siellä <strong>Enable disk quota</strong> ja määrittele vielä <strong>Maximum tile cache size</strong> -arvoksi <strong>2 GiB</strong>. <img src="img/harjoitus_9/image16.png" /></p>
+<p>Palataan hetkeksi takaisin näkymään <strong>Tile Caching</strong> → <strong>Disk Quota</strong>. Rastita siellä <strong>Enable disk quota</strong> ja määrittele vielä <strong>Maximum tile cache size</strong> -arvoksi <strong>2 GiB</strong>.</p>
+<p><img src="img/harjoitus_9/image16.png" /></p>
 <p>Paina lopulta <strong>Save</strong>, niin asetukset tulevat tallennetuksi.</p>
 <div class="hint-box">
 <p>Psst! Käyttöliittymässä käytetään lyhenteitä GiB ja GB. Niiden ero tulee siitä, että GiB (Gibibyte) on binäärijärjestelmä monikerta kun GB (Gigabyte) on kymmenjärjestelmä monikerta: GiB on 1024 MiB ja tavuina 230 tavua → eli 1 073 741 824 tavua GB on 1000 MB ja tavuina 109 tavua → eli 1 000 000 000 tavua</p>
@@ -493,9 +495,9 @@ type="button" onclick="navToggle()" aria-label="Toggle navigation">
 <p><strong>Voit katsoa ohjeita paikkatietokannat-harjoituksesta</strong>, jossa lisättiin aineistoja GeoServeriin PostGIS-paikkatietokannasta. Voit myös kysyä tarvittaessa kouluttajalta.</p>
 <p>Luo workspace, anna sille nimeksi <strong>suomi</strong>.</p>
 <p>Luo PostGIS-store, laita se suomi-workspaceen ja nimeä se <strong>suomi_tiesto_3067</strong>:ksi (tietokannan nimi on <strong>gs_training</strong>, skeema on <strong>suomi</strong>, käyttäjä on <strong>postgres</strong> ja salasana on <strong>gispo</strong>).</p>
-<p>Kyseisestä storesta löytyy ainoastaan yksi aineisto (osm-tiet). Luo siitä uusi GeoServer-taso, nimeä se <strong>suomi_tiesto_3067</strong>:ksi (täytä myös muuta tarvittavat tiedot).</p>
-<p>Tarpeen vaatiessa, voit katsoa mallia alla olevasta kuvakaappauksesta PostGIS-storen luomisesta:<br />
-<img src="img/harjoitus_9/image24.png" /> <img src="img/harjoitus_9/image25.png" /></p>
+<p>Kyseisestä storesta löytyy aineisto nimellä <strong>osm-tiet</strong>. Luo siitä uusi GeoServer-taso, nimeä se <strong>suomi_tiesto_3067</strong>:ksi (täytä myös muut tarvittavat tiedot).</p>
+<p>Tarpeen vaatiessa, voit katsoa mallia alla olevasta kuvakaappauksesta PostGIS-storen luomisesta:</p>
+<p><img src="img/harjoitus_9/image24.png" /> <img src="img/harjoitus_9/image25.png" /></p>
 </div>
 <div id="oman-karttatiiliruudukon-käyttöönotto" class="section level2" number="10.12">
 <h2><span class="header-section-number">10.12</span> <strong>Oman karttatiiliruudukon käyttöönotto</strong></h2>
@@ -540,7 +542,7 @@ type="button" onclick="navToggle()" aria-label="Toggle navigation">
 
 <div class="footer-info">
 <h5 class="footer-title">Johdanto GeoServerin käyttöön</h5>
-<span class="footer-version">v2024-09-26</span>
+<span class="footer-version">v2024-10-11</span>
 <div class="license"><img src="img/by-nd.svg" width="80px" alt="CC-BY-ND"></div>
 </div>
 

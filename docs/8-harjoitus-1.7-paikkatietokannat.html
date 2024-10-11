@@ -16,7 +16,7 @@
 
 <meta name="author" content="Gispo Oy" />
 
-<meta name="date" content="2024-09-26" />
+<meta name="date" content="2024-10-11" />
 
 
 <meta name="description" content="8 HARJOITUS 1.7: PAIKKATIETOKANNAT | Johdanto GeoServerin käyttöön">
@@ -249,7 +249,6 @@ type="button" onclick="navToggle()" aria-label="Toggle navigation">
 <p>30 minuuttia.</p>
 <div id="valmistautuminen-6" class="section level2" number="8.1">
 <h2><span class="header-section-number">8.1</span> <strong>Valmistautuminen</strong></h2>
-<p>Käynnistä koneessa web-selain ja kirjaudu osoitteeseen:</p>
 <p>Palvelinkoneeseen on asennettu PostgreSQL-tietokanta ja sen PostGIS-laajennos. Tietokantaan on ladattu valmiiksi erilaisia vektoriaineistoja.</p>
 </div>
 <div id="yhteyden-muodostaminen-paikkatietokantaan" class="section level2" number="8.2">
@@ -270,37 +269,33 @@ type="button" onclick="navToggle()" aria-label="Toggle navigation">
 </colgroup>
 <tbody>
 <tr class="odd">
-<td><h5 id="dbtype"><strong>Dbtype</strong></h5></td>
-<td>postgis</td>
-</tr>
-<tr class="even">
-<td><h5 id="host"><strong>Host</strong></h5></td>
+<td><h5 id="host"><strong>host</strong></h5></td>
 <td>postgres</td>
 </tr>
-<tr class="odd">
-<td><h5 id="port"><strong>Port</strong></h5></td>
+<tr class="even">
+<td><h5 id="port"><strong>port</strong></h5></td>
 <td>5432</td>
 </tr>
-<tr class="even">
-<td><h5 id="database"><strong>Database</strong></h5></td>
+<tr class="odd">
+<td><h5 id="database"><strong>database</strong></h5></td>
 <td>gs_training</td>
 </tr>
-<tr class="odd">
-<td><h5 id="schema"><strong>Schema</strong></h5></td>
+<tr class="even">
+<td><h5 id="schema"><strong>schema</strong></h5></td>
 <td>lipas</td>
 </tr>
-<tr class="even">
-<td><h5 id="user"><strong>User</strong></h5></td>
+<tr class="odd">
+<td><h5 id="user"><strong>user</strong></h5></td>
 <td>postgres</td>
 </tr>
-<tr class="odd">
-<td><h5 id="passwd"><strong>Passwd</strong></h5></td>
+<tr class="even">
+<td><h5 id="passwd"><strong>passwd</strong></h5></td>
 <td>gispo</td>
 </tr>
 </tbody>
 </table>
-<p>Jätä loput asetukset oletuksiin ja paina lopulta <strong>Save</strong>.
-<img src="img/harjoitus_7/image2.png" /></p>
+<p>Jätä loput asetukset oletuksiin ja paina lopulta <strong>Save</strong>.</p>
+<p><img src="img/harjoitus_7/image2.png" /></p>
 <p>Samalla tavalla kuin aiemmin, uuden tason luomisen näkymä tulee esiin automaattisesti storen luomisen jälkeen. Näkymässä on listattu kaikki tasot, jotka löytyvät kyseisessä tietokannassa.</p>
 <p>Aineistoon on nyt tehty viittaukset <strong>hki_lipas</strong>-storen kautta ja voit nähdä, mitä aineistoja se sisältää:
 <img src="img/harjoitus_7/image3.png" /></p>
@@ -314,12 +309,12 @@ type="button" onclick="navToggle()" aria-label="Toggle navigation">
 <p>Tason editoinnin näkymässä, tason nimi ja otsikko on automaattisesti täytettynä. Pidä oletusnimet ja lisää halutessasi lisätietoja <strong>Abstract</strong>-kentälle.</p>
 <p>Tarkista, että <strong>Enabled</strong> ja <strong>Advertised</strong> ovat rastittuina.</p>
 <p>Kuten olet varmasti nyt huomannut, uuden tason asetukset ovat samanlaiset, oli kyseessä sitten shapefile-formaatti tai PostGIS-tietokanta.</p>
-<p>Katso vielä <strong>Coordinate Reference Systems</strong> -osiosta, että GeoServer on tunnistanut koordinaattijärjestelmäksi <strong>EPSG:3067</strong>. PostGIS ja GeoServer käyttävät EPSG-koodeja määrittääkseen koordinaattijärjestelmän, joten useimmiten koordinaattijärjestelmä tulee oikein määritellyksi automaattisesti.
-<img src="img/harjoitus_7/image4.png" /></p>
-<p>Ennen kuin tallennetaan tason julkaisuasetukset, määritä tason <strong>Bounding Boxes</strong> samalla tavalla kuin aikaisemmin lisäämiesi aineistojen kanssa.
-<img src="img/harjoitus_7/image5.png" /></p>
-<p>Paina lopulta <strong>Save</strong>. Voit esikatsella uutta tasoa <strong>Layer Preview</strong>:n kautta.<br />
-<img src="img/harjoitus_7/image6.png" /></p>
+<p>Katso vielä <strong>Coordinate Reference Systems</strong> -osiosta, että GeoServer on tunnistanut koordinaattijärjestelmäksi <strong>EPSG:3067</strong>. PostGIS ja GeoServer käyttävät EPSG-koodeja määrittääkseen koordinaattijärjestelmän, joten useimmiten koordinaattijärjestelmä tulee oikein määritellyksi automaattisesti.</p>
+<p><img src="img/harjoitus_7/image4.png" /></p>
+<p>Ennen kuin tallennetaan tason julkaisuasetukset, määritä tason <strong>Bounding Boxes</strong> samalla tavalla kuin aikaisemmin lisäämiesi aineistojen kanssa.</p>
+<p><img src="img/harjoitus_7/image5.png" /></p>
+<p>Paina lopulta <strong>Save</strong>. Voit esikatsella uutta tasoa <strong>Layer Preview</strong>:n kautta.</p>
+<p><img src="img/harjoitus_7/image6.png" /></p>
 </div>
 <div id="monikulmio--ja-viiva-tason-lisääminen-postgis-tietokannasta" class="section level2" number="8.4">
 <h2><span class="header-section-number">8.4</span> <strong>Monikulmio- ja viiva-tason lisääminen PostGIS-tietokannasta</strong></h2>
@@ -423,7 +418,7 @@ type="button" onclick="navToggle()" aria-label="Toggle navigation">
 
 <div class="footer-info">
 <h5 class="footer-title">Johdanto GeoServerin käyttöön</h5>
-<span class="footer-version">v2024-09-26</span>
+<span class="footer-version">v2024-10-11</span>
 <div class="license"><img src="img/by-nd.svg" width="80px" alt="CC-BY-ND"></div>
 </div>
 

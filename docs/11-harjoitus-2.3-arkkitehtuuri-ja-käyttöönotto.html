@@ -16,7 +16,7 @@
 
 <meta name="author" content="Gispo Oy" />
 
-<meta name="date" content="2024-09-26" />
+<meta name="date" content="2024-10-11" />
 
 
 <meta name="description" content="11 HARJOITUS 2.3: ARKKITEHTUURI JA KÄYTTÖÖNOTTO | Johdanto GeoServerin käyttöön">
@@ -261,7 +261,8 @@ type="button" onclick="navToggle()" aria-label="Toggle navigation">
 <div id="image-processing--asetukset" class="section level2" number="11.3">
 <h2><span class="header-section-number">11.3</span> <strong>Image Processing -asetukset</strong></h2>
 <p>Tarkista vielä, mitkä Java-asetukset ovat voimassa palvelimessa kuvien käsittelyä varten. Lähtökohtaisesti ei ole kovin tehokasta käsitellä kuvia kokonaisina tietokoneen muistissa. Yleisesti käytetty tapa on jakaa kuvat pienempiin osiin (tiilet/tiles) ja tehdä mahdolliset kuvaoperaattorit pienempiin kuviin. JAI-asetukset (määritelty <strong>Image Processing</strong> -asetuksissa) hallinnoivat näiden menetelmien toimintaa.</p>
-<p>JAI (Java Advanced Imaging) asetuksia voit muokata <strong>Settings → Image Processing</strong> -näkymän kautta. <img src="img/harjoitus_10/image2.png" /></p>
+<p>JAI (Java Advanced Imaging) asetuksia voit muokata <strong>Settings → Image Processing</strong> -näkymän kautta.</p>
+<p><img src="img/harjoitus_10/image2.png" /></p>
 <p>Asetusten muutokset näkyvät <strong>Server Status</strong> -sivulla.</p>
 </div>
 <div id="raster-access" class="section level2" number="11.4">
@@ -334,7 +335,7 @@ type="button" onclick="navToggle()" aria-label="Toggle navigation">
 <p>GeoServerin palvelimen asetuksia on mahdollista hallita myös REST-rajapinnan kautta.</p>
 <p>Voit tarkistaa REST-rajapinnan kautta saatavilla olevat aineistot kirjoittamalla seuraavan osoitteen web-selaimeen (käytä oman palvelimesi ip-osoitetta):</p>
 <div class="note-box">
-<p><a href="http://%3Eoma-ip-osoite:8080/geoserver/rest/workspaces/" class="uri">http://%3Eoma-ip-osoite:8080/geoserver/rest/workspaces/</a></p>
+<p><a href="http://oma-ip-osoite/geoserver/rest/workspaces/" class="uri">http://oma-ip-osoite/geoserver/rest/workspaces/</a></p>
 </div>
 <p>Etsi tiedot edellisissä harjoituksissa luoduista karttatasoista.</p>
 <p><img src="img/harjoitus_10/image6.png" /></p>
@@ -349,7 +350,9 @@ type="button" onclick="navToggle()" aria-label="Toggle navigation">
 <h2><span class="header-section-number">11.7</span> <strong>Monitor-lisäosan käyttö</strong></h2>
 <p>GeoServerin <strong>Monitor</strong>-lisäosa on valmiiksi asennettu koulutus palvelimiin, ja se näkyy päävalikosta alapuolelta. Tällä lisäosalla voidaan tarkastella GeoServerin liikennettä. Voit vapaasti tarkastella mitä Monitor-lisäosalla voi tehdä. Pohdi myös miten se voisi olla hyödyllinen teidän organisaatiossa.</p>
 <p>Avaa <strong>Monitor → Activity</strong>.</p>
-<p>Kokeile esikatsella eri tasoja ja katso sen jälkeen <strong>Monitor → Activity → Daily</strong>-osiosta järjestelmän aktiviteettigrafiikkaa, jonka pitäisi näyttää seuraavanlaiselta: <img src="img/harjoitus_10/image7.png" /> <img src="img/harjoitus_10/image8.png" /></p>
+<p>Kokeile esikatsella eri tasoja ja katso sen jälkeen <strong>Monitor → Activity → Daily</strong>-osiosta järjestelmän aktiviteettigrafiikkaa, jonka pitäisi näyttää seuraavanlaiselta:</p>
+<p><img src="img/harjoitus_10/image7.png" /></p>
+<p><img src="img/harjoitus_10/image8.png" /></p>
 
 </div>
 </div>
@@ -366,7 +369,7 @@ type="button" onclick="navToggle()" aria-label="Toggle navigation">
 
 <div class="footer-info">
 <h5 class="footer-title">Johdanto GeoServerin käyttöön</h5>
-<span class="footer-version">v2024-09-26</span>
+<span class="footer-version">v2024-10-11</span>
 <div class="license"><img src="img/by-nd.svg" width="80px" alt="CC-BY-ND"></div>
 </div>
 

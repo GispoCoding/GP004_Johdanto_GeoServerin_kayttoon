@@ -16,7 +16,7 @@
 
 <meta name="author" content="Gispo Oy" />
 
-<meta name="date" content="2024-09-26" />
+<meta name="date" content="2024-10-11" />
 
 
 <meta name="description" content="7 HARJOITUS 1.6: RASTERIAINEISTOT | Johdanto GeoServerin käyttöön">
@@ -299,30 +299,30 @@ store: <strong>hki_ilmakuva<br />
 <p>Psst! Kuten aiemmin mainittiin, GeoServer pyrkii tulkitsemaan alkuperäisen aineiston koordinaattijärjestelmän alkuperäisistä tiedoista, joka tässä tapauksessa oli EPSG-muodossa.</p>
 </div>
 <p>Paina lopuksi <strong>Save</strong>.</p>
-<p>Tarkista, että uusi taso löytyy <strong>Data → Layers</strong> -näkymältä. Voit myös esikatsella sitä tuttuun tapaan käyttäen <strong>Data → Layers Preview</strong>.
-<img src="img/harjoitus_6/image9.png" /></p>
+<p>Tarkista, että uusi taso löytyy <strong>Data → Layers</strong> -näkymältä. Voit myös esikatsella sitä tuttuun tapaan käyttäen <strong>Data → Layers Preview</strong>.</p>
+<p><img src="img/harjoitus_6/image9.png" /></p>
 </div>
 <div id="layer-groups-1" class="section level2" number="7.5">
 <h2><span class="header-section-number">7.5</span> <strong>Layer Groups</strong></h2>
 <p>GeoServerin tasoja ja/tai aiemmin luotuja tasoryhmiä voidaan ryhmittää. Tasoryhmissä voi yhdistää eri vektori- ja rasteriformaatteja. Yksi selkeä käyttötapaus on taustakartan julkaiseminen yhtenä WMS-tasopalveluna. </p>
-<p>Luodaan nyt tasoryhmä käyttäen aiemmin palvelimelle lisättyjä <strong>ilmakuvat_keskusta-</strong>, <strong>rakennukset-</strong> ja <strong>tiesto</strong>-tasoja.</p>
+<p>Luodaan nyt tasoryhmä käyttäen aiemmin palvelimelle lisättyjä <strong>ilmakuvat-</strong>, <strong>rakennukset-</strong> ja <strong>tiesto</strong>-tasoja.</p>
 <p>Valitse päävalikosta <strong>Data → Layer Groups</strong> ja sitten <strong>Add new layer group</strong>.</p>
 <p>Laita ryhmätason nimeksi <strong>taustakartta</strong> ja otsikoksi <strong>Helsingin taustakartta</strong>. Lisää <strong>Abstract</strong> kentälle "Helsingin keskustan taustakartta".</p>
 <div class="hint-box">
 <p>Psst! Joissain selaimissa ääkkösten käyttö ei välttämättä onnistu. Vältä ääkkösten käyttöä tasojen nimissä ja otsikoissa.</p>
 </div>
 <p>Valitse <strong>helsinki</strong> workspace:ksi.</p>
-<p>Selaa sivua alaspäin, paina <strong>Add Layer…</strong> ja lisää <strong>ilmakuvat_keskusta</strong>-taso. Taso on nyt lisätty <strong>Layers</strong>-listalle.</p>
-<p>Paina <strong>Generate Bounds</strong> ja huomaa, kuinka tason alkuperäinen koordinaatistojärjestelmä ja laajuus on nyt määritettynä niille kuuluvissa kentissä. Pidetään ryhmätason järjestelmänä <strong>ETRS89 / TM35FIN</strong>.
-<img src="img/harjoitus_6/image10.png" /></p>
+<p>Selaa sivua alaspäin, paina <strong>Add Layer…</strong> ja lisää <strong>ilmakuvat</strong>-taso. Taso on nyt lisätty <strong>Layers</strong>-listalle.</p>
+<p>Paina <strong>Generate Bounds</strong> ja huomaa, kuinka tason alkuperäinen koordinaatistojärjestelmä ja laajuus on nyt määritettynä niille kuuluvissa kentissä. Pidetään ryhmätason järjestelmänä <strong>ETRS89 / TM35FIN</strong>.</p>
+<p><img src="img/harjoitus_6/image10.png" /></p>
 <p>Lisää samalla tavalla Helsingin <strong>rakennukset</strong>- ja <strong>tiesto</strong>-tasot.</p>
-<p>Huomaa, että voit järjestää tasot käyttämällä <strong>Drawing order</strong> -nuolia. Ylempänä oleva (sija 1) piirretään ensimmäiseksi; sen päälle piirretään seuraava taso, ja niin edelleen. Järjestele tasot tämän kuvan mukaan:</p>
+<p>Huomaa, että voit järjestää tasot käyttämällä <strong>Drawing order</strong> -nuolia. Ylempänä oleva (sija 1) piirretään ensimmäiseksi, sen päälle piirretään seuraava taso, ja niin edelleen. Järjestele tasot tämän kuvan mukaan:</p>
+<p><img src="img/harjoitus_6/image11.png" /></p>
 <p>Varmista, että <strong>Default Style</strong> ovat rastittuina.</p>
 <p>Paina lopulta uudelleen <strong>Generate Bounds</strong> päivittämään ryhmätason laajuustiedot, jotta myös uudet aineistot otetaan huomioon laajuustietojen määrittämisessä. Aina kun lisäät uutta aineistoa tasoryhmään tulisi painaa uudelleen <strong>Generate Bounds</strong> päivittääksesi ryhmätason laajuustiedot.</p>
 <p>Paina vielä <strong>Save</strong>.</p>
-<p>Voit esikatsella ryhmätasoa samalla tavalla kuin muitakin tasoja:
-<img src="img/harjoitus_6/image11.png" />
-<img src="img/harjoitus_6/image12.png" /></p>
+<p>Voit esikatsella ryhmätasoa samalla tavalla kuin muitakin tasoja:</p>
+<p><img src="img/harjoitus_6/image12.png" /></p>
 <div id="ryhmätasojen-julkaisemisen-muoto" class="section level3" number="7.5.1">
 <h3><span class="header-section-number">7.5.1</span> <strong>Ryhmätasojen julkaisemisen muoto</strong></h3>
 <p>Palaa ryhmätason asetuksiin (<strong>Data → Layer Groups → taustakartta</strong>). Selaa alaspäin <strong>Mode</strong>-kohdalle asti. Tässä kohdassa voit valita erilaisia muotoja ryhmätason tasoille:</p>
@@ -380,7 +380,7 @@ Helsingin kaupungin paikkatietopalvelujen metatietoihin voit tutustua tässä: <
 
 <div class="footer-info">
 <h5 class="footer-title">Johdanto GeoServerin käyttöön</h5>
-<span class="footer-version">v2024-09-26</span>
+<span class="footer-version">v2024-10-11</span>
 <div class="license"><img src="img/by-nd.svg" width="80px" alt="CC-BY-ND"></div>
 </div>
 
