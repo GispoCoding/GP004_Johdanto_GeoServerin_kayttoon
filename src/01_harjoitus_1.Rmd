@@ -52,10 +52,6 @@ Päävalikossa on näkyvissä aloitussivulla vain muutamia toimintoja. Nämä ov
 
 Tutustu niihin lyhyesti nyt, ja kysy kouluttajalta mitä eri elementit tarkoittavat.
 
-### **About GeoServer**
-
-Avaa **About GeoServer** ja tutki, mikä GeoServer-versio sinulla on käytössä ja mitkä muiden asennettujen ohjelmistojen versiot ovat. Tämäntyyppiset tiedot ovat tärkeitä palvelimen ongelmia selvitettäessä, tapahtuipa ongelmatilanteiden ratkaiseminen omatoimisesti taikka tukipalvelun avulla.
-
 ### **Layer Preview**
 
 Kokeile **Layer Preview -toimintoa** ja esikatsele GeoServerin oletusaineistoja. Tätä näkymää tulemme käyttämään usein kurssin aikana. Käytä nyt muutama minuutti oppiaksesi sen perustoiminnallisuudet.

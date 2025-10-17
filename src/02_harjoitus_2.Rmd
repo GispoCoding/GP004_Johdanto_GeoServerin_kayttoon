@@ -51,6 +51,10 @@ Näiden lisäksi Geoserverin laajennokset voivat lisätä valikkoja käyttöliit
 
 ![](img/harjoitus_2/image1.png)
 
+### **About GeoServer**
+
+Avaa **About GeoServer** ja tutki, mikä GeoServer-versio sinulla on käytössä ja mitkä muiden asennettujen ohjelmistojen versiot ovat. Tämäntyyppiset tiedot ovat tärkeitä palvelimen ongelmia selvitettäessä, tapahtuipa ongelmatilanteiden ratkaiseminen omatoimisesti taikka tukipalvelun avulla.
+
 ## **Master- ja Administrator-käyttäjät**
 
 GeoServerin oletusasennuksessa on kaksi käyttäjäprofiilia, **master** ja **admin**. Salasanat on vaihdettu oletuksesta seuraavalla tavalla:
