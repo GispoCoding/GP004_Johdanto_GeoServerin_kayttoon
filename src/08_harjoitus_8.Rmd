@@ -146,9 +146,9 @@ Esimerkiksi **Lipas-alueet**-taso GML2-esikatselusta (EPSG-koodi muodossa OGC HT
 
 ![](img/harjoitus_8/image5.png)
 
-## **Workspace kohtaiset asetukset**
+## **Workspace-kohtaiset asetukset**
 
-Samalla tavalla kun WMS-palvelujen kanssa, myös WFS-asetuksia on mahdollista määrittää workspace-kohtaisesti. Esimerkiksi WFS-T toiminnallisuus voidaan sallia vain yhden workspacen kautta ja pääsynhallinnan avulla sallia vain tunnistetut käyttäjät muokkaamaan aineistoja.
+Samalla tavalla kun WMS-palvelujen kanssa, myös WFS-asetuksia on mahdollista määrittää workspace-kohtaisesti. Esimerkiksi WFS-T-toiminnallisuus voidaan sallia vain yhden workspacen kautta ja pääsynhallinnan avulla sallia vain tunnistetut käyttäjät muokkaamaan aineistoja.
 
 Avaa **Data → Workspaces** ja valitse sitten **helsinki**-workspace. Rastita sitten **Services → WFS** ja paina sen jälkeen **WFS**-linkkiä.
 
@@ -162,9 +162,7 @@ Paina sen jälkeen **Submit** (sivun lopussa).
 
 Paina lopuksi vielä **Save** sivun alaosasta.
 
-Workspace-kohtaisilla asetuksilla voidaan esim. rajoi
-
-ttaa, missä koordinaattijärjestelmissä workspacen aineistot ovat saatavilla, tai poistaa WFS-T -palvelu tietyn workspacen aineistoista.
+Workspace-kohtaisilla asetuksilla voidaan esim. rajoittaa, missä koordinaattijärjestelmissä workspacen aineistot ovat saatavilla, tai poistaa WFS-T-palvelu tietyn workspacen aineistoista.
 
 ## **Editointi WFS-T-palvelun kautta**
 
@@ -174,7 +172,7 @@ Editointia voidaan tehdä eri client-ohjelmistojen avulla, esimerkiksi QGISin ta
 
 Helpoiten saadaan testattua editointi-toiminnallisuutta QGIS-paikkatietojärjestelmän avulla.
 
-Tarvitaan ensin WFS-palvelun osoite. Saat tämän esimerkiksi GeoServerin etusivulta, jonne pääset klikkaamalla vasemman yläkulman GeoServer-logoa. Klikkaa hiiren oikealla painikkeella etusivun **Service Capabilities**-paneelin WFS-kohdan alla olevaa linkkiä **1.1.0**.
+Tarvitaan ensin WFS-palvelun osoite. Saat tämän esimerkiksi GeoServerin etusivulta, jonne pääset klikkaamalla vasemman yläkulman GeoServer-logoa. Klikkaa hiiren oikealla painikkeella etusivun **Service Capabilities** -paneelin WFS-kohdan alla olevaa linkkiä **1.1.0**.
 
 Osoite on muotoa:
 

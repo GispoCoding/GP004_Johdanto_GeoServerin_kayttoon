@@ -104,7 +104,7 @@ Psst! Huomaa, että erikoismerkit ja ääkköset ovat sallittuja GeoServerissä,
 
 Uudelle käyttäjälle annetaan oikeuksia määrittämällä mitä rooleja käyttäjällä on. Roolit on määritelty **Roles taken from active role service: default** -kohdassa. Siinä on valittavissa muun muassa **hki_rooli**, lisää se **Selected Roles** -laatikkoon käyttäen laatikkojen välistä löytyviä siirtonuolia.
 
-Paina sitten **Save**,niin uusi käyttäjä **hki_kayttaja** on luotu ja sillä on oikeudet **hki_rooli**:nmukaisesti. Koska **hki_rooli**:lle ei vielä ole määritelty oikeuksia, niin uudella käyttäjälläkään ei ole vielä määritelty mitään oikeuksia.
+Paina sitten **Save**. Uusi käyttäjä **hki_kayttaja** on luotu, ja sillä on oikeudet **hki_rooli**nmukaisesti. Koska **hki_rooli**lle ei vielä ole määritelty oikeuksia, niin uudella käyttäjälläkään ei ole vielä määritelty mitään oikeuksia.
 
 ![](img/harjoitus_12/image6.png)
 
@@ -116,7 +116,7 @@ Avaa **Security → Data.** Tässä näkymässä näkyvät GeoServer-palvelimen 
 
 ![](img/harjoitus_12/image7.png)
 
-**Rule path** -sarakkeen alla olevat säännöt ovat muodoltaan **\*.\*.r**, joka antaa lukemisoikeudet kaikille tasoille kaikissa workspace:ssa.
+**Rule path** -sarakkeen alla olevat säännöt ovat muodoltaan **\*.\*.r**, joka antaa lukemisoikeudet kaikille tasoille kaikissa workspaceissa.
 
 Huomaa vielä, että **Roles**-sarakkeen alla on määritelty, mille rooleille oikeudet on myönnetty. Tässä on määritelty **\***-merkillä, joka tarkoittaa "kaikki roolit".
 
@@ -132,11 +132,11 @@ Psst! Kaikissa osissa voidaan käyttää myös \*-merkkiä, jolla voidaan viitat
 
 Paina listalta **\*.\*.r**.
 
-Tässä säännössä määritellään, että kaikkiin workspace:ihin ja kaikkiin tasoihin on lukemisoikeus.
+Tässä säännössä määritellään, että kaikkiin workspaceihin ja kaikkiin tasoihin on lukemisoikeus.
 
 ![](img/harjoitus_12/image9.png)
 
-**Roles**-osion alla on määritelty se, että tämä sääntö kuuluu kaikille rooleille (**Grant access to any role**). Huomaa, että **Grant access to any role** on rastittu, joten kaikki roolit voivat lukea kaikki tasoja kaikista workspace:sta.
+**Roles**-osion alla on määritelty se, että tämä sääntö kuuluu kaikille rooleille (**Grant access to any role**). Huomaa, että **Grant access to any role** on rastittu, joten kaikki roolit voivat lukea kaikki tasoja kaikista workspaceista.
 
 Rajoitetaan nyt sääntöä vain ylläpitäjien rooleille.
 
@@ -158,11 +158,11 @@ Kokeile nyt esikatsella jotain aineistoja **hki_kayttaja**-tunnuksella, yhtään
 
 ## **Aineiston käyttäjäkohtaiset käyttöoikeudet**
 
-Seuraavaksi määritellään **hki_kayttaja**-tunnukselle luku- ja kirjoitusoikeudet **helsinki**-workspace:en. Käytännössä pitää määritellä oikeudet roolille johon käyttäjä kuuluu, eli **hki_rooli**-roolille.
+Seuraavaksi määritellään **hki_kayttaja**-tunnukselle luku- ja kirjoitusoikeudet **helsinki**-workspaceen. Käytännössä pitää määritellä oikeudet roolille johon käyttäjä kuuluu, eli **hki_rooli**-roolille.
 
-Tähän asti **hki_rooli**:lle ei ole annettu vielä mitään oikeuksia, täten **hki_kayttaja**:llä ei ole enää oikeuksia mihinkään aineistoon (ellei joku sääntö on määritelty kaikille rooleille käyttäen **\***-merkkiä).
+Tähän asti **hki_rooli**lle ei ole annettu vielä mitään oikeuksia, täten **hki_kayttaja**llä ei ole enää oikeuksia mihinkään aineistoon (ellei joku sääntö on määritelty kaikille rooleille käyttäen **\***-merkkiä).
 
-Lisätään nyt **hki_kayttaja**:lle **Read**- ja **Write**-käyttöoikeudet, mutta vain **helsinki-**workspace:en. Tämä tapahtuu määrittämällä lisää aineiston sääntöjä.
+Lisätään nyt **hki_kayttaja**lle **Read**- ja **Write**-käyttöoikeudet, mutta vain **helsinki-**workspaceen. Tämä tapahtuu määrittämällä lisää aineiston sääntöjä.
 
 ::: hint-box
 Psst! Varmista, että olet kirjautunut ylläpitäjänä (tunnus: admin ja salasana: gispo).
@@ -180,7 +180,7 @@ Siirrä lopulta **hki_rooli** laatikosta **Available Roles**, laatikkoon **Selec
 
 Paina lopuksi **Save**. 
 
-Nyt **hki_kayttaja**:llä on read-oikeudet kaikkiin helsinki workspace:n tasoihin.
+Nyt **hki_kayttaja**llä on read-oikeudet kaikkiin helsinki workspacen tasoihin.
 
 Lisää samalla tavalla vielä **Write**. Kirjoitusoikeudet sallivat käyttäjälle aineistojen muokkausoikeudet aina kun se on sallittu GeoServerissa, esimerkiksi WFS-T-palvelun kautta.
 
@@ -188,7 +188,7 @@ Kokeile uudelleen esikatsella aineistoja **hki_kayttaja**-tunnuksella. Esikatsel
 
 Huomaa, että käyttäjällä ei ole kuitenkaan oikeuksia lisätä GeoServeriin uusia aineistoja tai tasoja. Voit antaa **hki_kayttaja**-tunnukselle **Admin**-oikeudet määrittämällä vielä ylläpitäjän oikeudet.
 
-Loppujen lopuksi on luotu kolme uutta sääntöä, jotka ovat **hki_rooli**:lla voimassa.
+Loppujen lopuksi on luotu kolme uutta sääntöä, jotka ovat **hki_rooli**lla voimassa.
 
 ![](img/harjoitus_12/image14.png)
 
@@ -198,7 +198,7 @@ Kirjaudu uudelleen palvelimelle käyttäen **hki_kayttaja**-tunnusta ja tarkista
 
 ## **Karttapalvelukohtaiset oikeudet**
 
-Kirjaudu **admin**-tunnuksella uudelleen Geoserver palvelimelle.
+Kirjaudu **admin**-tunnuksella uudelleen GeoServer palvelimelle.
 
 Samalla tavalla kuin äsken määriteltiin käyttäjäkohtaisesti oikeudet yhdelle workspacelle, voidaan asettaa oikeudet palvelukohtaisesti eri käyttäjille.
 
@@ -214,7 +214,7 @@ Luo uusi sääntö **\*.\*** ja rajoita sen käyttöä vain ylläpitäjille.
 
 Paina **Save**. Nyt GeoServerin palvelut ovat käytettävissä ainoastaan ylläpito-rooleille.
 
-Luo sen jälkeen sääntö, joka on käytössä vain **hki_rooli**:lle ja sillä on oikeudet käyttää kaikkia **WMS-karttapalvelujen** toimintoja.
+Luo sen jälkeen sääntö, joka on käytössä vain **hki_rooli**lle ja sillä on oikeudet käyttää kaikkia **WMS-karttapalvelujen** toimintoja.
 
 ::: hint-box
 Psst! Huomaa, että säännöt eivät välttämättä tule voimaan kuin vasta käyttäjän seuraavalla istunnolla.
@@ -224,6 +224,6 @@ Lopussa **Service access rules list** -näkymä näyttää tältä:
 
 ![](img/harjoitus_12/image18.png)
 
-Kirjaudu taas **hki_kayttaja**:nä ja kokeile esikatsella jotain aineistoa sekä WMS- että WFS-karttapalveluna. WFS-esikatselu ei enää onnistu, koska kyseisellä käyttäjällä ei ole oikeuksia WFS-toimintoihin, vain WMS-toimintoihin. 
+Kirjaudu taas **hki_kayttaja**nä ja kokeile esikatsella jotain aineistoa sekä WMS- että WFS-karttapalveluna. WFS-esikatselu ei enää onnistu, koska kyseisellä käyttäjällä ei ole oikeuksia WFS-toimintoihin, vain WMS-toimintoihin. 
 
 Poista lopuksi edellisessä kuvassa näkyvä sääntö (wms.\*), jotta wms-palvelu olisi taas käytettävissä kaikilla käyttäjillä.

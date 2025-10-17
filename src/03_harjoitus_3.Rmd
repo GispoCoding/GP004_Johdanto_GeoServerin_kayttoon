@@ -27,9 +27,9 @@ GeoServerin aineistohakemistossa on paikkatiedon lisäksi muita aineistoja, kute
 :::
 
 
-## **Vektoriaineisto Storen luominen**
+## **Vektoriaineiston Storen luominen**
 
-Koulutuksen aineistosta löytyy muun muassa OpenStreetMapsin rakennukset Helsingistä shapefile-formaatissa **buildings.shp**, joka lisätään nyt GeoServeriin.
+Koulutuksen aineistosta löytyy muun muassa OpenStreetMapin rakennukset Helsingistä shapefile-formaatissa **buildings.shp**, joka lisätään nyt GeoServeriin.
 
 Aineiston formaatin ollen **shapefile** täytyy sille luoda **store**, joka on shapefile-formaatin kanssa yhteensopiva.
 
@@ -41,13 +41,13 @@ Valitse Shapefile aineiston formaatiksi **New data source** -näkymässä, **Vec
 
 ![](img/harjoitus_3/image3.png)
 
-Seuraavassa näkymässä pääset määrittelemään juuri luomasi store:n muut asetukset, kuten nimen ja tiedoston sijainnit. Nimeä ne seuraavalla tavalla:
+Seuraavassa näkymässä pääset määrittelemään juuri luomasi storen muut asetukset, kuten nimen ja tiedoston sijainnit. Nimeä ne seuraavalla tavalla:
 
 -   **Valitse** workspaceksi helsinki
 
 -   **Nimeä** aineisto hki_rakennukset
 
--   **Lisää** halutessasi aineistolle kuvaus, esimerkiksi "Helsingin OpenStreetMaps rakennukset"
+-   **Lisää** halutessasi aineistolle kuvaus, esimerkiksi "Helsingin OpenStreetMap-rakennukset"
 
 Seuraavaksi määritellään mihin aineistoon (shape-tiedostoon) viitataan tämän store:n kautta. Muokkaa **Connection Parameters**:
 
@@ -97,7 +97,7 @@ Keskitytään nyt **Data**-välilehdessä oleviin valintoihin. Määrittele ylei
 
 -   **Otsikoi** Helsingin OpenStreetMap rakennukset
 
-**Lisää** halutessasi selitystä tasosta ja tasoon liittyviä avainsanoja (keywords). Avainsanojen avulla sekä Geoserverin ylläpitäjien ja käyttäjien on helpompi löytää heille tarpeellisia paikkatietoaineistoja.
+**Lisää** halutessasi selitystä tasosta ja tasoon liittyviä avainsanoja (keywords). Avainsanojen avulla sekä GeoServerin ylläpitäjien ja käyttäjien on helpompi löytää heille tarpeellisia paikkatietoaineistoja.
 
 ### **Coordinate Reference Systems**
 

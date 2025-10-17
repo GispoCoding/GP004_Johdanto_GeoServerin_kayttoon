@@ -72,7 +72,9 @@ Palaa **Tile Caching → Tile Layers** näkymään. Tältä sivulta voit myös e
 
 Valitse nyt **Seed/Truncate** -linkki Helsingin ilmakuvien tason karttatiilien luomista varten.
 
-**GeoWebCache**-näkymässä sivun yläosasta löytyy yleisiä toimintoja ja lista meneillään olevista tehtävistä. Karttatiilien luominen on hyvin resurssi-intensiivinen ja kohtuullisia levytiloja vaativa prosessi. On myös tyypillistä, että tehtävien eli karttatiilien luominen voi kestää hyvinkin pitkään (tunteja, jopa päiviä). Sivun tiedot päivitetään käyttämällä **Refresh list** -toimintoa. ![](img/harjoitus_9/image9.png)
+**GeoWebCache**-näkymässä sivun yläosasta löytyy yleisiä toimintoja ja lista meneillään olevista tehtävistä. Karttatiilien luominen on hyvin resurssi-intensiivinen ja kohtuullisia levytiloja vaativa prosessi. On myös tyypillistä, että tehtävien eli karttatiilien luominen voi kestää hyvinkin pitkään (tunteja, jopa päiviä). Sivun tiedot päivitetään käyttämällä **Refresh list** -toimintoa.
+
+![](img/harjoitus_9/image9.png)
 
 Tiilien luomista varten asetukset löytyvät sivun alapuolelta **Create a new task** -osiosta.
 
@@ -317,7 +319,7 @@ Esikatselussa on käytössä luomasi EPSG:3067 karttatiiliruudukko (alla huomata
 
 ## **Paikallisen karttatiiliruudukon muodostaminen**
 
-Geoserveriin voidaan muodostaa tarpeiden mukaan hyvin monenlaisia karttatiiliruudukoita. Joissakin tapauksissa voi olla tarpeen luoda oma paikallinen karttatiiliruudukko. Paikallisen karttatiiliruudukko voi olla tarpeellinen, jos karttatiilipalvelulle on runsaasti käyttöä ja aineistoihin halutaan yhdistää paikallisessa koordinaattijärjestelmässä olevia tietoaineistoja (vektori- tai rasteriaineistoja).
+GeoServeriin voidaan muodostaa tarpeiden mukaan hyvin monenlaisia karttatiiliruudukoita. Joissakin tapauksissa voi olla tarpeen luoda oma paikallinen karttatiiliruudukko. Paikallisen karttatiiliruudukko voi olla tarpeellinen, jos karttatiilipalvelulle on runsaasti käyttöä ja aineistoihin halutaan yhdistää paikallisessa koordinaattijärjestelmässä olevia tietoaineistoja (vektori- tai rasteriaineistoja).
 
 Luodaan nyt Helsingin alueelle oma karttatiiliruudukko, joka käyttää **ETRS89 / GK25FIN (EPSG:3879)** -koordinaattijärjestelmää. Määritellään resoluutiotasot mittakaavan mukaan.
 

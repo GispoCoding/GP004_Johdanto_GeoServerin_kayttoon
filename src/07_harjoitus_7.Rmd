@@ -164,7 +164,7 @@ Määrittele seuraavaksi tason ulottuvuudet (Bounding Box) ja paina **Save**. Vo
 
 Voit käyttää SQL-lausekkeissa myös paikkatietofunktioita. Käytetään esimerkkinä vyöhyke-funktiota (ST_Buffer).
 
-Avaa tason  **lipas_kaikki_reitit_helsinki** uudelleen (**Data → Layers**)
+Avaa tason **lipas_kaikki_reitit_helsinki** uudelleen (**Data → Layers**).
 
 Selaa **Data** välilehdessä sivun loppuun. Sieltä löytyy **Edit sql view** -toiminto.
 

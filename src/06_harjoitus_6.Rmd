@@ -148,7 +148,7 @@ Pidä oletus **Single** valittuna. Se asettaa WMS-tasot näkyville yhtenä tason
 
 Pidä loput asetukset oletuksina ja paina lopuksi **Save**. Ryhmätasoja voidaan esikatsella samalla tavalla kuin muita tasoja. Mene **Layer Preview** -näkymään ja avaa uuden ryhmätason esikatselutila OpenLayers-linkin avulla. Huomaa, että oletuskuvaustekniikka on käytössä. Tämän ryhmätason kuvaustekniikkaa parannetaan vielä myöhemmin.
 
-Kun olet saanut ryhmätason valmiiksi, voit palata ryhmätason asetuksiin ja kokeilla muita **Mode**-asetuksia. Seuraavat esimerkkikuvat ovat QGISin WMS-palvelun työkalusta. .
+Kun olet saanut ryhmätason valmiiksi, voit palata ryhmätason asetuksiin ja kokeilla muita **Mode**-asetuksia. Seuraavat esimerkkikuvat ovat QGISin WMS-palvelun työkalusta.
 
 **Mode → Single** näyttää tältä:
 ![](img/harjoitus_6/image13.png)
