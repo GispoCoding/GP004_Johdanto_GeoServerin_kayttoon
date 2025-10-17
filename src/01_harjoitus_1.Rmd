@@ -74,7 +74,7 @@ Tämän valikon alta löytyy muutamia GeoServerin testityökaluja:\
 
 ### **Demo requests**
 
-Kokeile erilaisten kyselyjen (toiminnallisuuksien) tuloksia ja näe, mitä kukin kyselykomento tuottaa. Kokeile **WMS_getMap_OpenLayers.url**-kyselyn toimivuutta valitsemalla kyseinen kysely valikosta ja paina **Submit**-toimintoa.
+Kokeile erilaisten kyselyjen (toiminnallisuuksien) tuloksia ja näe, mitä kukin kyselykomento tuottaa. Kokeile **WMS_getMap_OpenLayers.url**-kyselyn toimivuutta valitsemalla kyseinen kysely valikosta ja paina **Show Result** -toimintoa.
 
 GeoServerin eri toiminnot ja operaatiot muodostuvat URL:n liittyvistä parametreistä. Parametrit ohjaavat Geoserverin rajapintapalveluita: mitä karttatasoa kysytään, miltä alueelta tietoja haetaan tai kuva muodostetaan, vastauksen koordinaattijärjestelmä jne.
 
