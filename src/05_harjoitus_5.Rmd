@@ -45,6 +45,7 @@ Psst! Nämä metadatan asetukset ovat samankaltaiset myös WFS- ja WCS-palveluje
 :::
 
 Määrittele näitä tietoja WMS-palvelulle. Voit kirjoittaa muistiinpanot harjoituksen viimeiselle sivulle.
+
 ![](img/harjoitus_5/image1.png)
 
 ## **WMS**
@@ -109,7 +110,7 @@ Tiedot voit tarkistaa Getcapabilities-pyynnöllä seuraavasti:
 
 -   Tiger-workspace: [http://xx.xx.xx.xx/geoserver/tiger/wms?REQUEST=GetCapabilities](http://xx.xx.xx.xx/geoserver/helsinki/wms?REQUEST=Getcapabilities)
 
--   Geoserver oletus: [http://xx.xx.xx.xx/geoserver/wms?REQUEST=GetCapabilities](http://xx.xx.xx.xx/geoserver/helsinki/wms?REQUEST=Getcapabilities)
+-   GeoServer oletus: [http://xx.xx.xx.xx/geoserver/wms?REQUEST=GetCapabilities](http://xx.xx.xx.xx/geoserver/helsinki/wms?REQUEST=Getcapabilities)
 
 \
 ![](img/harjoitus_5/image5.png)

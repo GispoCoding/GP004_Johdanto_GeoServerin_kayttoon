@@ -77,7 +77,7 @@ Avaa kolmanteen selainikkunaan GeoServerin lokien esikatselu (**GeoServer Logs**
 
 ![](img/harjoitus_10/image4.png)
 
-Tutustu asetuksiin kouluttajan ohjauksella sekä lukemalla lisää tietoa asetuksista Geoserverin manuaalista (**Web Administration Interface → Server → Global Settings**). Avaa manuaali erilliseen selainikkunaan.
+Tutustu asetuksiin kouluttajan ohjauksella sekä lukemalla lisää tietoa asetuksista GeoServerin manuaalista (**Web Administration Interface → Server → Global Settings**). Avaa manuaali erilliseen selainikkunaan.
 
 Suorita nyt muutamia toimintoja (zoom in, zoom out, pan) karttaikkunassa. 
 
@@ -113,7 +113,7 @@ Psst! Tutustu REST API:n kuvaukseen GeoServerin ohjeessa.
 
 ## **Monitor-lisäosan käyttö**
 
-GeoServerin **Monitor**-lisäosa on valmiiksi asennettu koulutus palvelimiin, ja se näkyy päävalikosta alapuolelta. Tällä lisäosalla voidaan tarkastella GeoServerin liikennettä. Voit vapaasti tarkastella mitä Monitor-lisäosalla voi tehdä. Pohdi myös miten se voisi olla hyödyllinen teidän organisaatiossa.
+GeoServerin **Monitor**-lisäosa on valmiiksi asennettu koulutuspalvelimiin, ja se näkyy päävalikosta alapuolelta. Tällä lisäosalla voidaan tarkastella GeoServerin liikennettä. Voit vapaasti tarkastella mitä Monitor-lisäosalla voi tehdä. Pohdi myös miten se voisi olla hyödyllinen teidän organisaatiossa.
 
 Avaa **Monitor → Activity**.
 

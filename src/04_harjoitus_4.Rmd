@@ -30,7 +30,7 @@ Huomaa, että **WMS Settings** -kohdasta löytyy **Default Style** -valikko, joh
 
 ## **SLD-kuvaustekniikka**
 
-Geoserverin tyylit on määritelty **Styled Layer Descriptorilla** (SLD), joka on XML-kieli.
+GeoServerin tyylit on määritelty **Styled Layer Descriptorilla** (SLD), joka on XML-kieli.
 
 Poistu tason näkymästä ja avaa **Data → Styles** näkymä päävalikon alta. Tässä näkymässä määritellään tyylit (kuvaustekniikat), joita WMS-karttatasoissa käytetään.
 

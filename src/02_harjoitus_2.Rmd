@@ -43,7 +43,7 @@ Päävalikosta löytyviä GeoServerin toimintoja on ryhmitelty niiden käyttöta
 | ##### **Tools**          | Palvelimen lisätyökaluja                                                   |
 +--------------------------+----------------------------------------------------------------------------+
 
-Näiden lisäksi Geoserverin laajennokset voivat lisätä valikkoja käyttöliittymään.
+Näiden lisäksi GeoServerin laajennokset voivat lisätä valikkoja käyttöliittymään.
 
 **Päävalikossa** on nyt uusia valikoita ja toiminnallisuuksia. 
 
@@ -103,15 +103,15 @@ Tämä valikko sisältää GeoServerin tärkeimmät toiminnot. Aineistot lisät�
 
 ![](img/harjoitus_2/image6.png)
 
-**Styles** kohdassa määritellään tasoille (**Layers**) kuvaustekniikka, visualisointi. 
+**Styles**-kohdassa määritellään tasoille (**Layers**) kuvaustekniikka, visualisointi. 
 
-**Styles** (kuvaustekniikka) käytetään aina kun tasoja julkaistaan WMS-palveluna. Kuvaustekniikka ei ole riippuvainen tasoista: samaa kuvaustekniikkaa voidaan käyttää useilla tasoilla ja niillä voi olla useita valinnaisia kuvaustekniikoita.
+**Styles**-määrittelyjä (kuvaustekniikka) käytetään aina kun tasoja julkaistaan WMS-palveluna. Kuvaustekniikka ei ole riippuvainen tasoista: samaa kuvaustekniikkaa voidaan käyttää useilla tasoilla, ja niillä voi olla useita valinnaisia kuvaustekniikoita.
 
 ### **Layer Preview**
 
 Tämän valikon avulla on mahdollista esikatsella GeoServerillä julkaistuja karttatasoja.
 
-Geoserverin oletusasennuksessa on julkaistu muutama demotaso, joita voi heti käyttää ja esikatsella.
+GeoServerin oletusasennuksessa on julkaistu muutama demotaso, joita voi heti käyttää ja esikatsella.
 
 ![](img/harjoitus_2/image7.png)
 
@@ -125,13 +125,13 @@ Tasojen lähtöaineisto voi olla rasteri tai vektori, formaatti on kuvattu näil
 
 Tason esikatselu aukenee OpenLayers-karttaikkunana uuteen selainikkunaan. Huomaa, että aineiston **OpenLayers**-esikatselussa on käytössä kuvaustekniikka, joka on määritelty GeoServerilla oletukseksi. Kuvaustekniikka-teemaan tutustutaan myöhemmin lisää.
 
-Käyttämällä alasvetovalikkoa (**Select one**), voit myös ladata kyseisen tason eri tiedostomuodoissa (GeoTIFF, csv, shapefile\...).
+Käyttämällä alasvetovalikkoa (**Select one**), voit myös ladata kyseisen tason eri tiedostomuodoissa (GeoTIFF, CSV, Shapefile\...).
 
 ### **Workspaces**
 
 **Workspace** on GeoServerin tapa säilyttää ja järjestää viittaukset aineistoihin (**Stores**). Aineistot itse on tallennettu hakemistoon (tai tietokantaan), johon GeoServerillä on käyttöoikeudet.
 
-Tyypillisesti samassa workspace:ssa pidetään samanlaisia ja/tai samasta lähteestä saatuja aineistoja. Esimerkiksi organisaation aineistot voidaan järjestää teemojen mukaan workspacen avulla (ymparisto, kaavoitus, vaesto, terveys, jne.)
+Tyypillisesti samassa workspacessa pidetään samanlaisia ja/tai samasta lähteestä saatuja aineistoja. Esimerkiksi organisaation aineistot voidaan järjestää teemojen mukaan workspacen avulla (ymparisto, kaavoitus, vaesto, terveys, jne.).
 
 Avaa **Workspaces**-valikko, muutama workspace on valmiiksi luotu GeoServerille:
 
@@ -149,7 +149,7 @@ Rastita vielä **Default Workspace**, niin jatkossa juuri luomasi workspace on o
 Psst! URI (Uniform Resource Identifier) on teksti, joka määrittelee tietyn resurssin nimen. Se voi olla nettiosoite tai vaikka suhteellinen hakemisto kovalevystä. Ainoa vaatimus on se, että URI:n arvo on yksilöivä. Voit viitata esimerkiksi osoitteeseen tai kansioon, jossa on säilytetty workspaceen liittyvää dokumentaatiota.
 :::
 
-Paina **Submit** ja olet nyt lisännyt uuden workspacen Geoserverille.
+Paina **Submit** ja olet nyt lisännyt uuden workspacen GeoServerille.
 
 Avaa äsken tekemäsi workspace painamalla **helsinki**-workspace **Workspace Name** -kohdan alta ja huomaa, että lisää valintoja on nyt saatavilla. Palataan niihin myöhemmin säädettäessä workspace-kohtaisia asetuksia.
 
@@ -161,7 +161,7 @@ Workspaceja voidaan poistaa valitsemalla yksi tai useampi workspace ja painamall
 
 ### **Stores**
 
-Geoserverillä viitataan aineistolähteisiin **Storesien** avulla. Aineistolähteinä voivat olla yksittäiset tiedostot, tiedostoryhmät, hakemistot, tietokannat tai rajapintapalvelut.
+GeoServerillä viitataan aineistolähteisiin **Storesien** avulla. Aineistolähteinä voivat olla yksittäiset tiedostot, tiedostoryhmät, hakemistot, tietokannat tai rajapintapalvelut.
 
 Oletusasennuksessa on valmiina **Store**-viittauksia esimerkkiaineistoihin:
 
@@ -183,7 +183,7 @@ Mihin aineistoon sfdem-store viittaa?
 Mihin aineistoon taz_shapes-store viittaa?
 :::
 
-Huomaa, että [**file:data/**](file:data/){.uri} viittaa Geoserverin Data Directory -hakemistoon. Hakemiston sijainti levyjärjestelmässä löytyy **About & Status → Server Status** -valikon kautta.
+Huomaa, että [**file:data/**](file:data/){.uri} viittaa GeoServerin Data Directory -hakemistoon. Hakemiston sijainti levyjärjestelmässä löytyy **About & Status → Server Status** -valikon kautta.
 
 Store **taz_shapes** viittaa hakemistoon, jossa on useampia vektoriaineistoja, tässä tapauksessa .shp-tiedostoja.
 
@@ -201,7 +201,7 @@ Tasot (**Layers**) määrittelevät yhden aineistolähteen (**Store**) julkaisem
 
 Yksi taso vastaa yhtä aineistoa. Aineisto voidaan julkaista useisiin eri tasoihin, esimerkiksi eri kuvaustekniikoilla tms.
 
-**Layers**-näkymässä on mahdollista muokata, lisätä tai poistaa tasoja. **Layers**-näkymän taulukossa on nähtävissä muutama taso ja niiden nimet (**Name**). Taulukossa lukee myös tason otsikko (**Title**) ja missä **Store**:ssa aineistot sijaitsevat.
+**Layers**-näkymässä on mahdollista muokata, lisätä tai poistaa tasoja. **Layers**-näkymän taulukossa on nähtävissä muutama taso ja niiden nimet (**Name**). Taulukossa lukee myös tason otsikko (**Title**) ja missä **Store**ssa aineistot sijaitsevat.
 
 Sarake **Enabled** näyttää tiedon siitä, onko taso käytettävissä palvelimelta vai ei. Huomaa, että käytettävyyden voi määritellä koko storelle (eli aineistolähteelle) tai erikseen tasoille (aineiston näkymille). Myös tason alkuperäinen koordinaattijärjestelmä on ilmoitettu taulukossa, **Native SRS**.
 
@@ -209,7 +209,7 @@ Sarake **Enabled** näyttää tiedon siitä, onko taso käytettävissä palvelim
 
 Avaa **Manhattan (NY) landmarks** -tason asetusten näkymä painamalla tason otsikkoa (**Title**) tai nimeä (**Name**) sarakkeesta. 
 
-Tasoon liittyvät asetukset ovat laajat ja siksi ne on jaettu välilehtiin **Data**, **Publishing**, **Dimensions** ja **Tile Caching**. 
+Tasoon liittyvät asetukset ovat laajat ja siksi ne on jaettu välilehtiin **Data**, **Publishing**, **Dimensions**, **Tile Caching** ja **Security**. 
 
 Tutustu nyt eri välilehtien asetuksiin saadaksesi kuvan siitä, miten tasot määritellään GeoServerillä. Keskustele niistä kouluttajan kanssa.
 
