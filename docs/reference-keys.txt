@@ -8,7 +8,6 @@ lisenssi-ja-oikeudet
 harjoitus-1.1-asennus-ja-käyttöönotto
 valmistautuminen
 päävalikko
-about-geoserver
 layer-preview
 palvelutoiminnallisuudet
 demos
@@ -18,6 +17,7 @@ wcs-request-builder
 harjoitus-1.2-geoserverin-web-käyttöliittymä
 valmistautuminen-1
 ylläpitäjän-käyttöliittymä
+about-geoserver
 master--ja-administrator-käyttäjät
 about-status--asetukset
 contact-information
@@ -36,7 +36,7 @@ tile-caching-1
 security-1
 harjoitus-1.3-vektoriaineistot
 valmistautuminen-2
-vektoriaineisto-storen-luominen
+vektoriaineiston-storen-luominen
 vektoritason-julkaiseminen
 data-asetukset
 coordinate-reference-systems
