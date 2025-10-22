@@ -1,7 +1,12 @@
 name: Render to HTML & Deploy
+
 on:
-  repository_dispatch:
-    types: [render-deploy]
+  push:
+    branches:
+      - main
+    paths:
+      - 'src/**'
+      - '.github/workflows/**'
 
 jobs:
   render-deploy:
