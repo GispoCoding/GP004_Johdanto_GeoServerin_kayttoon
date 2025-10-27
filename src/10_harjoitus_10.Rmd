@@ -121,4 +121,6 @@ Kokeile esikatsella eri tasoja ja katso sen jälkeen **Monitor → Activity → 
 
 ![](img/harjoitus_10/image7.png) 
 
+Avaa palvelukohtainen raportti **Monitor → Reports → OWS Request Summary**.
+
 ![](img/harjoitus_10/image8.png)
