@@ -10,8 +10,6 @@ services:
     volumes:
     - geo-db-data:/var/lib/postgresql
     - ./postgis-init.sh:/postgis-init.sh
-    ports:
-      - "5432:5432"
     environment:
       - ALLOW_IP_RANGE=0.0.0.0/0
       - POSTGRES_DB=${PG_DB}
