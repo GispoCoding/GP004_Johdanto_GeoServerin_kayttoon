@@ -50,7 +50,7 @@ Tarkista, että taso on **Data → Layers**-taulussa. Voit esikatsella uutta ras
 
 Samalla tavalla kun lisäsit edellisessä kohdassa ArcGrid-tiedoston voit lisätä GeoTIFF-aineistoja. 
 
-Seuraa edellisen kohdan ohjeita ja lisää samalta alueelta ilmakuva. GeoTIFF-tiedosto löytyy täältä: **/nlsfi/Ortokuvat/L4133A.tif**.
+Seuraa edellisen kohdan ohjeita ja lisää samalta alueelta ilmakuva. GeoTIFF-tiedosto löytyy täältä: **/koulutus/nlsfi/Ortokuvat/L4133A.tif**.
 
 Nimeä seuraavasti: \
 	store:	**hki_ilmakuva\
