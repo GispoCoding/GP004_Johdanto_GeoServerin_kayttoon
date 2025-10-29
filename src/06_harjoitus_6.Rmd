@@ -2,11 +2,11 @@
 
 **Harjoituksen sisältö**
 
-Harjoituksessa lisätään rasteriaineistoja GeoServer-palvelimelle ja muokataan tason asetuksia WCS-palvelun julkistamista varten.
+Harjoituksessa lisätään rasteriaineistoja GeoServer-palvelimelle ja luodaan ryhmätaso.
 
 **Harjoituksen tavoite**
 
-Harjoituksen jälkeen opiskelija osaa lisätä rasteriaineistoja ja tehdä välttämättömät asetukset aineiston julkaisemiseksi.
+Harjoituksen jälkeen opiskelija osaa lisätä rasteriaineistoja ja luoda ryhmätason.
 
 **Arvioitu kesto**
 
