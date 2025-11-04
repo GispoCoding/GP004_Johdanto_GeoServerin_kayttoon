@@ -208,6 +208,8 @@ h5 { font-size: 100% !important; }
 /* Tables */
 table {
     border-collapse: collapse;
+    color: #434662;
+    font-family: 'Karla', sans-serif;
 }
 th, td {
     border: 1px solid #434662;
