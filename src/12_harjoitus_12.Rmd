@@ -226,4 +226,4 @@ Lopussa **Service access rules list** -näkymä näyttää tältä:
 
 Kirjaudu taas **hki_kayttaja**nä ja kokeile esikatsella jotain aineistoa sekä WMS- että WFS-karttapalveluna. WFS-esikatselu ei enää onnistu, koska kyseisellä käyttäjällä ei ole oikeuksia WFS-toimintoihin, vain WMS-toimintoihin. 
 
-Poista lopuksi edellisessä kuvassa näkyvä sääntö (wms.\*), jotta wms-palvelu olisi taas käytettävissä kaikilla käyttäjillä.
+Poista lopuksi edellisessä kuvassa näkyvät säännöt (\*.\* ja wms.\*), jotta WMS-palvelu olisi taas käytettävissä kaikilla käyttäjillä.
