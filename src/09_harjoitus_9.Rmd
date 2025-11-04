@@ -254,6 +254,7 @@ Suosituksissa sanotaan, että vasemman yläkulman koordinaatit (origo) ovat itä
 
 **Min Y** on sitten: 8388608 -- 2097152 = **6 291 456** m
 
+
 +------------------------------------------------------------------------------------------+
 | **  JHS180-mukaisen ruudukon kattavuus**                                                 |
 +=================================================+========================================+
@@ -261,6 +262,7 @@ Suosituksissa sanotaan, että vasemman yläkulman koordinaatit (origo) ovat itä
 +-------------------------------------------------+----------------------------------------+
 | Min Y: 6 291 456 m                              | Max Y: 8 388 608 m                     |
 +-------------------------------------------------+----------------------------------------+
+
 
 Pidä tiilen pikselikoko oletuksena, **256** px.
 
@@ -291,7 +293,7 @@ Paina lopulta **Save**, niin uusi JHS180-karttatiiliruudukko on käytettävissä
 
 Aiemmissa harjoituksissa olet harjoitellut aineistojen käyttöönottoa GeoServerissä. Samasta jo aiemmin käytetystä **gs_training** PostGIS-tietokannasta löytyy Suomen OpenStreetMap-tiestöaineisto **EPSG 3067** -koordinaattijärjestelmässä.
 
-Luo uusi taso tiestö-aineistosta. Suomen aineisto löytyy tietokannasta **suomi**-skeemasta nimellä **osm-tiet**.
+Luo uusi taso tiestö-aineistosta. Suomen aineisto löytyy tietokannasta **suomi**-skeemasta nimellä **osm_tiet**.
 
 ::: hint-box
 Psst! Muista, että ensin luodaan store, josta luodaan viittaus edellä mainittuun skeemaan ja sen jälkeen voidaan lisätä tasoja GeoServer-palvelimelle.
@@ -303,11 +305,11 @@ Luo workspace, anna sille nimeksi **suomi**.
 
 Luo PostGIS-store, laita se suomi-workspaceen ja nimeä se **suomi_tiesto_3067**:ksi (tietokannan nimi on **gs_training**, skeema on **suomi**, käyttäjä on **postgres** ja salasana on **gispo**).
 
-Kyseisestä storesta löytyy aineisto nimellä **osm-tiet**. Luo siitä uusi GeoServer-taso, nimeä se **suomi_tiesto_3067**:ksi (täytä myös muut tarvittavat tiedot).
+Kyseisestä storesta löytyy aineisto nimellä **osm_tiet**. Luo siitä uusi GeoServer-taso, nimeä se **suomi_tiesto_3067**:ksi (täytä myös muut tarvittavat tiedot). Muista asettaa koordinaattijärjestelmä (EPSG:3067).
 
 Tarpeen vaatiessa, voit katsoa mallia alla olevasta kuvakaappauksesta PostGIS-storen luomisesta:
 
-![](img/harjoitus_9/image24.png) ![](img/harjoitus_9/image25.png)
+![](img/harjoitus_9/image24.png)
 
 ## **Oman karttatiiliruudukon käyttöönotto**
 
@@ -317,7 +319,9 @@ Valitse **Available gridsets** -osion alta **Add grid subset** -kohdasta uusi **
 
 Tarvittaessa voit määritellä, mitkä zoomaus-tasot ovat käytettävissä tai mitkä tallentuvat välimuistiin käyttäen **Published**- ja **Cached zoom levels -asetuksia**.
 
-Paina lopulta **Save**. ![](img/harjoitus_9/image26.png)
+Paina lopulta **Save**. 
+
+![](img/harjoitus_9/image26.png)
 
 Esikatsele nyt **suomi_tiesto_3067** uudella karttatiiliruudukolla näkymästä **Tile Caching → Tile Layers**. Valitse tiestötason kohdalla **JHS180_EPSG3067/png**. 
 
