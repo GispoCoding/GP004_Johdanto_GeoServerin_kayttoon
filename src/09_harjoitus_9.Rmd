@@ -215,10 +215,10 @@ Jos jää aikaa, voit jatkaa tästä tekemällä lisätehtäviä.
 
 ## **JHS180 mukainen karttatiiliruudukko**
 
-JHS180 suosituksesta löytyy muun muassa suositus kansallisesta karttatiiliruudukosta, joka perustuu OGC-standardien määrittelyihin. Suosituksesta löytyy muun muassa seuraavat määritelmät:
+[JHS180](https://geoforum.fi/jhs-180-paikkatiedon-sisaltopalvelut/) suosituksesta löytyy muun muassa suositus kansallisesta karttatiiliruudukosta, joka perustuu OGC-standardien määrittelyihin. Suosituksesta löytyy muun muassa seuraavat määritelmät:
 
 +------------------------------+----------------------------------------------------------------------------------------------------------------+
-| **Rajapintastandardi**       | OGC:n WMTS standardi                                                                                          |
+| **Rajapintastandardi**       | OGC:n WMTS standardi                                                                                           |
 +------------------------------+----------------------------------------------------------------------------------------------------------------+
 | **Koordinaattijärjestelmä**  | ETRS89 / TM35-FIN (EPSG:3067)                                                                                  |
 +------------------------------+----------------------------------------------------------------------------------------------------------------+
@@ -231,9 +231,10 @@ JHS180 suosituksesta löytyy muun muassa suositus kansallisesta karttatiiliruudu
 | **Kuvaformaatti**            | Image/png                                                                                                      |
 +------------------------------+----------------------------------------------------------------------------------------------------------------+
 
+\
 Näillä määritelmillä, karkeimmalla resoluutiotasolla (taso 0) on vain yksi tiilikuva kooltaan 2 097 152 m \* 2 097 152 m (8 192\*8 192 pikseliä). Tämän kuvatiilen pohjois-etelä -suuntainen keskilinja sijoittuu projektiokaistan keskimeridiaanille (27 astetta). Ja tiilen pohjoisreunan pohjoiskoordinaatti on tiilen koon monikerta päiväntasaajalta laskien (4 \* 2 097 152).
 
-Seuraava taso (taso 1) muodostuu jakamalla 0 tason ainoa tiili neljään yhtä suureen osaan. Ja niin edelleen muodostuvat seuraavat tasot, taso 15 asti. Katso tarkemmin luentomateriaalista.
+Seuraava taso (taso 1) muodostuu jakamalla 0 tason ainoa tiili neljään yhtä suureen osaan. Tämä tapa jatkuu tasolle 15 asti.
 
 ## **Uuden karttatiiliruudukon luominen**
 
