@@ -26,7 +26,7 @@ Avaa **Tile Caching → Caching defaults** ja tarkista, mitkä karttatiilipalvel
 
 Oletuksena aktivoituna ovat **WMS-C**- (WMS Tile Caching) ja **TMS** (Tile Map Service)-karttatiilipalvelut.
 
-Avaa vielä **Tile Caching → Tile Layers** ja huomaa myös, että kaikille tasoille on automaattisesti luotu oma karttatiilitaso.\
+Avaa vielä **Tile Caching → Tile Layers** ja huomaa myös, että listalta löytyy jo tiilitettyjä tasoja.\
 ![](img/harjoitus_9/image2.png)
 
 ## **GeoWebCache-käyttöliittymä**
@@ -56,7 +56,7 @@ Valitse sitten **Tile Caching**.
 
 Oletusasetukset on määritelty siten, että kaikille uusille tasoille luodaan automaattisesti karttatiilet. Myös sekä jpeg- että png-kuvatiilet ovat oletuksena aktivoituna.
 
-Selaa vielä tämän näkymän alaosaan, josta selviää **Available gridsets** -osiosta, että kaksi eri karttatiiliruudukkoa on oletuksena käytössä: **EPSG:4326** (WGS 84) ja **EPSG:900913** (Google Mercator): ![](img/harjoitus_9/image7.png)
+Selaa vielä tämän näkymän alaosaan, josta selviää **Available gridsets** -osiosta, mitkä karttatiiliruudukot ovat  oletuksena käytössä: ![](img/harjoitus_9/image7.png)
 
 ::: hint-box
 Psst! Tasokohtaisia tiilitysasetuksia pääset myös muokkaamaan Data → Layers näkymän kautta valitsemalla tason ja sen jälkeen Tile Caching -välilehden.
@@ -78,43 +78,53 @@ Valitse nyt **Seed/Truncate** -linkki Helsingin ilmakuvien tason karttatiilien l
 
 Tiilien luomista varten asetukset löytyvät sivun alapuolelta **Create a new task** -osiosta.
 
-+----------------------------+----------------------------------------------------------------------------------------------+
-| **Number of tasks to use** | Määrittää kuinka monta prosessia käynnistetään karttatiilien luomiseksi                      |
-+----------------------------+----------------------------------------------------------------------------------------------+
-| **Type of operation**      | Tiilien luomisen toimintotapa                                                                |
-|                            |                                                                                              |
-|                            | Reseed: luodaan kaikki karttatiilet, korvataan vanhat karttatiilet                           |
-|                            |                                                                                              |
-|                            | Seed: luodaan vain puuttuvat karttatiilet                                                    |
-|                            |                                                                                              |
-|                            | Truncate: poistetaan karttatiilet palvelimesta                                               |
-+----------------------------+----------------------------------------------------------------------------------------------+
-| **Grid set**               | Määrittää mille karttatiiliruudukolle luodaan karttatiilet                                   |
-+----------------------------+----------------------------------------------------------------------------------------------+
-| **Format**                 | Karttakuvan tiedostomuoto (esim. jpg, png)                                                   |
-+----------------------------+----------------------------------------------------------------------------------------------+
-| **Zoom start, Zoom stop**  | Mittakaavavälit luotavalle karttatiilille (mittakaavat on määritelty karttatiiliruudukoille) |
-+----------------------------+----------------------------------------------------------------------------------------------+
-| **Bounding box**           | Sijainnin suorakaiderajaus, jolta karttatiilet luodaan                                       |
-+----------------------------+----------------------------------------------------------------------------------------------+
++-----------------------------------+----------------------------------------------------------------------------------------------+
+| **Number of tasks to use**        | Määrittää kuinka monta prosessia käynnistetään karttatiilien luomiseksi                      |
++-----------------------------------+----------------------------------------------------------------------------------------------+
+| **Type of operation**             | Tiilien luomisen toimintotapa                                                                |
+|                                   |                                                                                              |
+|                                   | Reseed: luodaan kaikki karttatiilet, korvataan vanhat karttatiilet                           |
+|                                   |                                                                                              |
+|                                   | Seed: luodaan vain puuttuvat karttatiilet                                                    |
+|                                   |                                                                                              |
+|                                   | Truncate: poistetaan karttatiilet palvelimesta                                               |
++-----------------------------------+----------------------------------------------------------------------------------------------+
+| **Grid set**                      | Määrittää mille karttatiiliruudukolle luodaan karttatiilet                                   |
++-----------------------------------+----------------------------------------------------------------------------------------------+
+| **Format**                        | Karttakuvan tiedostomuoto (esim. jpg, png)                                                   |
++-----------------------------------+----------------------------------------------------------------------------------------------+
+| **Zoom start, Zoom stop**         | Mittakaavavälit luotavalle karttatiilille (mittakaavat on määritelty karttatiiliruudukoille) |
++-----------------------------------+----------------------------------------------------------------------------------------------+
+| **Modifiable Parameters**         | Kertoo mitkä WMS-pyynnön muuttujat vaikuttavat tiilien ulkoasuun ja pitää siksi huomioida    |
++-----------------------------------+----------------------------------------------------------------------------------------------+
+| **Bounding box**                  | Sijainnin suorakaiderajaus, jolta karttatiilet luodaan                                       |
++-----------------------------------+----------------------------------------------------------------------------------------------+
+| **Tile failure retries**          | Montako kertaa yritetään luoda tiiltä jos sen luonti epäonnistuu                             |
++-----------------------------------+----------------------------------------------------------------------------------------------+
+| **Pause before retry (ms)**       | Epäonnistuneen luonnin jälkeen pidettävä tauko (millisekunneissa)                            |
++-----------------------------------+----------------------------------------------------------------------------------------------+
+| **Total failures before aborting**| Montako epäonnistunutta tiilenluontikertoja kunnes lopetetaan koko prosessi                  |
++-----------------------------------+----------------------------------------------------------------------------------------------+
 
-Aseta **Number of tasks to use** -asetukseksi 1.
+\
 
 ::: hint-box
-Psst! 2\*tietokoneen_suorittimien_lukumäärä on hyvä lähtökohta kokeilulle.
+Psst! Jos tiedä mitä voit laittaa kohtaan "Number of tasks to use" niin 2\*tietokoneen_suorittimien_lukumäärä on hyvä lähtökohta kokeilulle.
 :::
+
+Aseta **Number of tasks to use** -asetukseksi 1.
 
 Aseta tehtävän asetukset seuraavalla tavalla, huomaa erityisesti **Zoom stop** -asetus. Laita arvoksi 15, niin lasketaan valmiiksi mittakaavatasot 0-15:
 
 Paina **Submit**.
 
-GeoServer (GeoWebCache) muodostaa nyt karttatiilet valitusta palvelusta mittakaavatasoista 0--15.
+GeoServer (GeoWebCache) muodostaa nyt karttatiilet valitusta palvelusta mittakaavatasoista 0–15.
 
 Muodostamisen ajan käyttöliittymässä voi seurata karttatiilien valmistumista:
 
 Paina **Refresh list** -linkkiä, kun haluat päivittää tiedot laskennan etenemisestä.
 
-Karttatiiliruudukon määritelmä ja tason sijainnin rajauksen mukaan mittakaavoille 0-15 tarvitaan 1 922 karttatiiltä. Kuvien piirtäminen kestää etäpalvelimella näillä asetuksilla minuutin verran.\
+Karttatiiliruudukon määritelmä ja tason sijainnin rajauksen mukaan mittakaavoille 0–15 tarvitaan 1 090 karttatiiltä. Kuvien piirtäminen kestää etäpalvelimella näillä asetuksilla minuutin verran.\
 ![](img/harjoitus_9/image10.png)
 
 Huomaa, että karttatiilet luodaan oletuksena tason sijainnin rajauksen mukaisesti (ellei sitä toisin ole määritelty). ![](img/harjoitus_9/image11.png)
@@ -124,21 +134,21 @@ Laske vielä karttatiilet **tasolle 16** (määrittele zoomaus aloitus- ja loppu
 
 Jos erehdyt määrittelemään vääriä asetuksia, voit pysäyttää laskennan käyttämällä **Kill all Tasks...** -toimintoa painamalla **Submit**-näppäintä. ![](img/harjoitus_9/image13.png)
 
-Taso 16 vastaa mittakaavaa 1:4 262. Kaikkiaan sen tiilittämiseen tarvitaan 3 700 karttatiiliä, joiden luomiseen menee noin pari minuuttia. Laske vielä taso 17 samalla tavalla ja kirjoita muistiinpanot prosessorimäärästä, karttatiilistä sekä ajasta.
+Taso 16 vastaa mittakaavaa 1:4 261. Kaikkiaan sen tiilittämiseen tarvitaan 1 936 karttatiiliä, joiden luomiseen menee noin pari minuuttia. Laske vielä taso 17 samalla tavalla ja kirjoita muistiinpanot prosessorimäärästä, karttatiilistä sekä ajasta.
 
 Taso 17 näyttää kartalla tältä: ![](img/harjoitus_9/image14.png)
 
 ## **Karttatiilien kovalevyn käyttö**
 
-Edellisessä kohdassa laskettiin karttatiiliä vain yhdelle tasolle (**ilmakuvat_keskusta**), vain yhteen karttatiiliruudukkoon (**EPSG:4326**) ja vain yhdelle kuvaformaatille (**png**). Tämän karttatason mittakaavatason 16 karttatiilet vievät noin 300 MB levytilaa.
+Edellisessä kohdassa laskettiin karttatiiliä vain yhdelle tasolle (**ilmakuvat**), vain yhteen karttatiiliruudukkoon (**EPSG:4326**) ja vain yhdelle kuvaformaatille (**png**). Tämän karttatason mittakaavatason 16 karttatiilet vievät noin 240 MB levytilaa.
 
 Karttatasoilla saattaa olla useita karttatiilipalveluita riippuen siitä, kuinka monta karttatiiliruudukkoa ja kuvatyyppiä on tason tiilitysasetuksissa määritelty.
 
 Karttatiilien luominen kannattaa suunnitella etukäteen ja toteuttaa huolellisesti. Yksi tärkeä asetus karttatiilipalveluissa on karttatiilien kovalevyn käytön tarkkaileminen ja hallinnointi. Siihen on GeoWebCache:ssa erilaisia asetuksia ja osaa niistä voi säätää suoraan GeoServeristä.
 
-Avaa **Tile Caching → Tile Layers** -näkymästä **ilmakuvat_keskusta** tason asetukset. Avaa vielä **Tile Caching** välilehti.
+Avaa **Tile Caching → Tile Layers** -näkymästä **ilmakuvat** tason asetukset. Avaa vielä **Tile Caching** välilehti.
 
-Sivun asetuksista voit tarkistaa, että sekä **jpeg**- että **png**-kuvaformaatit ovat rastitettuina. Sen lisäksi on määritelty **kaksi eri karttatiiliruudukkoa** käytettäväksi. Tämä tarkoittaa sitä, että tämä taso on saatavilla kuudella eri karttatiilitasolla. Äskettäin laskettiin valmiiksi karttatiiliä vain yhdelle.
+Sivun asetuksista voit tarkistaa, että sekä **jpeg**- että **png**-kuvaformaatit ovat rastitettuina. Sen lisäksi on määritelty **neljä eri karttatiiliruudukkoa** käytettäväksi. Tämä tarkoittaa sitä, että tämä taso on saatavilla kahdeksalla eri karttatiilitasolla. Äskettäin laskettiin valmiiksi karttatiiliä vain yhdelle.
 
 Voit tarkistaa kovalevyn käytön tasokohtaisesti **Tile Caching → Tile Layers** -näkymästä. Huomaa kuitenkin, että oletusasetuksilla tämä tieto ei ole saatavilla (**N/A**). 
 
@@ -160,31 +170,30 @@ Huomaa vielä, että **When enforcing disk quota limits, remove tiles that are**
 
 Paina **Save** ja palaa **Tile Caching → Tile Layers -**näkymään.
 
-Tarkista, että nyt **Disk Used** -sarakkeessa näkyy tarvittavat tiedot. Ilmakuvien karttatiilet vievät tällä hetkellä alle 500 megatavua. Muut tasot eivät käytä yhtään levytilaa. ![](img/harjoitus_9/image17.png)
+Tarkista, että nyt **Disk Used** -sarakkeessa näkyy tarvittavat tiedot. Ilmakuvien karttatiilet vievät tällä hetkellä alle yli 700 megatavua. Muut tasot eivät käytä yhtään levytilaa. ![](img/harjoitus_9/image17.png)
 
 Karttatiilet tulevat myös tallennetuksi automaattisesti aina karttatiilipalvelun luodessa karttatiiliä. Kokeile esikatsella eri tasojen karttatiilitasoja (**Tile Caching** → **Tile Layers** → **Preview**). Esimerkiksi rakennukset- ja taustakartta-tasoja. ![](img/harjoitus_9/image18.png)
 
 Voidaan todeta, että sen jälkeen myös niiden kohdalla **Disk Used** -sarakkeessa on tietoa levytilan käytöstä. Niiden levytilan käyttö kasvaa sitä mukaan kun eri kartta-alueita ja tiilitasoja käytetään. ![](img/harjoitus_9/image19.png)
 
-Edellisessä kohdassa laskettiin muutama karttatiilitasoja. Esimerkiksi Helsingin ilmakuvien mittakaavatason 16 karttatiilet vievät levytilaa reilut 300 megatavua.
+Edellisessä kohdassa laskettiin muutama karttatiilitasoja. Esimerkiksi Helsingin ilmakuvien mittakaavatason 16 karttatiilet vievät levytilaa yli 200 megatavua.
 
-Tasojen käyttämää levytilaa voidaan myös vapauttaa. Voit halutessasi tyhjentää tietyn tason kaikki karttatiilet käyttäen tason **Empty**-linkkiä. Kokeile tyhjentää **hki-rakennukset**-tason karttatiilet.
+Tasojen käyttämää levytilaa voidaan myös vapauttaa. Voit halutessasi tyhjentää tietyn tason kaikki karttatiilet käyttäen tason **Empty**-linkkiä. Kokeile tyhjentää **rakennukset**-tason karttatiilet.
 
 On mahdollista myös tyhjentää ainoastaan tietyn mittakaavan karttatiilet GeoWebCache-käyttöliittymällä: 
 
--   Avaa **ilmakuvat_keskusta**-tason oikealta **Seed/Truncate** ja valitse mittakaavataso 17 alku- ja loppumittakaavaksi.
+-   Avaa **ilmakuvat**-tason oikealta **Seed/Truncate** ja valitse mittakaavataso 17 alku- ja loppumittakaavaksi.
+
+-   Valitse sama **Grid Set** asetus, kun aikaisemmin, eli EPSG:4326.
 
 -   Valitse toiminnoksi **Truncate** ja lopuksi **Submit**. Tällä tavalla poistat palvelimesta kaikki mittakaavatason 17 karttatiiltä.
 
 -   Voit tarkistaa **Tile Layers** -näkymästä **ilmakuvat_keskusta**-tason nykyisen kovalevyn käytön.
 
-::: hint-box
-Psst! Helsingin ilmakuvien mittakaavataso 17 vaatii 1,4 GB.
-:::
 
 ## **Karttatiiliruudukot**
 
-GeoServerin oletusasennuksesta löytyy muutama valmiiksi määritelty karttatiiliruudukko. Nämä ruudukot ovat joko WGS 84 tai Web Mercator -koordinaattijärjestelmässä.
+GeoServerin oletusasennuksesta löytyy valmiiksi määriteltyjä karttatiiliruudukoita.
 
 Avaa **Tile Caching → Gridsets** ja paina sitten **EPSG:4326** -nimistä ruudukkoa. ![](img/harjoitus_9/image20.png)
 
@@ -198,6 +207,7 @@ Karttatiiliruudukon määritelmiin kuuluvat muun muassa:
 | **Tile Matrix Set**             | Karttatiilimalli (kuvapyramidi), jolla määritellään karttatiiliruudukolle valitut mittakaavat. Tämä voidaan määritellä joko resoluution tai mittakaavan mukaan. |
 +---------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+\
 Karttatiiliruudukkoja voi myös laatia omiin tarpeisiin.
 
 ## **Lisätehtäviä**
