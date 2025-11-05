@@ -103,13 +103,13 @@ Tiilien luomista varten asetukset löytyvät sivun alapuolelta **Create a new ta
 +-----------------------------------+----------------------------------------------------------------------------------------------+
 | **Pause before retry (ms)**       | Epäonnistuneen luonnin jälkeen pidettävä tauko (millisekunneissa)                            |
 +-----------------------------------+----------------------------------------------------------------------------------------------+
-| **Total failures before aborting**| Montako epäonnistunutta tiilenluontikertoja kunnes lopetetaan koko prosessi                  |
+| **Total failures before aborting**| Montako epäonnistunutta tiilenluontikertaa, kunnes lopetetaan koko prosessi                  |
 +-----------------------------------+----------------------------------------------------------------------------------------------+
 
 \
 
 ::: hint-box
-Psst! Jos tiedä mitä voit laittaa kohtaan "Number of tasks to use" niin 2\*tietokoneen_suorittimien_lukumäärä on hyvä lähtökohta kokeilulle.
+Psst! Jos et tiedä mitä voit laittaa kohtaan "Number of tasks to use", 2\*tietokoneen_suorittimien_lukumäärä on hyvä lähtökohta kokeilulle.
 :::
 
 Aseta **Number of tasks to use** -asetukseksi 1.
@@ -124,7 +124,7 @@ Muodostamisen ajan käyttöliittymässä voi seurata karttatiilien valmistumista
 
 Paina **Refresh list** -linkkiä, kun haluat päivittää tiedot laskennan etenemisestä.
 
-Karttatiiliruudukon määritelmä ja tason sijainnin rajauksen mukaan mittakaavoille 0–15 tarvitaan 1 090 karttatiiltä. Kuvien piirtäminen kestää etäpalvelimella näillä asetuksilla minuutin verran.\
+Karttatiiliruudukon määritelmän ja tason sijainnin rajauksen mukaan mittakaavoille 0–15 tarvitaan 1 090 karttatiiltä. Kuvien piirtäminen kestää etäpalvelimella näillä asetuksilla minuutin verran.\
 ![](img/harjoitus_9/image10.png)
 
 Huomaa, että karttatiilet luodaan oletuksena tason sijainnin rajauksen mukaisesti (ellei sitä toisin ole määritelty). ![](img/harjoitus_9/image11.png)
@@ -170,13 +170,13 @@ Huomaa vielä, että **When enforcing disk quota limits, remove tiles that are**
 
 Paina **Save** ja palaa **Tile Caching → Tile Layers -**näkymään.
 
-Tarkista, että nyt **Disk Used** -sarakkeessa näkyy tarvittavat tiedot. Ilmakuvien karttatiilet vievät tällä hetkellä alle yli 700 megatavua. Muut tasot eivät käytä yhtään levytilaa. ![](img/harjoitus_9/image17.png)
+Tarkista, että nyt **Disk Used** -sarakkeessa näkyy tarvittavat tiedot. Ilmakuvien karttatiilet vievät tällä hetkellä yli 700 megatavua. Muut tasot eivät käytä yhtään levytilaa. ![](img/harjoitus_9/image17.png)
 
 Karttatiilet tulevat myös tallennetuksi automaattisesti aina karttatiilipalvelun luodessa karttatiiliä. Kokeile esikatsella eri tasojen karttatiilitasoja (**Tile Caching** → **Tile Layers** → **Preview**). Esimerkiksi rakennukset- ja taustakartta-tasoja. ![](img/harjoitus_9/image18.png)
 
 Voidaan todeta, että sen jälkeen myös niiden kohdalla **Disk Used** -sarakkeessa on tietoa levytilan käytöstä. Niiden levytilan käyttö kasvaa sitä mukaan kun eri kartta-alueita ja tiilitasoja käytetään. ![](img/harjoitus_9/image19.png)
 
-Edellisessä kohdassa laskettiin muutama karttatiilitasoja. Esimerkiksi Helsingin ilmakuvien mittakaavatason 16 karttatiilet vievät levytilaa yli 200 megatavua.
+Edellisessä kohdassa laskettiin muutamia karttatiilitasoja. Esimerkiksi Helsingin ilmakuvien mittakaavatason 16 karttatiilet vievät levytilaa yli 200 megatavua.
 
 Tasojen käyttämää levytilaa voidaan myös vapauttaa. Voit halutessasi tyhjentää tietyn tason kaikki karttatiilet käyttäen tason **Empty**-linkkiä. Kokeile tyhjentää **rakennukset**-tason karttatiilet.
 
@@ -184,7 +184,7 @@ On mahdollista myös tyhjentää ainoastaan tietyn mittakaavan karttatiilet GeoW
 
 -   Avaa **ilmakuvat**-tason oikealta **Seed/Truncate** ja valitse mittakaavataso 17 alku- ja loppumittakaavaksi.
 
--   Valitse sama **Grid Set** asetus, kun aikaisemmin, eli EPSG:4326.
+-   Valitse sama **Grid Set** asetus kuin aikaisemmin, eli EPSG:4326.
 
 -   Valitse toiminnoksi **Truncate** ja lopuksi **Submit**. Tällä tavalla poistat palvelimesta kaikki mittakaavatason 17 karttatiiltä.
 
@@ -234,7 +234,7 @@ Jos jää aikaa, voit jatkaa tästä tekemällä lisätehtäviä.
 \
 Näillä määritelmillä, karkeimmalla resoluutiotasolla (taso 0) on vain yksi tiilikuva kooltaan 2 097 152 m \* 2 097 152 m (8 192\*8 192 pikseliä). Tämän kuvatiilen pohjois-etelä -suuntainen keskilinja sijoittuu projektiokaistan keskimeridiaanille (27 astetta). Ja tiilen pohjoisreunan pohjoiskoordinaatti on tiilen koon monikerta päiväntasaajalta laskien (4 \* 2 097 152).
 
-Seuraava taso (taso 1) muodostuu jakamalla 0 tason ainoa tiili neljään yhtä suureen osaan. Tämä tapa jatkuu tasolle 15 asti.
+Seuraava taso (taso 1) muodostuu jakamalla 0-tason ainoa tiili neljään yhtä suureen osaan. Tämä tapa jatkuu tasolle 15 asti.
 
 ## **Uuden karttatiiliruudukon luominen**
 
@@ -246,7 +246,7 @@ Anna nimeksi esimerkiksi **JHS180_EPSG3067** ja kirjoita lyhyt määritelmä ruu
 
 Valitse **Coordinate Reference System** -arvoksi **EPSG 3067**.
 
-Määrittele vielä ruudukon kattavuus aiemmin mainituilla JHS180 suosituksella, eli karkeamman tason kattavuus.
+Määrittele vielä ruudukon kattavuus aiemmin mainituilla JHS180-suosituksella, eli karkeamman tason kattavuus.
 
 Suosituksissa sanotaan, että vasemman yläkulman koordinaatit (origo) ovat itäkoordinaatti **-548 576** m ja pohjoiskoordinaatti **8 388 608** m. Näitä vastaavat **Min X** ja **Max Y** koordinaatit. Karkeamman tason koko metreinä on 2097152 \* 2097152 joten:
 
