@@ -16,7 +16,7 @@
 
 <meta name="author" content="Gispo Oy" />
 
-<meta name="date" content="2025-10-31" />
+<meta name="date" content="2025-11-05" />
 
 
 <meta name="description" content="10 HARJOITUS 2.2: KARTTATIILIPALVELUT | Johdanto GeoServerin käyttöön">
@@ -259,7 +259,7 @@ type="button" onclick="navToggle()" aria-label="Toggle navigation">
 <p>Avaa <strong>Tile Caching → Caching defaults</strong> ja tarkista, mitkä karttatiilipalvelut ovat käytössä GeoServerin asennuksessasi.</p>
 <p><img src="img/harjoitus_9/image1.png" /></p>
 <p>Oletuksena aktivoituna ovat <strong>WMS-C</strong>- (WMS Tile Caching) ja <strong>TMS</strong> (Tile Map Service)-karttatiilipalvelut.</p>
-<p>Avaa vielä <strong>Tile Caching → Tile Layers</strong> ja huomaa myös, että kaikille tasoille on automaattisesti luotu oma karttatiilitaso.<br />
+<p>Avaa vielä <strong>Tile Caching → Tile Layers</strong> ja huomaa myös, että listalta löytyy jo tiilitettyjä tasoja.<br />
 <img src="img/harjoitus_9/image2.png" /></p>
 </div>
 <div id="geowebcache-käyttöliittymä" class="section level2" number="10.3">
@@ -279,7 +279,7 @@ type="button" onclick="navToggle()" aria-label="Toggle navigation">
 <p>Valitse sitten <strong>Tile Caching</strong>.</p>
 <p><img src="img/harjoitus_9/image6.png" /></p>
 <p>Oletusasetukset on määritelty siten, että kaikille uusille tasoille luodaan automaattisesti karttatiilet. Myös sekä jpeg- että png-kuvatiilet ovat oletuksena aktivoituna.</p>
-<p>Selaa vielä tämän näkymän alaosaan, josta selviää <strong>Available gridsets</strong> -osiosta, että kaksi eri karttatiiliruudukkoa on oletuksena käytössä: <strong>EPSG:4326</strong> (WGS 84) ja <strong>EPSG:900913</strong> (Google Mercator): <img src="img/harjoitus_9/image7.png" /></p>
+<p>Selaa vielä tämän näkymän alaosaan, josta selviää <strong>Available gridsets</strong> -osiosta, mitkä karttatiiliruudukot ovat oletuksena käytössä: <img src="img/harjoitus_9/image7.png" /></p>
 <div class="hint-box">
 <p>Psst! Tasokohtaisia tiilitysasetuksia pääset myös muokkaamaan Data → Layers näkymän kautta valitsemalla tason ja sen jälkeen Tile Caching -välilehden.</p>
 </div>
@@ -295,8 +295,8 @@ type="button" onclick="navToggle()" aria-label="Toggle navigation">
 <p>Tiilien luomista varten asetukset löytyvät sivun alapuolelta <strong>Create a new task</strong> -osiosta.</p>
 <table>
 <colgroup>
-<col width="23%" />
-<col width="76%" />
+<col width="27%" />
+<col width="72%" />
 </colgroup>
 <tbody>
 <tr class="odd">
@@ -323,36 +323,54 @@ type="button" onclick="navToggle()" aria-label="Toggle navigation">
 <td>Mittakaavavälit luotavalle karttatiilille (mittakaavat on määritelty karttatiiliruudukoille)</td>
 </tr>
 <tr class="even">
+<td><strong>Modifiable Parameters</strong></td>
+<td>Kertoo mitkä WMS-pyynnön muuttujat vaikuttavat tiilien ulkoasuun ja pitää siksi huomioida</td>
+</tr>
+<tr class="odd">
 <td><strong>Bounding box</strong></td>
 <td>Sijainnin suorakaiderajaus, jolta karttatiilet luodaan</td>
 </tr>
+<tr class="even">
+<td><strong>Tile failure retries</strong></td>
+<td>Montako kertaa yritetään luoda tiiltä jos sen luonti epäonnistuu</td>
+</tr>
+<tr class="odd">
+<td><strong>Pause before retry (ms)</strong></td>
+<td>Epäonnistuneen luonnin jälkeen pidettävä tauko (millisekunneissa)</td>
+</tr>
+<tr class="even">
+<td><strong>Total failures before aborting</strong></td>
+<td>Montako epäonnistunutta tiilenluontikertaa, kunnes lopetetaan koko prosessi</td>
+</tr>
 </tbody>
 </table>
-<p>Aseta <strong>Number of tasks to use</strong> -asetukseksi 1.</p>
+<p><br />
+</p>
 <div class="hint-box">
-<p>Psst! 2*tietokoneen_suorittimien_lukumäärä on hyvä lähtökohta kokeilulle.</p>
+<p>Psst! Jos et tiedä mitä voit laittaa kohtaan “Number of tasks to use”, 2*tietokoneen_suorittimien_lukumäärä on hyvä lähtökohta kokeilulle.</p>
 </div>
+<p>Aseta <strong>Number of tasks to use</strong> -asetukseksi 1.</p>
 <p>Aseta tehtävän asetukset seuraavalla tavalla, huomaa erityisesti <strong>Zoom stop</strong> -asetus. Laita arvoksi 15, niin lasketaan valmiiksi mittakaavatasot 0-15:</p>
 <p>Paina <strong>Submit</strong>.</p>
 <p>GeoServer (GeoWebCache) muodostaa nyt karttatiilet valitusta palvelusta mittakaavatasoista 0–15.</p>
 <p>Muodostamisen ajan käyttöliittymässä voi seurata karttatiilien valmistumista:</p>
 <p>Paina <strong>Refresh list</strong> -linkkiä, kun haluat päivittää tiedot laskennan etenemisestä.</p>
-<p>Karttatiiliruudukon määritelmä ja tason sijainnin rajauksen mukaan mittakaavoille 0-15 tarvitaan 1 922 karttatiiltä. Kuvien piirtäminen kestää etäpalvelimella näillä asetuksilla minuutin verran.<br />
+<p>Karttatiiliruudukon määritelmän ja tason sijainnin rajauksen mukaan mittakaavoille 0–15 tarvitaan 1 090 karttatiiltä. Kuvien piirtäminen kestää etäpalvelimella näillä asetuksilla minuutin verran.<br />
 <img src="img/harjoitus_9/image10.png" /></p>
 <p>Huomaa, että karttatiilet luodaan oletuksena tason sijainnin rajauksen mukaisesti (ellei sitä toisin ole määritelty). <img src="img/harjoitus_9/image11.png" /></p>
 <p>Laske vielä karttatiilet <strong>tasolle 16</strong> (määrittele zoomaus aloitus- ja lopputasoksi 16). Päivitä laskennan aikana sivua ja tutki karttatiilien luomisen etenemistä.<br />
 <img src="img/harjoitus_9/image12.png" /></p>
 <p>Jos erehdyt määrittelemään vääriä asetuksia, voit pysäyttää laskennan käyttämällä <strong>Kill all Tasks…</strong> -toimintoa painamalla <strong>Submit</strong>-näppäintä. <img src="img/harjoitus_9/image13.png" /></p>
-<p>Taso 16 vastaa mittakaavaa 1:4 262. Kaikkiaan sen tiilittämiseen tarvitaan 3 700 karttatiiliä, joiden luomiseen menee noin pari minuuttia. Laske vielä taso 17 samalla tavalla ja kirjoita muistiinpanot prosessorimäärästä, karttatiilistä sekä ajasta.</p>
+<p>Taso 16 vastaa mittakaavaa 1:4 261. Kaikkiaan sen tiilittämiseen tarvitaan 1 936 karttatiiliä, joiden luomiseen menee noin pari minuuttia. Laske vielä taso 17 samalla tavalla ja kirjoita muistiinpanot prosessorimäärästä, karttatiilistä sekä ajasta.</p>
 <p>Taso 17 näyttää kartalla tältä: <img src="img/harjoitus_9/image14.png" /></p>
 </div>
 <div id="karttatiilien-kovalevyn-käyttö" class="section level2" number="10.6">
 <h2><span class="header-section-number">10.6</span> <strong>Karttatiilien kovalevyn käyttö</strong></h2>
-<p>Edellisessä kohdassa laskettiin karttatiiliä vain yhdelle tasolle (<strong>ilmakuvat_keskusta</strong>), vain yhteen karttatiiliruudukkoon (<strong>EPSG:4326</strong>) ja vain yhdelle kuvaformaatille (<strong>png</strong>). Tämän karttatason mittakaavatason 16 karttatiilet vievät noin 300 MB levytilaa.</p>
+<p>Edellisessä kohdassa laskettiin karttatiiliä vain yhdelle tasolle (<strong>ilmakuvat</strong>), vain yhteen karttatiiliruudukkoon (<strong>EPSG:4326</strong>) ja vain yhdelle kuvaformaatille (<strong>png</strong>). Tämän karttatason mittakaavatason 16 karttatiilet vievät noin 240 MB levytilaa.</p>
 <p>Karttatasoilla saattaa olla useita karttatiilipalveluita riippuen siitä, kuinka monta karttatiiliruudukkoa ja kuvatyyppiä on tason tiilitysasetuksissa määritelty.</p>
 <p>Karttatiilien luominen kannattaa suunnitella etukäteen ja toteuttaa huolellisesti. Yksi tärkeä asetus karttatiilipalveluissa on karttatiilien kovalevyn käytön tarkkaileminen ja hallinnointi. Siihen on GeoWebCache:ssa erilaisia asetuksia ja osaa niistä voi säätää suoraan GeoServeristä.</p>
-<p>Avaa <strong>Tile Caching → Tile Layers</strong> -näkymästä <strong>ilmakuvat_keskusta</strong> tason asetukset. Avaa vielä <strong>Tile Caching</strong> välilehti.</p>
-<p>Sivun asetuksista voit tarkistaa, että sekä <strong>jpeg</strong>- että <strong>png</strong>-kuvaformaatit ovat rastitettuina. Sen lisäksi on määritelty <strong>kaksi eri karttatiiliruudukkoa</strong> käytettäväksi. Tämä tarkoittaa sitä, että tämä taso on saatavilla kuudella eri karttatiilitasolla. Äskettäin laskettiin valmiiksi karttatiiliä vain yhdelle.</p>
+<p>Avaa <strong>Tile Caching → Tile Layers</strong> -näkymästä <strong>ilmakuvat</strong> tason asetukset. Avaa vielä <strong>Tile Caching</strong> välilehti.</p>
+<p>Sivun asetuksista voit tarkistaa, että sekä <strong>jpeg</strong>- että <strong>png</strong>-kuvaformaatit ovat rastitettuina. Sen lisäksi on määritelty <strong>neljä eri karttatiiliruudukkoa</strong> käytettäväksi. Tämä tarkoittaa sitä, että tämä taso on saatavilla kahdeksalla eri karttatiilitasolla. Äskettäin laskettiin valmiiksi karttatiiliä vain yhdelle.</p>
 <p>Voit tarkistaa kovalevyn käytön tasokohtaisesti <strong>Tile Caching → Tile Layers</strong> -näkymästä. Huomaa kuitenkin, että oletusasetuksilla tämä tieto ei ole saatavilla (<strong>N/A</strong>).</p>
 <p><img src="img/harjoitus_9/image15.png" /></p>
 <p>Tiedon näkymiseksi pitää ensin määrittää, kuinka paljon kovalevytilaa karttatiilipalvelulla on lupa käyttää. Oletuksena GeoWebCache voi käyttää koko palvelimen levytilan.</p>
@@ -364,24 +382,22 @@ type="button" onclick="navToggle()" aria-label="Toggle navigation">
 </div>
 <p>Huomaa vielä, että <strong>When enforcing disk quota limits, remove tiles that are</strong> -asetus tarkoittaa se, että GeoServer/GeoWebCache ei lopeta karttatiilien luomista, vaikka määritelty maksimi-karttatiilien levykäyttö saavutettaisiin. Sallitun levytilan täyttymisen jälkeen palvelin alkaa poistaa automaattisesti joko vähiten tai pitkän aikaan käyttämättä olleita karttatiiliä. Karttatiiliä tuotetaan siis jatkuvasti, vaikka maksimilevytilan raja tulisikin täyteen.</p>
 <p>Paina <strong>Save</strong> ja palaa <strong>Tile Caching → Tile Layers -</strong>näkymään.</p>
-<p>Tarkista, että nyt <strong>Disk Used</strong> -sarakkeessa näkyy tarvittavat tiedot. Ilmakuvien karttatiilet vievät tällä hetkellä alle 500 megatavua. Muut tasot eivät käytä yhtään levytilaa. <img src="img/harjoitus_9/image17.png" /></p>
+<p>Tarkista, että nyt <strong>Disk Used</strong> -sarakkeessa näkyy tarvittavat tiedot. Ilmakuvien karttatiilet vievät tällä hetkellä yli 700 megatavua. Muut tasot eivät käytä yhtään levytilaa. <img src="img/harjoitus_9/image17.png" /></p>
 <p>Karttatiilet tulevat myös tallennetuksi automaattisesti aina karttatiilipalvelun luodessa karttatiiliä. Kokeile esikatsella eri tasojen karttatiilitasoja (<strong>Tile Caching</strong> → <strong>Tile Layers</strong> → <strong>Preview</strong>). Esimerkiksi rakennukset- ja taustakartta-tasoja. <img src="img/harjoitus_9/image18.png" /></p>
 <p>Voidaan todeta, että sen jälkeen myös niiden kohdalla <strong>Disk Used</strong> -sarakkeessa on tietoa levytilan käytöstä. Niiden levytilan käyttö kasvaa sitä mukaan kun eri kartta-alueita ja tiilitasoja käytetään. <img src="img/harjoitus_9/image19.png" /></p>
-<p>Edellisessä kohdassa laskettiin muutama karttatiilitasoja. Esimerkiksi Helsingin ilmakuvien mittakaavatason 16 karttatiilet vievät levytilaa reilut 300 megatavua.</p>
-<p>Tasojen käyttämää levytilaa voidaan myös vapauttaa. Voit halutessasi tyhjentää tietyn tason kaikki karttatiilet käyttäen tason <strong>Empty</strong>-linkkiä. Kokeile tyhjentää <strong>hki-rakennukset</strong>-tason karttatiilet.</p>
+<p>Edellisessä kohdassa laskettiin muutamia karttatiilitasoja. Esimerkiksi Helsingin ilmakuvien mittakaavatason 16 karttatiilet vievät levytilaa yli 200 megatavua.</p>
+<p>Tasojen käyttämää levytilaa voidaan myös vapauttaa. Voit halutessasi tyhjentää tietyn tason kaikki karttatiilet käyttäen tason <strong>Empty</strong>-linkkiä. Kokeile tyhjentää <strong>rakennukset</strong>-tason karttatiilet.</p>
 <p>On mahdollista myös tyhjentää ainoastaan tietyn mittakaavan karttatiilet GeoWebCache-käyttöliittymällä: </p>
 <ul>
-<li><p>Avaa <strong>ilmakuvat_keskusta</strong>-tason oikealta <strong>Seed/Truncate</strong> ja valitse mittakaavataso 17 alku- ja loppumittakaavaksi.</p></li>
+<li><p>Avaa <strong>ilmakuvat</strong>-tason oikealta <strong>Seed/Truncate</strong> ja valitse mittakaavataso 17 alku- ja loppumittakaavaksi.</p></li>
+<li><p>Valitse sama <strong>Grid Set</strong> asetus kuin aikaisemmin, eli EPSG:4326.</p></li>
 <li><p>Valitse toiminnoksi <strong>Truncate</strong> ja lopuksi <strong>Submit</strong>. Tällä tavalla poistat palvelimesta kaikki mittakaavatason 17 karttatiiltä.</p></li>
 <li><p>Voit tarkistaa <strong>Tile Layers</strong> -näkymästä <strong>ilmakuvat_keskusta</strong>-tason nykyisen kovalevyn käytön.</p></li>
 </ul>
-<div class="hint-box">
-<p>Psst! Helsingin ilmakuvien mittakaavataso 17 vaatii 1,4 GB.</p>
-</div>
 </div>
 <div id="karttatiiliruudukot" class="section level2" number="10.7">
 <h2><span class="header-section-number">10.7</span> <strong>Karttatiiliruudukot</strong></h2>
-<p>GeoServerin oletusasennuksesta löytyy muutama valmiiksi määritelty karttatiiliruudukko. Nämä ruudukot ovat joko WGS 84 tai Web Mercator -koordinaattijärjestelmässä.</p>
+<p>GeoServerin oletusasennuksesta löytyy valmiiksi määriteltyjä karttatiiliruudukoita.</p>
 <p>Avaa <strong>Tile Caching → Gridsets</strong> ja paina sitten <strong>EPSG:4326</strong> -nimistä ruudukkoa. <img src="img/harjoitus_9/image20.png" /></p>
 <p>Karttatiiliruudukon määritelmiin kuuluvat muun muassa:</p>
 <table>
@@ -405,7 +421,8 @@ type="button" onclick="navToggle()" aria-label="Toggle navigation">
 </tr>
 </tbody>
 </table>
-<p>Karttatiiliruudukkoja voi myös laatia omiin tarpeisiin.</p>
+<p><br />
+Karttatiiliruudukkoja voi myös laatia omiin tarpeisiin.</p>
 </div>
 <div id="lisätehtäviä" class="section level2" number="10.8">
 <h2><span class="header-section-number">10.8</span> <strong>Lisätehtäviä</strong></h2>
@@ -413,7 +430,7 @@ type="button" onclick="navToggle()" aria-label="Toggle navigation">
 </div>
 <div id="jhs180-mukainen-karttatiiliruudukko" class="section level2" number="10.9">
 <h2><span class="header-section-number">10.9</span> <strong>JHS180 mukainen karttatiiliruudukko</strong></h2>
-<p>JHS180 suosituksesta löytyy muun muassa suositus kansallisesta karttatiiliruudukosta, joka perustuu OGC-standardien määrittelyihin. Suosituksesta löytyy muun muassa seuraavat määritelmät:</p>
+<p><a href="https://geoforum.fi/jhs-180-paikkatiedon-sisaltopalvelut/">JHS180</a> suosituksesta löytyy muun muassa suositus kansallisesta karttatiiliruudukosta, joka perustuu OGC-standardien määrittelyihin. Suosituksesta löytyy muun muassa seuraavat määritelmät:</p>
 <table>
 <colgroup>
 <col width="21%" />
@@ -446,8 +463,9 @@ type="button" onclick="navToggle()" aria-label="Toggle navigation">
 </tr>
 </tbody>
 </table>
-<p>Näillä määritelmillä, karkeimmalla resoluutiotasolla (taso 0) on vain yksi tiilikuva kooltaan 2 097 152 m * 2 097 152 m (8 192*8 192 pikseliä). Tämän kuvatiilen pohjois-etelä -suuntainen keskilinja sijoittuu projektiokaistan keskimeridiaanille (27 astetta). Ja tiilen pohjoisreunan pohjoiskoordinaatti on tiilen koon monikerta päiväntasaajalta laskien (4 * 2 097 152).</p>
-<p>Seuraava taso (taso 1) muodostuu jakamalla 0 tason ainoa tiili neljään yhtä suureen osaan. Ja niin edelleen muodostuvat seuraavat tasot, taso 15 asti. Katso tarkemmin luentomateriaalista.</p>
+<p><br />
+Näillä määritelmillä, karkeimmalla resoluutiotasolla (taso 0) on vain yksi tiilikuva kooltaan 2 097 152 m * 2 097 152 m (8 192*8 192 pikseliä). Tämän kuvatiilen pohjois-etelä -suuntainen keskilinja sijoittuu projektiokaistan keskimeridiaanille (27 astetta). Ja tiilen pohjoisreunan pohjoiskoordinaatti on tiilen koon monikerta päiväntasaajalta laskien (4 * 2 097 152).</p>
+<p>Seuraava taso (taso 1) muodostuu jakamalla 0-tason ainoa tiili neljään yhtä suureen osaan. Tämä tapa jatkuu tasolle 15 asti.</p>
 </div>
 <div id="uuden-karttatiiliruudukon-luominen" class="section level2" number="10.10">
 <h2><span class="header-section-number">10.10</span> <strong>Uuden karttatiiliruudukon luominen</strong></h2>
@@ -455,7 +473,7 @@ type="button" onclick="navToggle()" aria-label="Toggle navigation">
 <p>Valitse <strong>Tile caching → Gridset</strong> päävalikosta ja luo uusi karttatiiliruudukko painamalla <strong>Create a new gridset</strong>.</p>
 <p>Anna nimeksi esimerkiksi <strong>JHS180_EPSG3067</strong> ja kirjoita lyhyt määritelmä ruudukosta.</p>
 <p>Valitse <strong>Coordinate Reference System</strong> -arvoksi <strong>EPSG 3067</strong>.</p>
-<p>Määrittele vielä ruudukon kattavuus aiemmin mainituilla JHS180 suosituksella, eli karkeamman tason kattavuus.</p>
+<p>Määrittele vielä ruudukon kattavuus aiemmin mainituilla JHS180-suosituksella, eli karkeamman tason kattavuus.</p>
 <p>Suosituksissa sanotaan, että vasemman yläkulman koordinaatit (origo) ovat itäkoordinaatti <strong>-548 576</strong> m ja pohjoiskoordinaatti <strong>8 388 608</strong> m. Näitä vastaavat <strong>Min X</strong> ja <strong>Max Y</strong> koordinaatit. Karkeamman tason koko metreinä on 2097152 * 2097152 joten:</p>
 <p><strong>Max X</strong> on sitten: -548576 + 2097152 = <strong>1 548 576</strong> m</p>
 <p><strong>Min Y</strong> on sitten: 8388608 – 2097152 = <strong>6 291 456</strong> m</p>
@@ -491,23 +509,24 @@ type="button" onclick="navToggle()" aria-label="Toggle navigation">
 <h2><span class="header-section-number">10.11</span> <strong>Suomen OpenStreetMap-tiestö</strong></h2>
 <p>Äskettäin luomamme karttatiiliruudukko soveltuu aineistoihin, jotka kattavat koko Suomen.</p>
 <p>Aiemmissa harjoituksissa olet harjoitellut aineistojen käyttöönottoa GeoServerissä. Samasta jo aiemmin käytetystä <strong>gs_training</strong> PostGIS-tietokannasta löytyy Suomen OpenStreetMap-tiestöaineisto <strong>EPSG 3067</strong> -koordinaattijärjestelmässä.</p>
-<p>Luo uusi taso tiestö-aineistosta. Suomen aineisto löytyy tietokannasta <strong>suomi</strong>-skeemasta nimellä <strong>osm-tiet</strong>.</p>
+<p>Luo uusi taso tiestö-aineistosta. Suomen aineisto löytyy tietokannasta <strong>suomi</strong>-skeemasta nimellä <strong>osm_tiet</strong>.</p>
 <div class="hint-box">
 <p>Psst! Muista, että ensin luodaan store, josta luodaan viittaus edellä mainittuun skeemaan ja sen jälkeen voidaan lisätä tasoja GeoServer-palvelimelle.</p>
 </div>
 <p><strong>Voit katsoa ohjeita paikkatietokannat-harjoituksesta</strong>, jossa lisättiin aineistoja GeoServeriin PostGIS-paikkatietokannasta. Voit myös kysyä tarvittaessa kouluttajalta.</p>
 <p>Luo workspace, anna sille nimeksi <strong>suomi</strong>.</p>
 <p>Luo PostGIS-store, laita se suomi-workspaceen ja nimeä se <strong>suomi_tiesto_3067</strong>:ksi (tietokannan nimi on <strong>gs_training</strong>, skeema on <strong>suomi</strong>, käyttäjä on <strong>postgres</strong> ja salasana on <strong>gispo</strong>).</p>
-<p>Kyseisestä storesta löytyy aineisto nimellä <strong>osm-tiet</strong>. Luo siitä uusi GeoServer-taso, nimeä se <strong>suomi_tiesto_3067</strong>:ksi (täytä myös muut tarvittavat tiedot).</p>
+<p>Kyseisestä storesta löytyy aineisto nimellä <strong>osm_tiet</strong>. Luo siitä uusi GeoServer-taso, nimeä se <strong>suomi_tiesto_3067</strong>:ksi (täytä myös muut tarvittavat tiedot). Muista asettaa koordinaattijärjestelmä (EPSG:3067).</p>
 <p>Tarpeen vaatiessa, voit katsoa mallia alla olevasta kuvakaappauksesta PostGIS-storen luomisesta:</p>
-<p><img src="img/harjoitus_9/image24.png" /> <img src="img/harjoitus_9/image25.png" /></p>
+<p><img src="img/harjoitus_9/image24.png" /></p>
 </div>
 <div id="oman-karttatiiliruudukon-käyttöönotto" class="section level2" number="10.12">
 <h2><span class="header-section-number">10.12</span> <strong>Oman karttatiiliruudukon käyttöönotto</strong></h2>
 <p>Avaa <strong>Tile Caching → Tile Layers</strong> ja paina <strong>suomi_tiesto_3067</strong> -linkkiä. Avaa vielä <strong>Tile Caching</strong> -välilehti ja selaa sivun loppuun, josta löydät karttatiiliruudukko-asetukset.</p>
 <p>Valitse <strong>Available gridsets</strong> -osion alta <strong>Add grid subset</strong> -kohdasta uusi <strong>JHS180_EPSG3067</strong>-karttatiiliruudukko. Paina vielä <strong>plus</strong>-kuvaketta.</p>
 <p>Tarvittaessa voit määritellä, mitkä zoomaus-tasot ovat käytettävissä tai mitkä tallentuvat välimuistiin käyttäen <strong>Published</strong>- ja <strong>Cached zoom levels -asetuksia</strong>.</p>
-<p>Paina lopulta <strong>Save</strong>. <img src="img/harjoitus_9/image26.png" /></p>
+<p>Paina lopulta <strong>Save</strong>.</p>
+<p><img src="img/harjoitus_9/image26.png" /></p>
 <p>Esikatsele nyt <strong>suomi_tiesto_3067</strong> uudella karttatiiliruudukolla näkymästä <strong>Tile Caching → Tile Layers</strong>. Valitse tiestötason kohdalla <strong>JHS180_EPSG3067/png</strong>. </p>
 <p>Esikatselussa on käytössä luomasi EPSG:3067 karttatiiliruudukko (alla huomataan, kuinka käytössä ovat karttatiilet, ja kuinka Etelä-Suomea kohti mentäessä karttatiilet eivät vielä ole ehtineet renderöitymään ruudulle näytönkaappauksen ottohetkeen mennessä):</p>
 <p><img src="img/harjoitus_9/image27.png" /></p>
@@ -545,7 +564,7 @@ type="button" onclick="navToggle()" aria-label="Toggle navigation">
 
 <div class="footer-info">
 <h5 class="footer-title">Johdanto GeoServerin käyttöön</h5>
-<span class="footer-version">v2025-10-31</span>
+<span class="footer-version">v2025-11-05</span>
 <div class="license"><img src="img/by-nd.svg" width="80px" alt="CC-BY-ND"></div>
 </div>
 
