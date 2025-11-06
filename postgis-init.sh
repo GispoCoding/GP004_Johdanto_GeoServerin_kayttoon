@@ -37,3 +37,5 @@ echo "$PGHOST:5432:gs_training:$PGUSER:$PGPASSWORD" > $HOME/.pgpass
 chmod 600 $HOME/.pgpass
 osm2pgsql --output-pgsql-schema=suomi -s -C 1200 -d gs_training -U $PGUSER -H $PGHOST -P 5432 finland-latest.osm.pbf
 psql -d gs_training -c "ALTER TABLE suomi.planet_osm_roads RENAME TO osm_tiet;"
+psql -d gs_training -c "delete from suomi.osm_tiet where boundary!='';"
+psql -d gs_training -c "delete from suomi.osm_tiet where waterway!='';"
