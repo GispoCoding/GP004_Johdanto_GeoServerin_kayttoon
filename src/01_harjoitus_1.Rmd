@@ -40,6 +40,16 @@ Edessäsi on GeoServerin käyttöliittymä. Ennen kuin kirjaudut sisään, näet
 
 Kirjaudu nyt palvelimeen käyttäen tunnuksena **admin** ja salasanana **gispo**. Kun olet kirjautunut GeoServeriin niin näet myös ylävalikon toiminnot.
 
+
+:::hint-box
+GeoServerin oletusasennuksessa on kaksi käyttäjäprofiilia, **master** ja **admin**. Salasanat on vaihdettu oletuksesta seuraavalla tavalla:
+
+**master** →  gispogispo
+
+**admin** →   gispo
+
+:::
+
 ## **Ylävalikko**
 
 Ylävalikon kautta navigoit eri osien välillä. Tässä harjoituksessa keskitytään Geoserver-valikon osioihin.
