@@ -87,7 +87,7 @@ Palataksesi **Welcome**-näkymään voit aina painaa **GeoServer-logoa** sivun v
 
 Server Status -sivulla on tietoa erilaisista GeoServerin asetuksista ja tilasta. Huomaa esimerkiksi **Data directory** -kansion sijainti.
 
-Kirjoita omiin muistiinpanoihisi (harjoituksen viimeinen sivu) palvelimesi **Data directory**:n sijainti.\
+Kirjoita omiin muistiinpanoihisi palvelimesi **Data directory**:n sijainti.\
 
 ![](img/harjoitus_2/image4.png)
 
@@ -228,7 +228,6 @@ Avaa **Styles**-valikko, saat näkyviin listan GeoServerilla olevista kuvaustekn
 ![](img/harjoitus_2/image22.png)
 
 Avaa **giant_polygon**-tyyli ja tutustu GeoServerin käyttämään kuvaustekniikkaformaattiin. Tasojen kuvaustekniikka määritellään käyttäen Styled Layer Descriptor (SLD) -kieltä.
-
 ![](img/harjoitus_2/image23.png)
 
 Kuvaustekniikka on hyvin laaja aihe; siihen tutustutaan erikseen myöhemmin. Kuvaustekniikan toteuttamista voi helpottaa käyttämällä CSS-laajennosta, tätäkin käsitellään myöhemmin koulutuksessa.
