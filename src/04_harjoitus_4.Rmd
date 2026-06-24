@@ -52,7 +52,6 @@ Laaditaan nyt oma kuvaustekniikka Helsingin rakennukset -aineistolle.
 
 Anna uudelle tyylille nimeksi **oletus_polygoni**. Valitse workspace:ksi **helsinki**.
 
-![](img/harjoitus_4/image4.png)
 
 Helpottaakseen omien tyylien kirjoittamisen aloittamista, SLD-koodikentän täyttämiseen voidaan valita malliksi GeoServerin oletustyylit tai kopioida olemassa oleva tyyli.
 
@@ -60,7 +59,7 @@ Valitse **Generate a default style** -alasvetovalikosta **Polygon** ja paina sen
 
 ![](img/harjoitus_4/image5.png)
 
-Voit nyt testata SLD-koodia **Validate-**toiminnolla. Testauksen onnistuminen näkyy ilmoituksena sivun yläpuolella.
+Voit nyt testata SLD-koodia **Validate-**toiminnolla. Testauksen onnistuminen näkyy vihrellä palkilla.
 
 ![](img/harjoitus_4/image6.png)
 
@@ -76,7 +75,7 @@ Avaa **rakennukset**-tason editointinäkymä päävalikosta **Data → Layers**.
 
 Paina sitten **Save**.
 
-**Data → Layer Preview** näkymästä voit nyt esikatsella **rakennukset**-tasoa, uusi tyyli on nyt käytössä.
+**Data → Layer Preview** näkymästä voit nyt esikatsella **rakennukset**-tasoa, uusi tyyli on nyt käytössä. Huomioi, että esikatselu voi olla välillä hidasta riippuen datan määrästä.
 
 ![](img/harjoitus_4/image7.png)
 
@@ -86,10 +85,10 @@ Kannattaa tutustua SLD-tyylien kirjoittamiseen SLD Cookbook -sivuilta. SLD Cookb
 
 Käytetään seuraavaksi pohjana uuteen tyyliimme esimerkkiä **SLD Cookbookista**. 
 
-Avaa uudessa selainikkunassa GeoServerin SLD Cookbook alla olevasta linkistä (tai voit etsiä selaimella Googlesta "geoserver sld cookbook"). Etsi **Polygon with styled label** -kohta ja paina sitä:
+Avaa uudessa selainikkunassa GeoServerin SLD Cookbook alla olevasta linkistä. Tässä harjoituksessa käytetään **[Polygon with styled label](https://docs.geoserver.org/main/en/user/styling/sld/cookbook/polygons/#sld_cookbook_polygons_polygonwithstyledlabel)** -esimerkkiä.
 
 ::: note-box
-<http://docs.geoserver.org/stable/en/user/styling/sld/cookbook/>
+<https://docs.geoserver.org/main/en/user/styling/sld/cookbook/?h=cookbook>
 :::
 
 Löydät lyhyen esityksen kuvaustekniikasta ja SLD-koodin. Tutustu lyhyesti koodiin ja yritä löytää tärkeimmät elementit (tagit) kuten monikulmion viivan ja täytön värit sekä tekstien fonttimääritelmät. Voit kirjoittaa muistiinpanoja tärkeimmistä elementeistä ja määritelmistä harjoituksen viimeiselle sivulle.
