@@ -27,7 +27,7 @@ http://localhost:8080/geoserver
 Edessäsi on GeoServerin käyttöliittymä. Ennen kuin kirjaudut sisään, näet muutamia yleisiä tietoja palvelimesta.
 
 ![](img/harjoitus_1/image1.png)
-**Ylhäällä oikealla (1)** pääset kirjautumaan painamalla symbolia.
+**Ylhäällä oikealla (1)** pääset kirjautumaan painamalla symbolia. Sen vierestä voit vaihtaa kielen.
 
 **Ylhäällä keskellä (2)** on kootusti tietoja palvelimen workspaceista ja tasoista.
 
@@ -40,8 +40,6 @@ Edessäsi on GeoServerin käyttöliittymä. Ennen kuin kirjaudut sisään, näet
 
 Kirjaudu nyt palvelimeen käyttäen tunnuksena **admin** ja salasanana **gispo**. Kun olet kirjautunut GeoServeriin niin näet myös ylävalikon toiminnot.
 
-
-:::hint-box
 GeoServerin oletusasennuksessa on kaksi käyttäjäprofiilia, **master** ja **admin**. Salasanat on vaihdettu oletuksesta seuraavalla tavalla:
 
 **master** →  gispogispo
@@ -50,7 +48,14 @@ GeoServerin oletusasennuksessa on kaksi käyttäjäprofiilia, **master** ja **ad
 
 Ero master ja admin-käyttäjien välillä on se, että admin-käyttäjä on tarkoitettu käytettäväksi web-käyttöliittymän hallinnassa. Itse palvelimen asetusten muokkaamiseen käytetään master-käyttäjää, jolla on oikeudet päästä hallitsemaan GeoServerin root-asetuksia sekä suoraan palvelimella että web-käyttöliittymän kautta. Vältä näiden tunnusten käyttöä tuotannollisten palvelimien ylläpidossa.
 
+
+:::hint-box
+
+Psst! Käyttäjien salasanat voi vaihtaa **Security**-valikon kautta.
+
 :::
+
+Suosittelemme, että käytät kurssilla englannikielistä käyttöliittymää.
 
 ## **Ylävalikko**
 

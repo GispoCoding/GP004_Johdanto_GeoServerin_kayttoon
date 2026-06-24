@@ -2,7 +2,7 @@
 
 **Harjoituksen sisältö**
 
-Harjoituksessa tutustutaan tarkemmin GeoServerin päätoimintoihin käyttöliittymän kautta. Käydään läpi käyttöliittymän eri osioiden päävalintoja ja tärkeimpiä ominaisuuksia.
+Harjoituksessa tutustutaan tarkemmin GeoServerin päätoimintoihin käyttöliittymän kautta. Käydään läpi käyttöliittymän eri osioiden valintoja ja tärkeimpiä ominaisuuksia.
 
 **Harjoituksen tavoite**
 
@@ -12,120 +12,40 @@ Harjoituksen jälkeen opiskelija ymmärtää GeoServerin toimintaa ja eri osioid
 
 35 minuuttia.
 
-## **Valmistautuminen**
-
-Edellisessä harjoituksessa kävimme läpi osan GeoServerin web-käyttöliittymän valikoista. Näiden valikoiden ja toimintojen käyttäminen ei vaatinut sisäänkirjautumista. Tässä harjoituksessa kirjaudumme sisään GeoServerin web-käyttöliittymään ylläpitäjinä, jolloin meille avautuu enemmän valikkoja ja toimintoja.
-
 ## **Ylläpitäjän käyttöliittymä**
-
-Tähän asti käyttöliittymällä on ollut näkyvissä vain kaikille avoimet toiminnallisuudet ja aineistot (ilman tunnistautumista). Näitä voidaan rajoittaa käyttäjäkohtaisesti eri pääsynhallinta-asetusten kautta. Pääsynhallinnan perusteisiin tutustutaan myöhemmin kurssilla.
 
 Kirjaudu nyt palvelimeen käyttäen tunnuksena **admin** ja salasanana **gispo**.
 
-
-Ylläpitäjän näkymä muistuttaa äsken nähtyä käyttöliittymää. Sen rakenne on sama, mutta toiminnallisuuksia ja nähtävillä olevia tietoja on huomattavasti enemmän.
-
-Päävalikosta löytyviä GeoServerin toimintoja on ryhmitelty niiden käyttötarkoituksen mukaan ryhmiin:
+Ylävalikosta löytyviä GeoServerin toimintoja on ryhmitelty niiden käyttötarkoituksen mukaan ryhmiin:
 
 +--------------------------+----------------------------------------------------------------------------+
-| ##### **About & Status** | Yleistä tietoa GeoServerin asennuksesta ja tilasta                         |
+| ##### **GeoServer**      | Yleistä tietoa GeoServerin asennuksesta ja esikatseluosio                  |
 +--------------------------+----------------------------------------------------------------------------+
 | ##### **Data**           | Sisältää aineiston lataamisen, määrittämisen ja kuvaustekniikan toimintoja |
 +--------------------------+----------------------------------------------------------------------------+
 | ##### **Services**       | Valikossa voi määritellä eri paikkatietopalvelujen ominaisuuksia           |
 +--------------------------+----------------------------------------------------------------------------+
-| ##### **Tile Caching**   | Karttatiilipalvelujen asetukset                                            |
+| ##### **Server**         | Yleisiä asetuksia liittyen palvelimeen                                     |
++--------------------------+----------------------------------------------------------------------------+
+| ##### **Tile Cache**     | Karttatiilipalvelujen asetukset                                            |
 +--------------------------+----------------------------------------------------------------------------+
 | ##### **Security**       | Pääsynhallintaan liittyviä asetuksia                                       |
 +--------------------------+----------------------------------------------------------------------------+
-| ##### **Demos**          | Demo-toimintoja GeoServer-palvelujen testaamiseen                          |
-+--------------------------+----------------------------------------------------------------------------+
-| ##### **Tools**          | Palvelimen lisätyökaluja                                                   |
+| ##### **Utilities**      | Lisätyökaluja                                                              |
 +--------------------------+----------------------------------------------------------------------------+
 
-Näiden lisäksi GeoServerin laajennokset voivat lisätä valikkoja käyttöliittymään.
-
-**Päävalikossa** on nyt uusia valikoita ja toiminnallisuuksia. 
-
-Äskettäin läpikäydyt valikot ovat myös muuttaneet muotoaan. Niissä on nyt enemmän tietoa ja ne tarjoavat mahdollisuuden muokata erilaisia tietoja ja asetuksia.
+\
+Näiden lisäksi GeoServerin laajennukset voivat lisätä valikkoja käyttöliittymään.
 
 ![](img/harjoitus_2/image1.png)
 
-### **About GeoServer**
+## **GeoServer-valikko**
 
-Avaa **About GeoServer** ja tutki, mikä GeoServer-versio sinulla on käytössä ja mitkä muiden asennettujen ohjelmistojen versiot ovat. Tämäntyyppiset tiedot ovat tärkeitä palvelimen ongelmia selvitettäessä, tapahtuipa ongelmatilanteiden ratkaiseminen omatoimisesti taikka tukipalvelun avulla.
-
-## **Master- ja Administrator-käyttäjät**
-
-GeoServerin oletusasennuksessa on kaksi käyttäjäprofiilia, **master** ja **admin**. Salasanat on vaihdettu oletuksesta seuraavalla tavalla:
-
-**Master** →  gispogispo
-
-**Admin** →   gispo
-
-::: hint-box
-Psst! Ero master ja admin-käyttäjien välillä on se, että admin-käyttäjä on tarkoitettu käytettäväksi web-käyttöliittymän hallinnassa. Itse palvelimen asetusten muokkaamiseen käytetään master-käyttäjää, jolla on oikeudet päästä hallitsemaan GeoServerin root-asetuksia sekä suoraan palvelimella että web-käyttöliittymän kautta. Vältä näiden tunnusten käyttöä tuotannollisten palvelimien ylläpidossa.
-:::
-
-Näiden käyttäjien salasanat voi vaihtaa tarvittaessa pääsynhallinnan työkaluilla (**Security**-valikko).
-
-## **About & Status -asetukset**
-
-![](img/harjoitus_2/image2.png)
-
-### **Contact Information**
-
-Aloitetaan päivittämällä yhteystiedot. Valitse päävalikosta **About & Status → Contact Information**.
-
-Täytä omilla tiedoilla ainakin kentät **Organization**, **Contact**, **Position** ja **Email**.
-
-![](img/harjoitus_2/image3.png)
-
-Palataksesi **Welcome**-näkymään voit aina painaa **GeoServer-logoa** sivun vasemmasta yläreunasta.
-
-### **Server Status**
-
-Server Status -sivulla on tietoa erilaisista GeoServerin asetuksista ja tilasta. Huomaa esimerkiksi **Data directory** -kansion sijainti.
-
-Kirjoita omiin muistiinpanoihisi palvelimesi **Data directory**:n sijainti.\
-
-![](img/harjoitus_2/image4.png)
-
-### **GeoServer Logs**
-
-GeoServer Logs -valinnan kautta voit katsoa palvelimen lokitietoja. 
-
-![](img/harjoitus_2/image5.png)
+Avaa **GeoServer**-valikko ja tutki, mikä GeoServer-versio sinulla on käytössä ja mitkä muiden asennettujen ohjelmistojen versiot ovat. Tämäntyyppiset tiedot ovat tärkeitä palvelimen ongelmia selvitettäessä, tapahtuipa ongelmatilanteiden ratkaiseminen omatoimisesti taikka tukipalvelun avulla. 
 
 ## **Data-valikko**
 
-Tämä valikko sisältää GeoServerin tärkeimmät toiminnot. Aineistot lisätään ja määritellään näiden toimintojen avulla. Myös aineistojen esikatselu tapahtuu täällä olevia toimintoja käyttäen. Huomaa yhteydet valikon ja kuvassa esitellyn aineistojen järjestäytymisen välillä.
-
-![](img/harjoitus_2/image6.png)
-
-**Styles**-kohdassa määritellään tasoille (**Layers**) kuvaustekniikka, visualisointi. 
-
-**Styles**-määrittelyjä (kuvaustekniikka) käytetään aina kun tasoja julkaistaan WMS-palveluna. Kuvaustekniikka ei ole riippuvainen tasoista: samaa kuvaustekniikkaa voidaan käyttää useilla tasoilla, ja niillä voi olla useita valinnaisia kuvaustekniikoita.
-
-### **Layer Preview**
-
-Tämän valikon avulla on mahdollista esikatsella GeoServerillä julkaistuja karttatasoja.
-
-GeoServerin oletusasennuksessa on julkaistu muutama demotaso, joita voi heti käyttää ja esikatsella.
-
-![](img/harjoitus_2/image7.png)
-
-Tasojen lähtöaineisto voi olla rasteri tai vektori, formaatti on kuvattu näillä kuvakkeilla:
-
- ![](img/harjoitus_2/image8.png) Rasteri
-
- ![](img/harjoitus_2/image9.png) Piste (vektori)                                  ![](img/harjoitus_2/image10.png) Monikulmio (vektori)
-
- ![](img/harjoitus_2/image11.png) Viiva (vektori)                                  ![](img/harjoitus_2/image12.png) Tasoryhmä
-
-Tason esikatselu aukenee OpenLayers-karttaikkunana uuteen selainikkunaan. Huomaa, että aineiston **OpenLayers**-esikatselussa on käytössä kuvaustekniikka, joka on määritelty GeoServerilla oletukseksi. Kuvaustekniikka-teemaan tutustutaan myöhemmin lisää.
-
-Käyttämällä alasvetovalikkoa (**Select one**), voit myös ladata kyseisen tason eri tiedostomuodoissa (GeoTIFF, CSV, Shapefile\...).
+Tämä valikko sisältää GeoServerin tärkeimtä toimintoja. Aineistot lisätään ja määritellään tämän valikon kautta.
 
 ### **Workspaces**
 
@@ -133,7 +53,7 @@ Käyttämällä alasvetovalikkoa (**Select one**), voit myös ladata kyseisen ta
 
 Tyypillisesti samassa workspacessa pidetään samanlaisia ja/tai samasta lähteestä saatuja aineistoja. Esimerkiksi organisaation aineistot voidaan järjestää teemojen mukaan workspacen avulla (ymparisto, kaavoitus, vaesto, terveys, jne.).
 
-Avaa **Workspaces**-valikko, muutama workspace on valmiiksi luotu GeoServerille:
+Avaa **Workspaces**-osio. Muutama workspace on valmiiksi luotu GeoServerille:
 
 ![](img/harjoitus_2/image13.png)
 
@@ -149,7 +69,7 @@ Rastita vielä **Default Workspace**, niin jatkossa juuri luomasi workspace on o
 Psst! URI (Uniform Resource Identifier) on teksti, joka määrittelee tietyn resurssin nimen. Se voi olla nettiosoite tai vaikka suhteellinen hakemisto kovalevystä. Ainoa vaatimus on se, että URI:n arvo on yksilöivä. Voit viitata esimerkiksi osoitteeseen tai kansioon, jossa on säilytetty workspaceen liittyvää dokumentaatiota.
 :::
 
-Paina **Submit** ja olet nyt lisännyt uuden workspacen GeoServerille.
+Paina **Save** ja olet nyt lisännyt uuden workspacen GeoServerille.
 
 Avaa äsken tekemäsi workspace painamalla **helsinki**-workspace **Workspace Name** -kohdan alta ja huomaa, että lisää valintoja on nyt saatavilla. Palataan niihin myöhemmin säädettäessä workspace-kohtaisia asetuksia.
 
@@ -157,7 +77,7 @@ Avaa äsken tekemäsi workspace painamalla **helsinki**-workspace **Workspace Na
 
 Palaa **Workspace**-näkymään painamalla **Cancel**.
 
-Workspaceja voidaan poistaa valitsemalla yksi tai useampi workspace ja painamalla **Remove selected workspace(s)** -toimintoa.
+Workspaceja voidaan poistaa valitsemalla yksi tai useampi workspace ja painamalla **Remove selected workspaces** -toimintoa.
 
 ### **Stores**
 
@@ -169,9 +89,19 @@ Oletusasennuksessa on valmiina **Store**-viittauksia esimerkkiaineistoihin:
 
 Jokaisen Storen vieressä on kuvake joka viittaa aineiston tyyppiin:
 
-Tutustu muutamaan storen asetuksiin. Esimerkiksi **sfdem** viittaa rasteriaineistoon (huomaa kuvake) ja **taz_shapes** viittaa vektoriaineistoon.
+| Ikoni | Aineistotyyppi |
+| :---: | :--- |
+| ![raster-file][icon1] | Rasteriaineisto tiedostossa |
+| ![vector-file][icon2] | Vektoriaineisto tiedostossa |
+| ![vector-db][icon3]   | Vektoriaineisto tietokannassa |
+| ![wfs][icon4]         | Vektori palvelimelta (Web Feature Server) |
 
-![](img/harjoitus_2/image17.png)
+[icon1]: https://docs.geoserver.org/main/en/user/data/webadmin/img/data_stores_type1.png
+[icon2]: https://docs.geoserver.org/main/en/user/data/webadmin/img/data_stores_type2.png
+[icon3]: https://docs.geoserver.org/main/en/user/data/webadmin/img/data_stores_type3.png
+[icon4]: https://docs.geoserver.org/main/en/user/data/webadmin/img/data_stores_type4.png
+\
+Tutustu muutamaan storen asetuksiin. Esimerkiksi **sfdem** viittaa rasteriaineistoon (huomaa kuvake) ja **taz_shapes** viittaa vektoriaineistoon.
 
 Avaa sfdem-store ja taz_shapes-store. Kirjoita muistiinpanoihisi ylös vastaukset seuraaviin kysymyksiin:
 
@@ -183,23 +113,23 @@ Mihin aineistoon sfdem-store viittaa?
 Mihin aineistoon taz_shapes-store viittaa?
 :::
 
-Huomaa, että [**file:data/**](file:data/){.uri} viittaa GeoServerin Data Directory -hakemistoon. Hakemiston sijainti levyjärjestelmässä löytyy **About & Status → Server Status** -valikon kautta.
+Huomaa, että [**file:data/**](file:data/){.uri} viittaa GeoServerin Data Directory -hakemistoon. Hakemiston sijainti levyjärjestelmässä löytyy **Server → Server Status** -valikon kautta.
 
-Store **taz_shapes** viittaa hakemistoon, jossa on useampia vektoriaineistoja, tässä tapauksessa .shp-tiedostoja.
+Store **taz_shapes** viittaa hakemistoon, jossa on useampia vektoriaineistoja, tässä tapauksessa .shp-tiedostoja. 
 
-Avaa vielä **taz_shapes**-store ja huomaa, että asetuksissa on rastittu **Enabled**. Se määrittää onko aineisto käytettävissä palvelimelta tai ei.
+Avaa vielä **taz_shapes**-store ja huomaa, että asetuksissa on rastittu **Enabled**. Se määrittää onko aineisto käytettävissä palvelimelta tai ei. Painamalla **Browse** näet kansiosisällön. 
 
 ![](img/harjoitus_2/image18.png)
 
 Toisin sanoen haluttaessa estää jonkin aineiston käyttöä GeoServerin kautta, ei tarvitse muuta kun jättää rastittamatta **Enabled**-valinta joko layer-, store- tai jopa workspace-valikossa.\
 
-![](img/harjoitus_2/image19.png)
+Nyt kun olet avannut taz_shapes-storen niin GeoServer näyttää sinulle siihen liittyvän workspacen tiedo (huomaat sen sillä että valikoissa on kansio-kuvakkeet). Jotta pääset takaisin globaalinäkymäät voit painaa GeoServer-logoa ylävasemmalla.
 
 ### **Layers**
 
 Tasot (**Layers**) määrittelevät yhden aineistolähteen (**Store**) julkaisemisen ominaisuudet, kuten kuvaustekniikan, koordinaattijärjestelmän, metatiedot, palvelun ominaisuudet, karttatiilipalvelun (tile caching) määrittelyt jne.
 
-Yksi taso vastaa yhtä aineistoa. Aineisto voidaan julkaista useisiin eri tasoihin, esimerkiksi eri kuvaustekniikoilla tms.
+Yksi taso vastaa yhtä aineistoa. Aineisto voidaan julkaista useisiin eri tasoihin, esimerkiksi eri kuvaustekniikoilla.
 
 **Layers**-näkymässä on mahdollista muokata, lisätä tai poistaa tasoja. **Layers**-näkymän taulukossa on nähtävissä muutama taso ja niiden nimet (**Name**). Taulukossa lukee myös tason otsikko (**Title**) ja missä **Store**ssa aineistot sijaitsevat.
 
@@ -223,43 +153,74 @@ Tutustumme tarkemmin tasoasetuksiin myöhemmin, kun lisäämme omia aineistoja G
 
 ## **Styles**
 
+**Styles**-kohdassa määritellään tasoille (**Layers**) kuvaustekniikka, visualisointi. 
+
+**Styles**-määrittelyjä (kuvaustekniikka) käytetään aina kun tasoja julkaistaan WMS-palveluna. Kuvaustekniikka ei ole riippuvainen tasoista: samaa kuvaustekniikkaa voidaan käyttää useilla tasoilla, ja niillä voi olla useita valinnaisia kuvaustekniikoita.
+
 Avaa **Styles**-valikko, saat näkyviin listan GeoServerilla olevista kuvaustekniikoista.
 
 ![](img/harjoitus_2/image22.png)
 
 Avaa **giant_polygon**-tyyli ja tutustu GeoServerin käyttämään kuvaustekniikkaformaattiin. Tasojen kuvaustekniikka määritellään käyttäen Styled Layer Descriptor (SLD) -kieltä.
+
 ![](img/harjoitus_2/image23.png)
 
-Kuvaustekniikka on hyvin laaja aihe; siihen tutustutaan erikseen myöhemmin. Kuvaustekniikan toteuttamista voi helpottaa käyttämällä CSS-laajennosta, tätäkin käsitellään myöhemmin koulutuksessa.
+Kuvaustekniikka on hyvin laaja aihe ja siihen tutustutaan erikseen myöhemmin. Kuvaustekniikan toteuttamista voi helpottaa käyttämällä CSS-laajennusta, tätäkin käsitellään myöhemmin koulutuksessa.
 
 ## **Services**
 
-GeoServerin rajapintapalvelujen (WFS, WMS ja WCS) yleisasetukset määritellään **Services**-valikon kautta; näihin tutustutaan tarkemmin myöhemmin.
+GeoServerin rajapintapalvelujen (WFS, WMS ja WCS) yleisasetukset määritellään **Services**-valikon kautta ja näihin tutustutaan tarkemmin myöhemmin.
 
 ![](img/harjoitus_2/image24.png)
 
-## **Settings**
+## **Server**
 
-Tämä valikko sisältää erilaisia asetuksia kuten:
+Tässä osiossa voi määritellä palvelimen yleisiä asetuksia.
 
-+--------------------------------------+-----------------------------------------------------------------------------+
-| **Global**                           | Rajapintapalvelujen asetuksia ja lokitietojen asetuksia                     |
-+--------------------------------------+-----------------------------------------------------------------------------+
-| **Image Processing**                 | Kuvien (WMS-ja WCS-palvelujen) käsittelyyn liittyviä asetuksia              |
-+--------------------------------------+-----------------------------------------------------------------------------+
-| **Raster Access**                    | Rasteriaineiston käsittelyyn liittyviä muisti- ja CPU-asetuksia |
-+--------------------------------------+-----------------------------------------------------------------------------+
+### **Contact Information**
 
-## **Tile Caching**
+Päivitetään GeoServerin yhteystiedot. Valitse **Server → Contact Information**.
 
-Tämän valikon kautta määritellään karttatiilipalvelujen (tile caching) asetuksia. Karttatiilipalveluihin tutustutaan tarkemmin myöhemmin.
+Täytä omilla tiedoilla ainakin kuvassa merkityt kentät. Nämä tiedot ovat tärkeitä metatietoja GeoServerin ulkopuolisille käyttäjille.
 
-![](img/harjoitus_2/image25.png)
+![](img/harjoitus_2/image3.png)
+
+### **Server Status**
+
+Server Status -sivulla on tietoa erilaisista GeoServerin asetuksista ja tilasta. Huomaa esimerkiksi **Data directory** -kansion sijainti.
+
+Kirjoita omiin muistiinpanoihisi palvelimesi **Data directory**:n sijainti, joka ei välttämättä ole sama kuin kuvassa.\
+
+![](img/harjoitus_2/image4.png)
+
+### **Logs**
+
+Logs -valinnan kautta voit katsoa palvelimen lokitietoja. 
+
+![](img/harjoitus_2/image5.png)
+
+
+
+### **Global Settings**
+
+Tämä osio sisältää muun muassa rajapintapalvelujen asetuksia ja lokitietojen asetuksia. 
+
+### **Image Processing**
+
+Tämä osio sisältää Kuvien (WMS-ja WCS-palvelujen) käsittelyyn liittyviä asetuksia. 
+
+### **Raster Access**  
+Tämä osio sisältää rasteriaineiston käsittelyyn liittyviä muisti- ja CPU-asetuksia. 
+
+
+## **Tile Cache**
+
+Tämän valikon kautta määritellään karttatiilipalvelujen (tile caching) asetuksia. Karttatiilipalveluihin ja tämän valikon osioihin tutustutaan tarkemmin myöhemmin.
 
 ## **Security**
 
-Valikko sisältää GeoServerin pääsynhallintaan liittyvät asetukset. Huomaa, että muun muassa pääsynhallinta voidaan määrittää sekä käyttäjä-, ryhmä- ja roolikohtaisesti että aineisto- ja palvelukohtaisesti. Vilkaise nyt **Users**, **Groups, and Roles** -valikkoon.
+Valikko sisältää GeoServerin pääsynhallintaan liittyvät asetukset. Huomaa, että muun muassa pääsynhallinta voidaan määrittää sekä käyttäjä-, ryhmä- ja roolikohtaisesti että aineisto- ja palvelukohtaisesti. Vilkaise nyt **Users**, **Groups, Roles** -valikkoa.
 
 ![](img/harjoitus_2/image26.png)
 
-Pääsynhallintaa käsitellään tarkemmin myöhemmin.
+Myös pääsynhallintaa käsitellään tarkemmin myöhemmin.
