@@ -16,7 +16,7 @@
 
 <meta name="author" content="Gispo Oy" />
 
-<meta name="date" content="2025-11-05" />
+<meta name="date" content="2026-06-24" />
 
 
 <meta name="description" content="2 HARJOITUS 1.1: ASENNUS JA KÄYTTÖÖNOTTO | Johdanto GeoServerin käyttöön">
@@ -283,7 +283,7 @@ type="button" onclick="navToggle()" aria-label="Toggle navigation">
 <h3><span class="header-section-number">2.2.2</span> <strong>Palvelutoiminnallisuudet</strong></h3>
 <p>Palaa palvelimen pääsivulle painamalla <strong>GeoServer-logoa</strong>.</p>
 <p>Ennen kun kirjaudutaan palvelimelle voit nähdä, mitä rajapintapalveluita käytössä olevalla GeoServerin asennuksella on mahdollista julkaista.</p>
-<p>Harjoituksen GeoServerille on asennettu oletuksena WCS, WFS, WMS, TMS, WMS-C ja WMTS. Muita rajapintapalveluita, kuten esimerkiksi WPS-palvelu, voidaan julkaista GeoServeriin laajennosten avulla. Painamalla rajapintapalvelujen versionumeroita, voit tutustua niiden toiminnallisuuksiin (capabilities).</p>
+<p>Harjoituksen GeoServerille on asennettu oletuksena WCS, WFS, WMS, TMS, WMS-C ja WMTS. Muita rajapintapalveluita, kuten esimerkiksi WPS-palvelu, voidaan julkaista GeoServeriin laajennusten avulla. Painamalla rajapintapalvelujen versionumeroita, voit tutustua niiden toiminnallisuuksiin (capabilities).</p>
 <p>Tämä osio on nähtävissä vain aloitussivulla. Muista, että aloitussivuun pääset aina painamalla GeoServer-logoa.</p>
 </div>
 <div id="demos" class="section level3" number="2.2.3">
@@ -306,7 +306,13 @@ type="button" onclick="navToggle()" aria-label="Toggle navigation">
 <p>Koordinaatit esitetään WKT-formaatissa (Well Known Text).</p>
 <p>Seuraavassa kuvassa on pistegeometria määritelty WKT-formaatissa EPSG:3067 koordinaattijärjestelmässä <strong>POINT (522800 7615630)</strong>:</p>
 <p><img src="img/harjoitus_1/image3.png" /></p>
-<p>Voit myös kokeilla ETRS89 / TM35FIN -viivageometriaa. Löydät esimerkkitiedoston koulutuskansiosta nimellä <strong>esimerkki_wkt_geometry_3067.txt</strong>. Avaa se tekstieditorissa ja käytä sitä <strong>Reprojection console</strong> -työkalussa. Kokeile muuntaa se esimerkiksi WGS 84 -järjestelmään.</p>
+<p>Voit myös kokeilla ETRS89 / TM35FIN -viivageometriaa. Löydät esimerkin seuraavassa laatikossa.</p>
+<div class="file-content-box">
+<p>MULTILINESTRING ((648023.291968740755692 7710356.988362550, 647623.264163991552778 7709773.493117010220885,
+647025.100957126589492 7709395.217135690152645, 646919.555495914653875 7709322.892699570395052, 646428.536749321036041
+7708986.160282356664538, 646070.417665179818869 7708777.868454321287572))</p>
+</div>
+<p>Kopioi laatikon sisältö ja käytä sitä <strong>Reprojection console</strong> -työkalussa. Kokeile muuntaa se esimerkiksi WGS 84 -järjestelmään.</p>
 <p><img src="img/harjoitus_1/image4.png" /></p>
 </div>
 <div id="wcs-request-builder" class="section level2" number="2.4">
@@ -331,7 +337,7 @@ type="button" onclick="navToggle()" aria-label="Toggle navigation">
 
 <div class="footer-info">
 <h5 class="footer-title">Johdanto GeoServerin käyttöön</h5>
-<span class="footer-version">v2025-11-05</span>
+<span class="footer-version">v2026-06-24</span>
 <div class="license"><img src="img/by-nd.svg" width="80px" alt="CC-BY-ND"></div>
 </div>
 
