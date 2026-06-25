@@ -74,7 +74,7 @@ Paina **Publish** tason julkaisemiseksi.
 Luodaan ja julkaistaan nyt uusi taso. Jos et vielä tehnyt niin, paina **Publish** niin pääset muuttamaan julkaistavan tason ominaisuuksia.
 
 ::: hint-box
-Psst! Jos ehdit poistumaan edellisestä näkymästä, samaan uuden tason luonti -näkymään pääsee Data \> Layers \> Add a new layer ja valitsemalla haluttu store (meidän tapauksessa helsinki:hki_rakennukset).
+Psst! Jos ehdit poistumaan edellisestä näkymästä, samaan uuden tason luonti -näkymään pääsee Data → Layers → Add a new layer ja valitsemalla haluttu store (meidän tapauksessa helsinki:hki_rakennukset).
 :::
 
 Tason julkistamisen ominaisuudet ovat jaettu viiteen välilehteen:

@@ -20,9 +20,9 @@ Aiemmissa harjoituksissa on luotu GeoServerin palvelimelle taso **rakennukset**,
 
 WMS-palvelut visualisoivat karttakuvia GeoServerissä ennalta määritetyillä kuvaustekniikoilla. Tähän asti olemme käyttäneet oletuskuvaustekniikoita aina lisättyämme uusia aineistoja, esimerkiksi kun olemme esikatselleet jotain tasoa.
 
-Avaa päävalikosta **Layers**-näkymä ja **rakennukset**-taso. Avaa sitten **Publishing**-välilehti. ![](img/harjoitus_4/image1.png)
+Avaa Ylävalikosta **Data** ja sen jälkeen **Layers** ja avaa **rakennukset**-taso. Avaa sitten **Publishing**-välilehti. ![](img/harjoitus_4/image1.png)
 
-Huomaa, että **WMS Settings** -kohdasta löytyy **Default Style** -valikko, johon on valittu **polygon**-kuvaustekniikka.
+Huomaa, että **Cartography Settings** -kohdasta löytyy **Default Style** -valikko, johon on valittu **polygon**-kuvaustekniikka.
 
 \
 
@@ -34,11 +34,11 @@ GeoServerin tyylit on määritelty **Styled Layer Descriptorilla** (SLD), joka o
 
 Poistu tason näkymästä ja avaa **Data → Styles** näkymä päävalikon alta. Tässä näkymässä määritellään tyylit (kuvaustekniikat), joita WMS-karttatasoissa käytetään.
 
-Listalla on parikymmentä tyyliä valmiina, jotka tulevat GeoServerin asennuksen mukana. Katsotaan aluksi, miltä **rakennukset**-tason käyttämä polygon-tyyli näyttää. Avaa se painamalla **polygon**-kohtaa.
+Koko GeoServerissä on parikymmentä tyyliä valmiina, jotka tulevat GeoServerin asennuksen mukana. Jos hyppäsit suoraan äskeisestä näkymästä tähän niin suoraan ainoastaan polygon-tyyliä. Katsotaan aluksi, miltä **rakennukset**-tason käyttämä polygon-tyyli näyttää. Avaa se painamalla **polygon**-kohtaa.
 
 ![](img/harjoitus_4/image3.png)
 
-Huomaa, että **Format** on **SLD**. Tutustu nyt tyylin koodiin: se muistuttaa verkkosivujen HTML-koodia. Siinä voit tunnistaa muun muassa **\<Fill\>**-ja **\<Stroke\>**-tagit, jotka määrittelevät monikulmion täyte- ja rajaviivan värejä.
+Huomaa, että **Format** on **SLD**. Tutustu nyt tyylin koodiin, joka muistuttaa verkkosivujen HTML-koodia. Siinä voit tunnistaa muun muassa **\<Fill\>**-ja **\<Stroke\>**-tagit, jotka määrittelevät monikulmion täyte- ja rajaviivan värejä.
 
 Koodin toimivuutta voi kokeilla **Validate**- ja selitteen esikatselua **Preview legend** -toiminnolla.
 
@@ -50,8 +50,7 @@ Laaditaan nyt oma kuvaustekniikka Helsingin rakennukset -aineistolle.
 
 **Data → Styles** näkymässä, lisää uusi SLD-tyyli painamalla **Add a new style**.
 
-Anna uudelle tyylille nimeksi **oletus_polygoni**. Valitse workspace:ksi **helsinki**.
-
+Anna uudelle tyylille nimeksi **oletus_polygoni**. Valitse workspace:ksi **helsinki**.  
 
 Helpottaakseen omien tyylien kirjoittamisen aloittamista, SLD-koodikentän täyttämiseen voidaan valita malliksi GeoServerin oletustyylit tai kopioida olemassa oleva tyyli.
 
@@ -59,11 +58,11 @@ Valitse **Generate a default style** -alasvetovalikosta **Polygon** ja paina sen
 
 ![](img/harjoitus_4/image5.png)
 
-Voit nyt testata SLD-koodia **Validate-**toiminnolla. Testauksen onnistuminen näkyy vihrellä palkilla.
+Voit nyt testata SLD-koodia **Validate-**toiminnolla. Testauksen onnistuminen näkyy vaalensinisellä palkilla.
 
 ![](img/harjoitus_4/image6.png)
 
-Tallenna muutokset väliaikaisesti painamalla ensin **Apply**. Paina tämän jälkeen **Save**, niin muutokset tallentuvat pysyvästi.
+Muutoksia voi otta väliaikaisesti käyttöön painamalla **Apply**. Tätä voi käyttää jos esim. on esikatselemassa tyyliä toisella välilehdellä. Paina nyt kuitenkin **Save**, niin muutokset tallentuvat pysyvästi.
 
 ## **SLD-kuvaustekniikan käyttöönotto**
 
@@ -75,9 +74,11 @@ Avaa **rakennukset**-tason editointinäkymä päävalikosta **Data → Layers**.
 
 Paina sitten **Save**.
 
-**Data → Layer Preview** näkymästä voit nyt esikatsella **rakennukset**-tasoa, uusi tyyli on nyt käytössä. Huomioi, että esikatselu voi olla välillä hidasta riippuen datan määrästä.
+Voit nyt esikatsella **rakennukset**-tasoa, painamalla vasemalla olevaa **rakennukset**-tasoa ja sen jälkeen sivun keskellä olevaa **OpenLayers**-kohtaa. Huomioi, että esikatselu voi olla välillä hidasta riippuen datan määrästä.
 
 ![](img/harjoitus_4/image7.png)
+![](img/harjoitus_4/image7b.png)
+![](img/harjoitus_4/image7c.png)
 
 ## **SLD Cookbook**
 
@@ -91,7 +92,7 @@ Avaa uudessa selainikkunassa GeoServerin SLD Cookbook alla olevasta linkistä. T
 <https://docs.geoserver.org/main/en/user/styling/sld/cookbook/?h=cookbook>
 :::
 
-Löydät lyhyen esityksen kuvaustekniikasta ja SLD-koodin. Tutustu lyhyesti koodiin ja yritä löytää tärkeimmät elementit (tagit) kuten monikulmion viivan ja täytön värit sekä tekstien fonttimääritelmät. Voit kirjoittaa muistiinpanoja tärkeimmistä elementeistä ja määritelmistä harjoituksen viimeiselle sivulle.
+Löydät lyhyen esityksen kuvaustekniikasta ja SLD-koodin. Tutustu lyhyesti koodiin ja yritä löytää tärkeimmät elementit (tagit) kuten monikulmion viivan ja täytön värit sekä tekstien fonttimääritelmät. Voit kirjoittaa muistiinpanoja tärkeimmistä elementeistä ja määritelmistä.
 
 Esimerkissä **\<Stroke\>**-koodissa on määritelty reunaviivan väri ja paksuus.
 
@@ -99,9 +100,9 @@ Esimerkissä **\<Stroke\>**-koodissa on määritelty reunaviivan väri ja paksuu
 
 Tavanomaisen SLD-kielen lisäksi tämä mallikoodi sisältää kaksi GeoServerin omaa lisäosaa, joita käytetään SLD:ssä tekstien sijoittamiseen. Tunnistat tällaiset kohdat koodista **\<VendorOption\...\>**-tageista.
 
-Etsi SLD-tyylien esimerkkisivuilta **View and download the full "Polygon with styled label" SLD** -linkki, avaa se uudessa ikkunassa ja tallenna kyseinen sivu .sld-tiedostona, käyttämällä selaimen tallennus (save as / tallenna nimellä) toimintoa. Anna tiedostolle nimi, jonka muistat vielä myöhemmin (esimerkiksi polygon_polygonwithstyledlabel.sld).
+Etsi SLD-tyylien esimerkkisivuilta **View and download the full "Polygon with styled label" SLD** -linkki. Klikkaa sitä ja tallenna. Riippuen selaimesta niin sinun pitää ehkä avata se uudessa ikkunassa ja tallenna kyseinen sivu .sld-tiedostona, käyttämällä selaimen tallennus (save as / tallenna nimellä) toimintoa. Anna tiedostolle nimi, jonka muistat vielä myöhemmin (esimerkiksi polygon_polygonwithstyledlabel.sld).
 
-Palaa nyt GeoServerin käyttöliittymään ja paina koodilaatikon yläpuolelta **Browse**. Etsi äskettäin ladattu SLD-tyyli levyltä ja paina lopuksi **Upload**.
+Palaa nyt GeoServerin käyttöliittymään ja mene **Styles**-näkymään ja paina **Add a new style**. Paina koodilaatikon yläpuolelta **Choose file**. Etsi äskettäin ladattu SLD-tyyli levyltä ja paina lopuksi **Upload**.
 
 ![](img/harjoitus_4/image8.png)
 
@@ -127,7 +128,7 @@ Muokkaa vielä monikulmion SLD-tyyli seuraavasti:
 Psst! Huomaa, että GeoServerissä desimaalierottimena toimii ainoastaan piste ".". Tämä pätee kaikissa GeoServerin asetuksissa.
 :::
 
-Tallenna sitten muutokset painamalla ensin **Apply**.
+Tallenna sitten muutokset painamalla  **Save**.
 
 Lopuksi vaihda **rakennukset**-tasolle tyyliksi **rakennukset**-tyyli (**Data → Layers → rakennukset → Publishing**).
 
