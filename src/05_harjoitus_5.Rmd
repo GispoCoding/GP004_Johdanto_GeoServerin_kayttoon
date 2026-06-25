@@ -32,19 +32,19 @@ Käytännössä kaikki aiemmin lisätyt aineistot ovat jo valmiiksi julkaistu ra
 
 Olemme esimerkiksi käyttäneet WMS-karttapalvelua aina kun olemme esikatselleet jotain tasoa selaimella.
 
-Avaa **Services → WMS-näkymä**.
+Avaa **Services → Mapping Services**.
 
-Asetusten sivun alussa löytyy **Service Metadata** -tiedot.
+Asetusten sivun alussa löytyy **Service Metadata** -tiedot ja sen jälkeen **Service Control**.
 
-Tarkista, että **Enable WMS** -valinta on rastitettuna. Toiminnon ollessa valittuna GeoServer-palvelin tuottaa WMS-karttapalvelua. Jos tämä valinta ei ole rastittu, mikään aineisto ei ole saatavilla WMS-karttapalveluna. Rajapintapalveluiden saatavuutta voidaan hallita myös workspace-kohtaisesti.
+**Service Metadata**-osiossa määritetään tietoja palvelusta ja sen ylläpitäjästä.
 
-Kaikkien karttapalveluiden toiminnallisuutta ja palvelinasetuksia voi myös määrittää seuraavien kohtien mukaisesti: **Maintainer**, **Online resource**, **Title**, **Abstract**, **Fees**, **Access Constraints** ja **Keywords**-asetusten avulla määritetään tietoja palvelusta ja sen ylläpitäjästä.
+Tarkista, että **Enable** -valinta on rastitettuna **Service Control**-osiossa. Toiminnon ollessa valittuna GeoServer-palvelin tuottaa WMS-karttapalvelua. Jos tämä valinta ei ole rastittu, mikään aineisto ei ole saatavilla WMS-karttapalveluna. Rajapintapalveluiden saatavuutta voidaan hallita myös workspace-kohtaisesti.
 
 ::: hint-box
-Psst! Nämä metadatan asetukset ovat samankaltaiset myös WFS- ja WCS-palvelujen kohdalla.
+Psst! Nämä metadatan asetukset ovat samankaltaiset myös muiden palvelujen kohdalla.
 :::
 
-Määrittele näitä tietoja WMS-palvelulle. Voit kirjoittaa muistiinpanot harjoituksen viimeiselle sivulle.
+Määrittele metatietoja WMS-palvelulle.
 
 ![](img/harjoitus_5/image1.png)
 
@@ -56,7 +56,7 @@ Määrittele näitä tietoja WMS-palvelulle. Voit kirjoittaa muistiinpanot harjo
 Psst! Karttakuvat luodaan aina GeoServerin saadessa WMS-pyyntöjä käyttöliittymästä. Lisäksi GeoServer käyttää hyväkseen palvelimen välivarastossa (cache) olemassa olevia karttakuvia. GeoServer saa pyyntöjä aina kun palvelimeen otetaan yhteys, mutta myös silloin kun kartalla zoomataan (vaihdetaan mittakaavaa) tai siirrytään paikasta toiseen.
 :::
 
-Avaa **Services → WMS** uudelleen.
+Avaa **Services → Mapping** uudelleen ja mene välilehdelle **WMS**.
 
 Perustietojen lisäksi jokaisella karttapalvelulla on omat asetuksensa, jotka määrittävät karttapalvelun toiminnallisuutta. Näitä on runsaasti WMS-palvelun osalta. Esimerkiksi, kuvien luomiseen voi valita interpoloinnin menetelmäksi **Raster Rendering Options** -kohdassa: **Nearest Neighbor**, **Bilinear** tai **Bicubic**. Oletuksena valittu **Nearest neighbor** -menetelmä on suositeltava valinta rasterien perusvisualisointiin.
 
@@ -64,7 +64,7 @@ Yksi kiinnostava asetus WMS-palvelulle on vesileimojen käyttäminen. Vesileimoj
 
 Kokeillaan asettaa palvelimen WMS-palvelulle GeoServer-logo vesileimaksi.
 
-Avaa **Services → WMS** ja etsi kohta **Watermark Settings** ja varmista, että **Enable watermark** on rastittuna.
+Etsi kohta **Watermark Settings** ja varmista, että **Enable watermark** on rastittuna.
 
 ![](img/harjoitus_5/image2.png)
 
@@ -72,9 +72,9 @@ Käytä sitten **Browse\...** valitsemaan GeoServerin logo (**/koulutus/GeoServe
 
 Laita vielä läpinäkyvyyttä **30**:ksi ja sijainniksi **Bottom right**.
 
-Paina nyt **Apply** tallentaaksesi muutokset WMS-palveluun. Kaikkien WMS-palvelukartan kautta saatujen karttojen pitäisi nyt sisältää vesileima.
+Paina nyt **Save** tallentaaksesi muutokset väliaikaisesti WMS-palveluun. Kaikkien WMS-palvelukartan kautta saatujen karttojen pitäisi nyt sisältää vesileima.
 
-Avaa **Data → Layer Preview**, ja esikatsele joitakin tasoja. Tarkista, että vesileima tulee näkyviin kaikissa WMS-pyynnöissä.
+Avaa **GeoServer → Browse Layers**, ja esikatsele joitakin tasoja. Tarkista, että vesileima tulee näkyviin kaikissa WMS-pyynnöissä.
 
 Esimerkiksi, **states**-taso näyttää tältä OpenLayers-esikatselunäkymässä:
 ![](img/harjoitus_5/image3.png)
@@ -95,14 +95,14 @@ Avaa **Data → Workspaces**.
 
 Muokataan seuraavaksi **helsinki**-workspacen asetuksia. Valitse se **Workspace Names** -kohdan alta. 
 
-Rastita sitten **Settings → Enabled** ja oikealta **Services** → **WMS**.
+Rastita **Services** → **Mapping** ja sitten **Settings → Enabled**.
 
 Voit täyttää nyt tämän workspace-kohtaiset yhteystiedot kuvaamaan Helsingin WMS-karttapalvelua.
 ![](img/harjoitus_5/image4.png)
 
 Selaa alaspäin ja paina **Save**.
 
-Nyt muut GeoServer-palvelimessasi olevat WMS-karttapalvelut sisältävät oletustiedot (määritelty **About & Status → Contact Information**), kun taas **helsinki**-workspace WMS-palvelun tiedot ovat ne jotka juuri määritettiin.
+Nyt muut GeoServer-palvelimessasi olevat WMS-karttapalvelut sisältävät oletustiedot (määritelty **Server → Contact Information**), kun taas **helsinki**-workspace WMS-palvelun tiedot ovat ne jotka juuri määritettiin.
 
 Tiedot voit tarkistaa Getcapabilities-pyynnöllä seuraavasti:
 
@@ -125,7 +125,7 @@ Psst! DPI-arvo on oletusarvoisesti pieni, jotta se ei ylikuormita palvelinta ja 
 
 Palveluille on mahdollista määrittää muita kuvaresoluutioita muokkaamalla WMS-karttapyyntöjen parametreja.
 
-Kokeile nyt esikatsella **poly_landmarks-**tasoa JPEG-kuvana. Löydät tason helposti **Layer preview** -näkymästä:
+Kokeile nyt esikatsella **poly_landmarks-**tasoa JPEG-kuvana. Löydät tason helposti **Browse Layers** -näkymästä. Valitse **Download sample** alasvetovalikosta WMS:n alta **JPEG**. 
 ![](img/harjoitus_5/image6.png)
 
 Tuloksena saat karttakuvan JPEG-formaatissa oletusresoluutiolla eli DPI-arvolla 90:\
@@ -156,7 +156,7 @@ Huomataan, että tyylit eivät täsmää aikaisempaan. Se johtuu siitä, että p
 
 Resoluutiot voidaan tarkistaa halutessaan tallentamalla molemmat kuvat kovalevylle ja vertaamalla niitä zoomaamalla käyttämäsi käyttöjärjestelmän kuvien esikatseluohjelman avulla.
 
-Kuten sanottu, tyylit eivät nyt näytä oikeilta, koska oletuspyynnössä on kuvan koko laskettu 90 DPI resoluution mukaiseksi. Nyt on siis muokattava **&width-** ja **&height**-parametrien arvot yhteensopivaksi uuteenresoluutioon eli arvolle **300 DPI**. Tämä tapahtuu käyttämällä seuraavaa yhtälöä:
+Kuten sanottu, tyylit eivät nyt näytä oikeilta, koska oletuspyynnössä on kuvan koko laskettu 90 DPI resoluution mukaiseksi. Nyt on siis muokattava **&width-** ja **&height**-parametrien arvot yhteensopivaksi uuteenresoluutioon eli arvolle **300 DPI**. Tämä tapahtuu käyttämällä seuraavaa yhtälöä:\
 ![](img/harjoitus_5/image10.png)
 
 ![](img/harjoitus_5/image11.png)
@@ -178,11 +178,11 @@ WMS-palveluja käyttävät ohjelmistot, kuten QGIS, rakentavat automaattisesti e
 
 ## **WCS**
 
-Avaa **Services → WCS**.
+Avaa **Services → Rasters**.
 
-Totuttuun tapaan voidaan päättää, halutaanko GeoServerin tuottavan raakarasterikarttaa. Se määritellään **Enable WCS** -valinnalla. Raakarasteriaineistojen jakamista on hyvä harkita tarkasti. Palvelu voi aiheuttaa suuria datasiirtomääriä verkkoyhteydelle. Lisäksi WCS-palvelun materiaaliksi sopii käytännössä vain luokitellut rasteriaineistot, ilma- ja satelliittikuvat. 
+Totuttuun tapaan voidaan päättää, halutaanko GeoServerin tuottavan raakarasterikarttaa. Se määritellään **Service Control**-osiossa **Enable** -valinnalla. Raakarasteriaineistojen jakamista on hyvä harkita tarkasti. Palvelu voi aiheuttaa suuria datasiirtomääriä verkkoyhteydelle. Lisäksi WCS-palvelun materiaaliksi sopii käytännössä vain luokitellut rasteriaineistot, ilma- ja satelliittikuvat. 
 
-**Coverage processing** -kohdan alta löytyy WCS-palvelun asetukset. **Use subsampling** -valinnan aktivointi pienentää käsiteltävää datamäärää, mikä on hyödyllistä käytettäessä aineistoa alkuperäistä pienemmällä resoluutiolla.
+Siirry **WCS**-välilhedelle nähdäkseen WCS-palvelun asetukset. **Use subsampling** -valinnan aktivointi pienentää käsiteltävää datamäärää, mikä on hyödyllistä käytettäessä aineistoa alkuperäistä pienemmällä resoluutiolla.
 
 Samalla tavalla, **Overview policy** -toiminto mahdollistaa aineiston yleiskatsausten käytön (näiden ollessa olemassa palvelimessa), mikä osaltansa vähentää siirrettävän tiedon määrää (vähemmän gigatavuja). Oletus on, ettei yleiskatsausta käytetä. Huomaa, että yleiskatsaukset aineistoista on luotava erikseen.
 

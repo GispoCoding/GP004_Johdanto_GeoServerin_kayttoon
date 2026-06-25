@@ -163,9 +163,9 @@ SLD-koodi ikkunassa näyttää tältä:
 
 Paina sitten **Validate**.
 
-Jos koodin käytössä tulee virheilmoituksia tai se ei toimi, pyydä kouluttajalta apua. Muuten paina **Apply**, niin tyyli tallentuu.
+Jos koodin käytössä tulee virheilmoituksia tai se ei toimi, pyydä kouluttajalta apua. Muuten paina **Apply**, niin tyyli tallentuu väliaikaisesti. Voit nyt käydä esikatselemassa, mutta muista vielä lopuksi painaa **Save** jotta muutokset tallentuvat pysyvästi.
 
-Päivitetty tyyli on heti käytössä palvelimella ja sitä voi esikatsella **rakennukset**-tason avulla. Selainikkunan voit päivittää painamalla **F5**-näppäintätai **CTRL+R**-näppäimiä.
+Päivitetty tyyli on heti käytössä palvelimella ja sitä voi esikatsella **rakennukset**-tason avulla. Selainikkunan voit päivittää painamalla **F5**-näppäintä tai **CTRL+R**-näppäimiä.
 
 ![](img/harjoitus_4/image11.png)
 
@@ -175,13 +175,13 @@ Osoitteessa <http://colorbrewer2.org/> voi tutustua erilaisiin visualisointityyl
 
 Luo nyt uusi tyyli, jota tullaan käyttämään tiestön kuvaamiseen.
 
-Samalla tavalla kuin aiemmin, käytä hyväksi GeoServerissa olemassa oleva tyyli. **Tiger_roads**-tyyli sopii tiestön kuvaamiseen. Esikatsele tiger_roads-tasoa.
+Samalla tavalla kuin aiemmin, käytä hyväksi GeoServerissa olemassa oleva tyyli. **Tiger_roads**-tyyli sopii tiestön kuvaamiseen. Etsi tiger_roads-tyyli (se ei ole osa helsinki-workspacea) ja mene välilehdell **Layer Preview**. Täälläkin voi esikatsella tyyliä.
 
 ![](img/harjoitus_4/image12.png)
 
 Kadut on kuvattu leveinä valkoisina kaistoina kun karttaa lähennetään tarpeeksi. Tehdään seuraavaksi samankaltainen tyyli aikaisemmin julkaistua tiesto-aineistoa varten.
 
-Luo uusi tyyli (**Data → Styles → Add a new style**), nimeä se **tiesto**. Kopioi **simple_roads** tyyli.
+Luo uusi tyyli (**Data → Styles → Add a new style**), nimeä se **tiesto**. Kopioi **simple_roads** tyyli valitsemalla tyyli kohdassa **Copy from existing style** ja painamalla **Copy ...**.
 
 Etsi **\<Rule\>** kappaleen sisällä oleva **\<Title\>** ja lisää sen alle:
 
@@ -191,7 +191,7 @@ Etsi **\<Rule\>** kappaleen sisällä oleva **\<Title\>** ja lisää sen alle:
 
 ![](img/harjoitus_4/image13.png)
 
-Paina sitten **Apply**.
+Paina sitten **Apply**. Pidä välilehti auki ja avaa GeoServeri toiseen välilehteen ja mneen tiesto-tasona asetuksiin.
 
 Aseta vielä tiesto-tason oletustyyliksi **tiesto-tyyli**. (**Data → Layers → helsinki:tiesto → Publishing**).
 
