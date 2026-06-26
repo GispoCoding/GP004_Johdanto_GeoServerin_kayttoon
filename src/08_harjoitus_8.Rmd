@@ -24,9 +24,9 @@ Aiemmin tarkasteltiin Open Geospatial Consortiumin (OGC) määrittämien WMS- ja
 
 WFS-palveluiden avulla voidaan käsitellä vektoriaineistoja sekä niiden geometria- ja attribuuttitietoja verkon yli.
 
-Avaa **Services → WFS**. Heti näkymän alusta löytyy palvelun yleistiedot (**Service Metadata**).
+Avaa **Services → Vectors**. Heti näkymän alusta löytyy palvelun yleistiedot (**Service Metadata**).
 
-WFS-kohtaiset asetukset löytyvät alempaa, josta määritellään, miten WFS-kohtaisia palvelupyyntöjä käsitellään ja miten niihin vastataan.
+WFS-kohtaiset asetukset löytyvät WFS-välilehdellä, josta määritellään, miten WFS-kohtaisia palvelupyyntöjä käsitellään ja miten niihin vastataan.
 
 ## **Tietomäärä pyynnöissä**
 
@@ -34,31 +34,28 @@ WFS-kohtaiset asetukset löytyvät alempaa, josta määritellään, miten WFS-ko
 
 Toiminnon testaamista varten määrittele kyseisten ominaisuuksien arvoksi **1**.
 
-Paina sitten **Submit**.
+Paina sitten **Save**.
 
-Katsele sen jälkeen **tiesto**-tasoa WFS-rajapinnan kautta Layer Previewin GML-esikatselun kauttatai esim. QGIS-sovelluksella.
+Mene sen jälkeen **tiesto**-tasolle ja valite esikatselutavaksi GML.
 
 ::: hint-box
 Miten äsken määritellyt ominaisuudet ovat vaikuttaneet lopputulokseen? Miksi?
 :::
 
-Esikatsele samaa **tiesto**-tasoa nyt käyttäen **GML**-linkkiä.
 
 ![](img/harjoitus_8/image1.png)
 
-![](img/harjoitus_8/image2.png)
-
 Palvelun vastaus (xml-muodossa) sisältää nyt vain yhden geometrian, kuten olimme määritelleet asetuksissa.
 
-Palaa vielä **Services → WFS**-näkymään ja rastita **Return bounding box with every feature**. Esikatsele taas samaa tasoa ja vertaile sitä aiemman palvelupyynnön tulokseen. Tietyissä sovelluksissa voi olla tarpeen saada tiedot jokaisen paikkatietokohteen sijainnin rajauksesta (bounding box).
+Palaa vielä **Services → Vectors → WFS**-näkymään ja rastita **Return bounding box with every feature**. Esikatsele taas samaa tasoa ja vertaile sitä aiemman palvelupyynnön tulokseen. Tietyissä sovelluksissa voi olla tarpeen saada tiedot jokaisen paikkatietokohteen sijainnin rajauksesta (bounding box).
 
 Tarkista tiesto-tason GML-esikatselusta, että GeoServerin lähettämä vastaus sisältää nyt myös geometrioita rajaavan suorakaiteen.
 
 ![](img/harjoitus_8/image3.png)
 
-Palaa uudelleen **Services → WFS** -näkymään ja palauttaa oletuksiin **Maximum number of features**: **1 000 000** ja **Maximum number of features for preview**: **50**.
+Palaa uudelleen **Services → Vectors → WFS** -näkymään ja palauttaa oletuksiin **Maximum number of features**: **1 000 000** ja **Maximum number of features for preview**: **50**.
 
-Paina **Submit**.
+Paina **Save**.
 
 Voit vielä tarkistaa, että nyt GML-esikatselussa tulee vain 50:n kohteen geometriat, vaikka tiesto-tasolla on paljon enemmän paikkatietokohteita.
 
@@ -82,9 +79,9 @@ Mitkä koordinaattijärjestelmät ovat kyseessä?
 
 Voit tarkistaa nyt, että WFS-toiminnallisuuksien dokumentissa yllä mainitut koordinaattijärjestelmät ovat ilmoitettuna.
 
-Paina **GeoServer-logoa** vasemmasta yläkulmasta (palaa siis web-käyttöliittymän etusivulle) ja sen jälkeen valitse sivun oikealta laidalta **WFS** → 1.1.0 tai **2.0.0**.
+Paina **GeoServer-logoa** vasemmasta yläkulmasta (palaa siis web-käyttöliittymän etusivulle) ja sen jälkeen valitse sivun keskeltä **WFS** → **1.1.0** tai **2.0.0**.
 
-Etsimällä "**EPSG**" sivulta löydät EPSG-koodit WFS-palvelun dokumentaatiosta (xm-formaatissa):
+Etsimällä "**EPSG**" sivulta löydät EPSG-koodit WFS-palvelun dokumentaatiosta (xml-formaatissa):
 
 Huomaa, ettei tämä asetus toimi WFS 1.0.0, sillä siinä ilmoitetaan EPSG-koodit vain tasokohtaisesti.
 
@@ -92,7 +89,7 @@ Huomaa, ettei tämä asetus toimi WFS 1.0.0, sillä siinä ilmoitetaan EPSG-kood
 
 ## **Service Levels**
 
-GeoServerissa voidaan julkaista vektoriaineisto editoitavaksi **WFS-T (Transactional)** -palvelun avulla.
+GeoServerissa voidaan julkaista vektoriaineisto editoitavaksi **WFS-T (Transactional)** -palvelun avulla. Mene taas  **Services → Vectors → WFS** -näkymään.
 
 **Service Level** -valinnat määrittävät millaisen palvelutason WFS tarjoaa.
 
@@ -122,7 +119,7 @@ Erilaiset WFS-palvelun versiot palauttavat oletuksena eri GML-formaatit:
 
 Jokaiselle GML-formaatille on mahdollista määritellä koordinaattijärjestelmäformaatti, joka tulee ottaa huomioon GML-tuloksessa. Tämä on tärkeä etenkin kun kehitetään WFS-palveluita hyödyntäviä sovelluksia.
 
-**EPSG-KOODIT JA KOORDINAATIEN FORMAATIT GML-DOKUMENTISSA**
+### EPSG-koodit ja koordinaattien formaatit GML-dokumentissa
 
 +--------------------------+-----------------------------------------------------------------------------------------------------------+
 | **EPSG Code**            | srsName="EPSG:4326"                                                                                       |
@@ -142,6 +139,7 @@ Jokaiselle GML-formaatille on mahdollista määritellä koordinaattijärjestelm�
 | **OGC HTTP URI**         | srsName="[http://www.opengis.net/def/crs/EPSG/0/4326"](http://www.opengis.net/def/crs/EPSG/0/4326%22)     |
 +--------------------------+-----------------------------------------------------------------------------------------------------------+
 
+\
 Esimerkiksi **Lipas-alueet**-taso GML2-esikatselusta (EPSG-koodi muodossa OGC HTTP URL):
 
 ![](img/harjoitus_8/image5.png)
@@ -150,17 +148,15 @@ Esimerkiksi **Lipas-alueet**-taso GML2-esikatselusta (EPSG-koodi muodossa OGC HT
 
 Samalla tavalla kun WMS-palvelujen kanssa, myös WFS-asetuksia on mahdollista määrittää workspace-kohtaisesti. Esimerkiksi WFS-T-toiminnallisuus voidaan sallia vain yhden workspacen kautta ja pääsynhallinnan avulla sallia vain tunnistetut käyttäjät muokkaamaan aineistoja.
 
-Avaa **Data → Workspaces** ja valitse sitten **helsinki**-workspace. Rastita sitten **Services → WFS** ja paina sen jälkeen **WFS**-linkkiä.
+Avaa **Data → Workspaces** ja valitse sitten **helsinki**-workspace. Rastita sitten **Services → Vectors** ja paina sen jälkeen **Save**.
 
 ![](img/harjoitus_8/image6.png)
 
-Varmista, että **Service Level** asetus on **Complete**.
+Varmista, että **Service Level** asetus on **Complete** menemällä **Services → Vectors** ja valitse workspaceksi **helsinki** ja siirry **WFS**-välilehdelle.
 
 ![](img/harjoitus_8/image7.png)
 
-Paina sen jälkeen **Submit** (sivun lopussa).
-
-Paina lopuksi vielä **Save** sivun alaosasta.
+Paina sen jälkeen **Save**.
 
 Workspace-kohtaisilla asetuksilla voidaan esim. rajoittaa, missä koordinaattijärjestelmissä workspacen aineistot ovat saatavilla, tai poistaa WFS-T-palvelu tietyn workspacen aineistoista.
 
@@ -188,7 +184,7 @@ GeoServerin oletusasetuksilla workspace-kohtaisen osoitteen saa lisäämällä o
 <http://ip.osoite:8080/geoserver/helsinki/ows?service=wfs&version=1.1.0&request=GetCapabilities>
 :::
 
-Avaa QGIS työpöydän pikakuvakkeesta. Lisää uusi WFS-palvelu ja liitä URL-kenttään äsken kopioimasi osoite. Syötä myös käyttäjänimi (admin) sekä salasana (gispo).
+Avaa QGIS-ohjelmisto. Lisää uusi WFS-palvelu ja liitä URL-kenttään äsken kopioimasi osoite. Syötä myös käyttäjänimi (admin) sekä salasana (gispo).
 
 ![](img/harjoitus_8/image8.png)
 
@@ -218,11 +214,11 @@ Uusi store sisältää karttatasoja, jotka on jaettu alkuperäisessä  WFS-palv
 
 ![](img/harjoitus_8/image11.png)
 
-Voit julkaista tasoja suoraan palvelusta. Julkaise esimerkiksi **lipas_retkikartta_reitit**. Paina oikealta **Publish** ja määrittele **Bounding  Boxes** totutulla tavalla.
+Voit julkaista tasoja suoraan palvelusta. Julkaise esimerkiksi **lipas_lipas_101_lahipuisto**. Paina oikealta **Publish** ja määrittele **Bounding  Boxes** totutulla tavalla.
 
 Paina sitten **Save**.
 
-Voit nyt esikatsella uutta tasoa (oletusnimeksi tulee **retkikartta_reitit**).
+Voit nyt esikatsella uutta tasoa (oletusnimeksi tulee **lipas_101_lahipuisto**).
 
 ![](img/harjoitus_8/image12.png)
 
