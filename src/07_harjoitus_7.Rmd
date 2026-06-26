@@ -29,7 +29,11 @@ Kuten muiden aineistojen kanssa, jotta aineistoja voidaan käyttää GeoServeris
 Luo uusi store (**Data → Stores → Add new Store**).
 
 Valitse formaatiksi **PostGIS - PostGIS Database**:
-![](img/harjoitus_7/image1.png)
+![](img/harjoitus_7/image1.png)\
+
+::: hint-box
+PostGIS vai PostGIS (JNDI)? Kysymys kuuluu, että kuka halutaan että hallinnoi tietokantayhteykseiä (database connection polll). Suora PostGIS-yhteys on nopeampi ja helpompi ottaa käyttöön. PostGIS (JNDI) eli Java Naming and Directory Inteface käytetään kun halutaan, että Tomcat (web application server) on se joka hallinnoi käyttäjätunnusta ja salasanaa. Se on työläämpi ottaa käyttöön mutta silloin tietokantayhtyes ei ole samalla tavalla tiedossa GeoServerillä joka lisää turvallisuutta.
+:::
 
 Valitse **Workspaceksi** tuttu **helsinki**-workspace ja nimeä se **hki_lipas** (**Data Source Name**).
 
@@ -61,7 +65,7 @@ Aineistoon on nyt tehty viittaukset **hki_lipas**-storen kautta ja voit nähdä,
 
 ## **PostGIS-tason lisääminen**
 
-Voit heti julkaista jonkin tason storen luomisen jälkeen painamalla **Publish**. Julkaise nyt **pisteet**-taso. Lipas on Jyväskylän yliopiston hallinnoima valtakunnallinen liikunnan paikkatietojärjestelmä.
+Voit heti julkaista jonkin tason storen luomisen jälkeen painamalla **Publish**. Julkaise nyt **lipas_kaikki_pisteet**-taso. Lipas on Jyväskylän yliopiston hallinnoima valtakunnallinen liikunnan paikkatietojärjestelmä.
 
 ::: hint-box
 Psst! Kun myöhemmin haluat julkaista muita tasoja hki_HRI-storesta se onnistuu päävalikosta Data → Layers → Add a new layers ja valitsemalla haluamasi store.
@@ -75,13 +79,11 @@ Kuten olet varmasti nyt huomannut, uuden tason asetukset ovat samanlaiset, oli k
 
 Katso vielä **Coordinate Reference Systems** -osiosta, että GeoServer on tunnistanut koordinaattijärjestelmäksi **EPSG:3067**. PostGIS ja GeoServer käyttävät EPSG-koodeja määrittääkseen koordinaattijärjestelmän, joten useimmiten koordinaattijärjestelmä tulee oikein määritellyksi automaattisesti.
 
-![](img/harjoitus_7/image4.png)
-
 Ennen kuin tallennetaan tason julkaisuasetukset, määritä tason **Bounding Boxes** samalla tavalla kuin aikaisemmin lisäämiesi aineistojen kanssa.
 
 ![](img/harjoitus_7/image5.png)
 
-Paina lopulta **Save**. Voit esikatsella uutta tasoa **Layer Preview**:n kautta.
+Paina lopulta **Save**. Voit esikatsella uutta tasoa **Browse Layers**-näkymän kautta.
 
 ![](img/harjoitus_7/image6.png)
 
@@ -112,7 +114,7 @@ Vaihda lopuksi oletustyylit kyseisille tasoille käyttäen GeoServerin valmiita 
 +--------------------------+-----------------+
 | **lipas_kaikki_reitit**  | simple_roads    |
 +--------------------------+-----------------+
-
+\
 Voit vielä lopuksi tehdä aineistoista ryhmätason. Kuvassa on yhdistetty Helsingin taustakartta-ryhmätaso ja lipas-aineistot yhteen karttapalvelutasoon:
 ![](img/harjoitus_7/image7.png)
 
@@ -128,7 +130,7 @@ Annan nimeksi **lipas_kaikki_reitit_helsinki**.
 Psst! SQL-näkymä voitaisiin luoda myös suoraan tietokantaan ja käyttää tuota näkymää (view) tason luomiseen.
 :::
 
-SQL-kyselyjen tekemiseksi on hyvä ensin selvittää tietokannan taulujen kenttien nimet ja tyypit. Voit tarkistaa aineiston kentät avaamalla tason **Data → Layers**-näkymästä; kentät on lueteltu **Data**-välilehden lopussa. Aineiston ominaisuustietojen tyyppejä pääset tarkastelemaan parhaiten käyttäen muita ohjelmistoja kuten pgAdmin tai QGIS. Voit  myös tutustua niihin Lipas-sivuilta (<http://www.liikuntapaikat.fi/lipas>). Attribuuttitiedot GeoServerissä näyttävät tältä:
+SQL-kyselyjen tekemiseksi on hyvä ensin selvittää tietokannan taulujen kenttien nimet ja tyypit. Voit tarkistaa aineiston kentät avaamalla tason **Data → Layers**-näkymästä; kentät on lueteltu **Data**-välilehden lopussa. Aineiston ominaisuustietojen tyyppejä pääset tarkastelemaan parhaiten käyttäen muita ohjelmistoja kuten pgAdmin tai QGIS. Voit  myös tutustua niihin [Lipas-sivuilta](https://www.jyu.fi/fi/liikunta/yhteistyo/lipas-liikunnan-paikkatietojarjestelma). Attribuuttitiedot GeoServerissä näyttävät tältä:
 
 ![](img/harjoitus_7/image8.png)
 
@@ -150,6 +152,7 @@ WHERE kunta_nimi = \'Helsinki\'
 
 Rastita **Guess geometry type and srid** -toiminto ja paina sitten **Refresh**.
 ![](img/harjoitus_7/image10.png)
+\
 
 Tarkista sitten, että **geom**-nimisen kentän kohdalla **SRID** on määritelty oikean EPSG-tunnuksen mukaisesti (meidän tapauksessamme tunnus on **3067**).
 
@@ -157,7 +160,7 @@ Tarkista sitten, että **geom**-nimisen kentän kohdalla **SRID** on määritelt
 
 Paina lopulta **Save**.
 
-Määrittele seuraavaksi tason ulottuvuudet (Bounding Box) ja paina **Save**. Voit esikatsella Helsingin liikuntareitit -tasoa nyt.
+Määrittele seuraavaksi tason laajuus (Bounding Box) ja paina **Save**. Voit esikatsella Helsingin liikuntareitit -tasoa nyt.
 ![](img/harjoitus_7/image12.png)
 
 ## **Paikkatietotoiminnot SQL-näkymien kautta**
@@ -178,7 +181,7 @@ FROM lipas.lipas_kaikki_reitit
 WHERE kunta_nimi = \'Helsinki\'
 :::
 
-Päivitä taas attribuuttien formaatti ja paina sitten **Save**.
+Päivitä taas attribuuttien formaatti ja paina sitten **OK** ja **Save**.
 ![](img/harjoitus_7/image13.png)
 
 Esikatselussa huomaat, että reitit-aineisto on nyt puskuroitu 10 metrillä:

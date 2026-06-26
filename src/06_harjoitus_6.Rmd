@@ -18,7 +18,7 @@ Aiemmissa harjoituksissa on luotu **helsinki**-workspace, joihin on määritelty
 
 GeoServerin palvelimen aineistohakemistoon on valmiiksi ladattu muutama rasteriaineisto: korkeusmallikuva ja neljä ilmakuvaa Helsingin alueelta.
 
-## **korkeusmallikuvan lisääminen**
+## **Korkeusmallikuvan lisääminen**
 
 Rasteriaineiston lisääminen GeoServeriin tapahtuu melko samalla tavalla kun aiemmissa harjoituksissa vektoriaineistojen kanssa. Rasteriaineisto on Maanmittauslaitoksen korkeusmalli (ruutukoolla 2 m x 2 m).
 
