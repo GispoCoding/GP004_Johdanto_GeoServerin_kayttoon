@@ -16,69 +16,55 @@ Harjoituksen jälkeen opiskelija osaa lisätä rasteriaineistoja ja luoda ryhmä
 
 Aiemmissa harjoituksissa on luotu **helsinki**-workspace, joihin on määritelty muun muassa vesileima näkyväksi.
 
-GeoServerin palvelimen aineistohakemistoon on valmiiksi ladattu muutama rasteriaineisto: yksi korkeusmalli ja neljä ilmakuvaa Helsingin alueelta.
+GeoServerin palvelimen aineistohakemistoon on valmiiksi ladattu muutama rasteriaineisto: korkeusmallikuva ja neljä ilmakuvaa Helsingin alueelta.
 
-## **Rasteriaineiston lisääminen**
+## **korkeusmallikuvan lisääminen**
 
-Rasteriaineiston lisääminen GeoServeriin tapahtuu melko samalla tavalla kun aiemmissa harjoituksissa vektoriaineistojen kanssa. Ladataan nyt GeoServeriin käytettäväksi rasteriaineisto, jonka alkuperäinen formaatti on **ArcGrid** (ASCII-pohjainen rasteriformaatti). Rasteriaineisto on Maanmittauslaitoksen korkeusmalli Helsingin alueelta (ruutukoolla 2 m x 2 m).
+Rasteriaineiston lisääminen GeoServeriin tapahtuu melko samalla tavalla kun aiemmissa harjoituksissa vektoriaineistojen kanssa. Rasteriaineisto on Maanmittauslaitoksen korkeusmalli (ruutukoolla 2 m x 2 m).
 
 Ensin meidän pitää luoda viitereferenssi aineistoon, jotta GeoServer tietäisi, missä aineisto sijaitsee fyysisesti. Muista, että tämä tapahtuu luomalla storeja.
 
-Luo uusi store valitsemalla **Stores → Add new Store**. Paina sitten **ArcGrid** storen formaatiksi.
+Luo uusi store valitsemalla **Data → Stores → Add new Store**. Paina sitten **GeoTIFF** storen formaatiksi.
 
-Valitse taas **helsinki**-workspace ja nimeä uusi store: **hki_korkeusmalli_L4133A**.
+Valitse taas **helsinki**-workspace ja nimeä uusi store: **hki_korkeusmalli**.
 
-Selaa sitten kansioon **/koulutus/korkeusmalli_2m/** ja valitse tiedosto **L4133A.asc**.\
+Selaa sitten kansioon **/koulutus/korkeusmalli_2m/** ja valitse tiedosto **L4133A_korkeusmalli**.\
 ![](img/harjoitus_6/image1.png)
 
 Paina sitten **Save** ja sen jälkeen **Publish**.
 
 Kuten aiemmin vektoriaineistojen luomisen yhteydessä, pääset nyt tason editointinäkymään. Tarkista yleisasetukset niin, että sekä **Enabled** että **Advertised** ovat valittuna.
 
-Laita nimeksi **korkeusmalli** ja otsikoksi **Helsingin korkeusmalli** ja lisätiedoksi **Korkeusmalli 2m -- Maanmittauslaitos.**
-![](img/harjoitus_6/image2.png)
+Laita nimeksi **korkeusmalli** ja otsikoksi **Helsingin korkeusmalli**.
 
-Huomaa, että **Coordinate Reference Systems** -kohdassa, koordinaattijärjestelmä on määritelty väärin. Aineiston oikea järjestelmä on **ETRS89 / ETRS-TM35FIN** (**EPSG:3067**). Korjaa sitä käsin **Declared SRS** -kentässä ja valitse **SRS handling** kentästä **Force declared**. Käytä sen jälkeen pikalinkkejä määrittääksesi aineiston laajuuden.
+Aineiston oikea järjestelmä on **ETRS89 / ETRS-TM35FIN** (**EPSG:3067**). Tarkista, että se on oikein. Tarkista myös aineiston laajuuden. Jos olet epävarma laajudesta voit painaa **Compute from data** ja **Compute from native bounds** määrittääksesi aineiston laajuuden.
 ![](img/harjoitus_6/image3.png)
 
-Paina sitten **Save.**
+Paina sitten **Save**.
 
-Tarkista, että taso on **Data → Layers**-taulussa. Voit esikatsella uutta rasteritasoa **Data → Layer Preview** -ikkunan kautta.\
+Tarkista, että taso on **Data → Layers**-taulukossa. Voit esikatsella uutta rasteritasoa **Data → Browse Layers** -näkymän kautta.\
 ![](img/harjoitus_6/image4.png)
-
-## **Ilmakuvan lisääminen**
-
-Samalla tavalla kun lisäsit edellisessä kohdassa ArcGrid-tiedoston voit lisätä GeoTIFF-aineistoja. 
-
-Seuraa edellisen kohdan ohjeita ja lisää samalta alueelta ilmakuva. GeoTIFF-tiedosto löytyy täältä: **/koulutus/nlsfi/Ortokuvat/L4133A.tif**.
-
-Nimeä seuraavasti: \
-	store:	**hki_ilmakuva\
-** taso:	**ilmakuva**
-
-Ilmakuva esikatselussa:
-![](img/harjoitus_6/image5.png)
 
 ## **Image Mosaic**
 
-GeoServerin avulla voi julkaista useita rasteriaineistoja (esim. GeoTIFF-tiedostoja) yhtenä WMS-palveluna käyttämällä **Image mosaic** -formaattia.
+GeoServerin avulla voi julkaista useita rasteriaineistoja (esim. monta GeoTIFF-tiedostoja) yhtenä WMS-palveluna käyttämällä **Image mosaic** -formaattia.
 
-Mosaiikin muodostaminen vaatii, että kaikki aineistot ovat samassa kansiossa ja tiedostoformaatissa sekä samassa koordinaattijärjestelmässä. Rasteriformaatti tulee olla tuettuna GeoServerissä, esim. GeoTIFF tai ArcGrid.
+Mosaiikin muodostaminen vaatii, että kaikki aineistot ovat samassa kansiossa ja tiedostoformaatissa sekä samassa koordinaattijärjestelmässä. Rasteriformaatti tulee olla tuettuna GeoServerissä.
 
 Tämä storen tyyppi on tarkoitettu käytettäväksi samantyyppisten rasteriaineistojen kanssa. Esimerkiksi useita ilmakuvia, jotka muodostavat mosaiikin suositellaan julkaistavaksi kyseisellä tavalla välttäen tasokohtaista julkaisemista.
 
-Edellisen ilmakuvan kansiossa on muutamia ilmakuvia Helsingistä. Aineisto on ladattu Maanmittauslaitoksen aineistopalvelusta. Ne ovat **GeoTIFF-**formaatissa ja **TM35FIN**-**koordinaattijärjestelmässä** (**EPSG:3067**). Kuten nähdään kyseinen aineisto täyttää kaikki mosaiikin muodostamiseen vaatimukset.
+Palvelimelle on valmiiksi ladattu neljä ilmakuvaa. Aineisto on ladattu Maanmittauslaitoksen aineistopalvelusta. Ne ovat **GeoTIFF-**formaatissa ja **TM35FIN**-**koordinaattijärjestelmässä** (**EPSG:3067**). Kuten nähdään kyseinen aineisto täyttää kaikki mosaiikin muodostamiseen vaatimukset.
 
-Luo uusi store **helsinki** workspaceen. Valitse formaatiksi **ImageMosaic - Image mosaicking plugin**.
+Luo uusi store **helsinki** workspaceen. Valitse formaatiksi **ImageMosaic**.
 
-Selaa kansioon **/koulutus/nlsfi/Ortokuvat/** ja paina **OK**. Täten, kaikki kuvat kansiossa yhdistetään yhteen ja mosaiikkia käsitellään sen jälkeen yhtenä tasona.
+Selaa kansioon **/koulutus/nlsfi/Ortokuvat** ja paina **OK**. Täten, kaikki kuvat kansiossa yhdistetään yhteen ja mosaiikkia käsitellään sen jälkeen yhtenä tasona.
 
-Anna nimi ja selitys esimerkiksi seuraavan kuvan mukaisella tavalla:
+Anna nimeksi **hki_ilmakuvat** ja kirjoita kuvaukseen **Helsingin ilmakuvat**:
 ![](img/harjoitus_6/image6.png)
 
 Paina sitten **Save** ja sen jälkeen julkista taso painamalla **Publish**.
 
-Laita tason nimeksi **ilmakuvat** ja otsikoksi **Helsingin keskustan ilmakuvat**. Lisätiedoksi voit kirjoittaa esimerkiksi **Helsingin ilmakuvat - Maanmittauslaitos 2014**. Tarkista tason editointinäkymästä, että **Enabled** ja **Advertised** ovat rastitettuna.
+Laita tason nimeksi **ilmakuvat** ja otsikoksi **Helsingin keskustan ilmakuvat**. Lisätiedoksi voit kirjoittaa esimerkiksi **Helsingin ilmakuvat - Maanmittauslaitos**. Tarkista tason editointinäkymästä, että **Enabled** ja **Advertised** ovat rastitettuna.
 ![](img/harjoitus_6/image7.png)
 
 Huomaa, että GeoTIFF-tiedoston koordinaattijärjestelmän tiedot (EPSG:3067) ja aineiston laajuus on tässä määrittynyt oikein automaattisesti (oletusarvojen mukaisesti).
@@ -90,7 +76,7 @@ Psst! Kuten aiemmin mainittiin, GeoServer pyrkii tulkitsemaan alkuperäisen aine
 
 Paina lopuksi **Save**.
 
-Tarkista, että uusi taso löytyy **Data → Layers** -näkymältä. Voit myös esikatsella sitä tuttuun tapaan käyttäen **Data → Layers Preview**.
+Tarkista, että uusi taso löytyy **Data → Layers** -näkymältä. Voit myös esikatsella sitä tuttuun tapaan käyttäen **Data → Browse Layers**.
 
 ![](img/harjoitus_6/image9.png)
 
@@ -116,13 +102,13 @@ Paina **Generate Bounds** ja huomaa, kuinka tason alkuperäinen koordinaatistoj�
 
 ![](img/harjoitus_6/image10.png)
 
-Lisää samalla tavalla Helsingin **rakennukset**- ja **tiesto**-tasot.
+Lisää samalla tavalla Helsingin **rakennukset**- ja **tiesto**-tasot. 
 
 Huomaa, että voit järjestää tasot käyttämällä **Drawing order** -nuolia. Ylempänä oleva (sija 1) piirretään ensimmäiseksi, sen päälle piirretään seuraava taso, ja niin edelleen. Järjestele tasot tämän kuvan mukaan:
 
 ![](img/harjoitus_6/image11.png)
 
-Varmista, että **Default Style** ovat rastittuina.
+Rasita **Default Style** tasoille.
 
 Paina lopulta uudelleen **Generate Bounds** päivittämään ryhmätason laajuustiedot, jotta myös uudet aineistot otetaan huomioon laajuustietojen määrittämisessä. Aina kun lisäät uutta aineistoa tasoryhmään tulisi painaa uudelleen **Generate Bounds** päivittääksesi ryhmätason laajuustiedot.
 
@@ -137,6 +123,8 @@ Voit esikatsella ryhmätasoa samalla tavalla kuin muitakin tasoja:
 Palaa ryhmätason asetuksiin (**Data → Layer Groups → taustakartta**). Selaa alaspäin **Mode**-kohdalle asti. Tässä kohdassa voit valita erilaisia muotoja ryhmätason tasoille:
 
 -   **Single**-ryhmätaso on nähtävissä yhtenä tasona, lähtötasoja ei voi erotella toisistaan
+
+-   **Opaque Container**-ryhmätaso on nähtävissä yhtenä tasona, lähtötasot ei tule esiin edes GetCapabilites-kutsussa
 
 -   **Named Tree** -ryhmätaso on nähtävissä ryhmänä ja yksittäisinä tasoina
 
@@ -188,5 +176,4 @@ Voit nyt esikatsella uutta tasoa samalla tavalla kuin aiemmin:
 
 ::: hint-box
 Psst! Huomaa, että WMS-cascade-tasojen tyyliin tai sisältöön ei voida vaikuttaa, sillä ne ovat Helsingin kaupungin omassa palvelimessa. 
-Helsingin kaupungin paikkatietopalvelujen metatietoihin voit tutustua tässä: http://ptp.hel.fi/avoindata/aineistot/Aineistolista_wms_avoindata_ulkoverkko.html.
 :::
